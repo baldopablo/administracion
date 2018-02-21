@@ -30,3 +30,35 @@ D:\Administración\Administracion\Administracion\obj\x86\Release\WindowsApplicat
 D:\Administración\Administracion\Administracion\obj\x86\Release\WindowsApplication1.FRM_GESTION_USUARIOS.resources
 D:\Administración\Administracion\Administracion\obj\x86\Release\WindowsApplication1.FRM_INGRESO.resources
 D:\Administración\Administracion\Administracion\obj\x86\Release\WindowsApplication1.FRM_GESTION_USUARIOS_B.resources
+E:\Proyecto Pablo\administracion\trunk\Administracion\bin\Release\Administracion.exe.config
+E:\Proyecto Pablo\administracion\trunk\Administracion\obj\x86\Release\Administracion.exe
+E:\Proyecto Pablo\administracion\trunk\Administracion\obj\x86\Release\Administracion.xml
+E:\Proyecto Pablo\administracion\trunk\Administracion\obj\x86\Release\Administracion.pdb
+E:\Proyecto Pablo\administracion\trunk\Administracion\bin\Release\DATOS\DC_Administracion.designer.vb
+E:\Proyecto Pablo\administracion\trunk\Administracion\bin\Release\DATOS\DC_Administracion.dbml.layout
+E:\Proyecto Pablo\administracion\trunk\Administracion\bin\Release\DATOS\DC_Administracion.dbml
+E:\Proyecto Pablo\administracion\trunk\Administracion\bin\Release\Administracion.exe.manifest
+E:\Proyecto Pablo\administracion\trunk\Administracion\bin\Release\Administracion.application
+E:\Proyecto Pablo\administracion\trunk\Administracion\bin\Release\Administracion.exe
+E:\Proyecto Pablo\administracion\trunk\Administracion\bin\Release\Administracion.pdb
+E:\Proyecto Pablo\administracion\trunk\Administracion\bin\Release\Administracion.xml
+E:\Proyecto Pablo\administracion\trunk\Administracion\obj\x86\Release\WindowsApplication1.FRM_CLIENTES_BUSCAR_B_M.resources
+E:\Proyecto Pablo\administracion\trunk\Administracion\obj\x86\Release\WindowsApplication1.FRM_AGREGAR_PROD_A_VENT.resources
+E:\Proyecto Pablo\administracion\trunk\Administracion\obj\x86\Release\WindowsApplication1.FRM_GESTION_USUARIOS_B.resources
+E:\Proyecto Pablo\administracion\trunk\Administracion\obj\x86\Release\WindowsApplication1.FRM_GESTION_USUARIOS.resources
+E:\Proyecto Pablo\administracion\trunk\Administracion\obj\x86\Release\WindowsApplication1.FRM_INGRESO.resources
+E:\Proyecto Pablo\administracion\trunk\Administracion\obj\x86\Release\WindowsApplication1.FRM_MENU.resources
+E:\Proyecto Pablo\administracion\trunk\Administracion\obj\x86\Release\WindowsApplication1.FRM_OBTENER_CADENA.resources
+E:\Proyecto Pablo\administracion\trunk\Administracion\obj\x86\Release\WindowsApplication1.FRM_TIPOS_PRODUCTOS.resources
+E:\Proyecto Pablo\administracion\trunk\Administracion\obj\x86\Release\WindowsApplication1.FRM_FORMAS_DE_PAGO.resources
+E:\Proyecto Pablo\administracion\trunk\Administracion\obj\x86\Release\WindowsApplication1.FRM_CLIENTES_A_M.resources
+E:\Proyecto Pablo\administracion\trunk\Administracion\obj\x86\Release\WindowsApplication1.FRM_DEPOSITOS.resources
+E:\Proyecto Pablo\administracion\trunk\Administracion\obj\x86\Release\WindowsApplication1.FRM_PRODUCTOS.resources
+E:\Proyecto Pablo\administracion\trunk\Administracion\obj\x86\Release\WindowsApplication1.FRM_PROVEEDORES.resources
+E:\Proyecto Pablo\administracion\trunk\Administracion\obj\x86\Release\WindowsApplication1.FRM_SERVICIOS.resources
+E:\Proyecto Pablo\administracion\trunk\Administracion\obj\x86\Release\WindowsApplication1.FRM_VENTAS.resources
+E:\Proyecto Pablo\administracion\trunk\Administracion\obj\x86\Release\WindowsApplication1.Installer1.resources
+E:\Proyecto Pablo\administracion\trunk\Administracion\obj\x86\Release\WindowsApplication1.Resources.resources
+E:\Proyecto Pablo\administracion\trunk\Administracion\obj\x86\Release\Administracion.vbproj.GenerateResource.Cache
+E:\Proyecto Pablo\administracion\trunk\Administracion\obj\x86\Release\Administracion.exe.manifest
+E:\Proyecto Pablo\administracion\trunk\Administracion\obj\x86\Release\Administracion.application
