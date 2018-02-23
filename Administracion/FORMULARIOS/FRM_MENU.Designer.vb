@@ -137,7 +137,6 @@ Partial Class FRM_MENU
         Me.ProveedoresToolStripMenuItem.Name = "ProveedoresToolStripMenuItem"
         Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(84, 20)
         Me.ProveedoresToolStripMenuItem.Text = "Proveedores"
-        Me.ProveedoresToolStripMenuItem.Visible = False
         '
         'ProductosToolStripMenuItem
         '
@@ -145,12 +144,11 @@ Partial Class FRM_MENU
         Me.ProductosToolStripMenuItem.Name = "ProductosToolStripMenuItem"
         Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(73, 20)
         Me.ProductosToolStripMenuItem.Text = "Productos"
-        Me.ProductosToolStripMenuItem.Visible = False
         '
         'StockToolStripMenuItem
         '
         Me.StockToolStripMenuItem.Name = "StockToolStripMenuItem"
-        Me.StockToolStripMenuItem.Size = New System.Drawing.Size(102, 22)
+        Me.StockToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.StockToolStripMenuItem.Text = "stock"
         '
         'VentasToolStripMenuItem
