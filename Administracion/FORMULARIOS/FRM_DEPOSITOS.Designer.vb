@@ -32,6 +32,9 @@ Partial Class FRM_DEPOSITOS
         Me.TB_DEPO_LOCALIDAD = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TB_DEPO_CODIGO = New System.Windows.Forms.TextBox()
+        Me.BTN_DEPO_ACTUALIZAR = New System.Windows.Forms.Button()
+        Me.TB_DEPO_ID = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'BTN_DEPO_GUARDAR
@@ -45,9 +48,9 @@ Partial Class FRM_DEPOSITOS
         '
         'BTN_DEPO_SALIR
         '
-        Me.BTN_DEPO_SALIR.Location = New System.Drawing.Point(136, 219)
+        Me.BTN_DEPO_SALIR.Location = New System.Drawing.Point(210, 219)
         Me.BTN_DEPO_SALIR.Name = "BTN_DEPO_SALIR"
-        Me.BTN_DEPO_SALIR.Size = New System.Drawing.Size(93, 34)
+        Me.BTN_DEPO_SALIR.Size = New System.Drawing.Size(97, 34)
         Me.BTN_DEPO_SALIR.TabIndex = 1
         Me.BTN_DEPO_SALIR.Text = "Salir"
         Me.BTN_DEPO_SALIR.UseVisualStyleBackColor = True
@@ -116,11 +119,39 @@ Partial Class FRM_DEPOSITOS
         Me.TB_DEPO_CODIGO.Size = New System.Drawing.Size(210, 20)
         Me.TB_DEPO_CODIGO.TabIndex = 9
         '
+        'BTN_DEPO_ACTUALIZAR
+        '
+        Me.BTN_DEPO_ACTUALIZAR.Location = New System.Drawing.Point(111, 219)
+        Me.BTN_DEPO_ACTUALIZAR.Name = "BTN_DEPO_ACTUALIZAR"
+        Me.BTN_DEPO_ACTUALIZAR.Size = New System.Drawing.Size(97, 34)
+        Me.BTN_DEPO_ACTUALIZAR.TabIndex = 10
+        Me.BTN_DEPO_ACTUALIZAR.Text = "Actualizar"
+        Me.BTN_DEPO_ACTUALIZAR.UseVisualStyleBackColor = True
+        '
+        'TB_DEPO_ID
+        '
+        Me.TB_DEPO_ID.Location = New System.Drawing.Point(253, 33)
+        Me.TB_DEPO_ID.Name = "TB_DEPO_ID"
+        Me.TB_DEPO_ID.Size = New System.Drawing.Size(69, 20)
+        Me.TB_DEPO_ID.TabIndex = 12
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(265, 17)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(18, 13)
+        Me.Label5.TabIndex = 11
+        Me.Label5.Text = "ID"
+        '
         'FRM_DEPOSITOS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(246, 274)
+        Me.ClientSize = New System.Drawing.Size(344, 274)
+        Me.Controls.Add(Me.TB_DEPO_ID)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.BTN_DEPO_ACTUALIZAR)
         Me.Controls.Add(Me.TB_DEPO_CODIGO)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.TB_DEPO_LOCALIDAD)
@@ -147,4 +178,7 @@ Partial Class FRM_DEPOSITOS
     Friend WithEvents TB_DEPO_LOCALIDAD As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents TB_DEPO_CODIGO As System.Windows.Forms.TextBox
+    Friend WithEvents BTN_DEPO_ACTUALIZAR As System.Windows.Forms.Button
+    Friend WithEvents TB_DEPO_ID As System.Windows.Forms.TextBox
+    Friend WithEvents Label5 As System.Windows.Forms.Label
 End Class
