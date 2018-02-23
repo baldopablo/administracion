@@ -62,3 +62,5 @@ E:\Proyecto Pablo\administracion\trunk\Administracion\obj\x86\Release\WindowsApp
 E:\Proyecto Pablo\administracion\trunk\Administracion\obj\x86\Release\Administracion.vbproj.GenerateResource.Cache
 E:\Proyecto Pablo\administracion\trunk\Administracion\obj\x86\Release\Administracion.exe.manifest
 E:\Proyecto Pablo\administracion\trunk\Administracion\obj\x86\Release\Administracion.application
+E:\Proyecto Pablo\administracion\trunk\Administracion\obj\x86\Release\WindowsApplication1.FRM_PRODUCTOS_BUSCAR_B_M.resources
+E:\Proyecto Pablo\administracion\trunk\Administracion\obj\x86\Release\WindowsApplication1.FRM_PROVEEDORES_BUSCAR_B_M.resources

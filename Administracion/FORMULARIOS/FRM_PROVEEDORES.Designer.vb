@@ -40,6 +40,9 @@ Partial Class FRM_PROVEEDORES
         Me.TB_PROV_URL = New System.Windows.Forms.TextBox()
         Me.TB_PROV_LOCALIDAD = New System.Windows.Forms.TextBox()
         Me.TB_PROV_CODIGO = New System.Windows.Forms.TextBox()
+        Me.TB_PROV_ID = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.BTN_PROV_ACTUALIZAR = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'BTN_PROV_GUARDAR
@@ -188,11 +191,41 @@ Partial Class FRM_PROVEEDORES
         Me.TB_PROV_CODIGO.Size = New System.Drawing.Size(83, 20)
         Me.TB_PROV_CODIGO.TabIndex = 17
         '
+        'TB_PROV_ID
+        '
+        Me.TB_PROV_ID.Location = New System.Drawing.Point(149, 170)
+        Me.TB_PROV_ID.Name = "TB_PROV_ID"
+        Me.TB_PROV_ID.Size = New System.Drawing.Size(83, 20)
+        Me.TB_PROV_ID.TabIndex = 19
+        Me.TB_PROV_ID.Visible = False
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(124, 173)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(18, 13)
+        Me.Label9.TabIndex = 18
+        Me.Label9.Text = "ID"
+        Me.Label9.Visible = False
+        '
+        'BTN_PROV_ACTUALIZAR
+        '
+        Me.BTN_PROV_ACTUALIZAR.Location = New System.Drawing.Point(46, 196)
+        Me.BTN_PROV_ACTUALIZAR.Name = "BTN_PROV_ACTUALIZAR"
+        Me.BTN_PROV_ACTUALIZAR.Size = New System.Drawing.Size(82, 28)
+        Me.BTN_PROV_ACTUALIZAR.TabIndex = 20
+        Me.BTN_PROV_ACTUALIZAR.Text = "Actualizar"
+        Me.BTN_PROV_ACTUALIZAR.UseVisualStyleBackColor = True
+        '
         'FRM_PROVEEDORES
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(284, 262)
+        Me.ClientSize = New System.Drawing.Size(275, 262)
+        Me.Controls.Add(Me.BTN_PROV_ACTUALIZAR)
+        Me.Controls.Add(Me.TB_PROV_ID)
+        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.TB_PROV_CODIGO)
         Me.Controls.Add(Me.TB_PROV_LOCALIDAD)
         Me.Controls.Add(Me.TB_PROV_URL)
@@ -235,4 +268,7 @@ Partial Class FRM_PROVEEDORES
     Friend WithEvents TB_PROV_URL As System.Windows.Forms.TextBox
     Friend WithEvents TB_PROV_LOCALIDAD As System.Windows.Forms.TextBox
     Friend WithEvents TB_PROV_CODIGO As System.Windows.Forms.TextBox
+    Friend WithEvents TB_PROV_ID As System.Windows.Forms.TextBox
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents BTN_PROV_ACTUALIZAR As System.Windows.Forms.Button
 End Class

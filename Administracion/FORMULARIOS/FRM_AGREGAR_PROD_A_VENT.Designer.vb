@@ -23,14 +23,14 @@ Partial Class FRM_AGREGAR_PROD_A_VENT
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.BTN_AGREGAR_PROD_BUSCAR = New System.Windows.Forms.Button()
+        Me.BTN_AGREGAR_PROD_LIMPIAR = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.BTN_AGREGAR_PROD_BUSCAR = New System.Windows.Forms.Button()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.BTN_AGREGAR_PROD_CARGAR = New System.Windows.Forms.Button()
         Me.BTN_AGREGAR_PROD_SALIR = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.BTN_AGREGAR_PROD_LIMPIAR = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -49,16 +49,30 @@ Partial Class FRM_AGREGAR_PROD_A_VENT
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Buscar por:"
         '
-        'RadioButton1
+        'BTN_AGREGAR_PROD_LIMPIAR
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(43, 24)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(81, 17)
-        Me.RadioButton1.TabIndex = 0
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Descripción"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.BTN_AGREGAR_PROD_LIMPIAR.Location = New System.Drawing.Point(243, 45)
+        Me.BTN_AGREGAR_PROD_LIMPIAR.Name = "BTN_AGREGAR_PROD_LIMPIAR"
+        Me.BTN_AGREGAR_PROD_LIMPIAR.Size = New System.Drawing.Size(100, 22)
+        Me.BTN_AGREGAR_PROD_LIMPIAR.TabIndex = 4
+        Me.BTN_AGREGAR_PROD_LIMPIAR.Text = "Limpiar"
+        Me.BTN_AGREGAR_PROD_LIMPIAR.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(137, 21)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(206, 20)
+        Me.TextBox1.TabIndex = 3
+        '
+        'BTN_AGREGAR_PROD_BUSCAR
+        '
+        Me.BTN_AGREGAR_PROD_BUSCAR.Location = New System.Drawing.Point(137, 45)
+        Me.BTN_AGREGAR_PROD_BUSCAR.Name = "BTN_AGREGAR_PROD_BUSCAR"
+        Me.BTN_AGREGAR_PROD_BUSCAR.Size = New System.Drawing.Size(100, 22)
+        Me.BTN_AGREGAR_PROD_BUSCAR.TabIndex = 2
+        Me.BTN_AGREGAR_PROD_BUSCAR.Text = "Buscar"
+        Me.BTN_AGREGAR_PROD_BUSCAR.UseVisualStyleBackColor = True
         '
         'RadioButton2
         '
@@ -71,21 +85,16 @@ Partial Class FRM_AGREGAR_PROD_A_VENT
         Me.RadioButton2.Text = "Código"
         Me.RadioButton2.UseVisualStyleBackColor = True
         '
-        'BTN_AGREGAR_PROD_BUSCAR
+        'RadioButton1
         '
-        Me.BTN_AGREGAR_PROD_BUSCAR.Location = New System.Drawing.Point(137, 45)
-        Me.BTN_AGREGAR_PROD_BUSCAR.Name = "BTN_AGREGAR_PROD_BUSCAR"
-        Me.BTN_AGREGAR_PROD_BUSCAR.Size = New System.Drawing.Size(100, 22)
-        Me.BTN_AGREGAR_PROD_BUSCAR.TabIndex = 2
-        Me.BTN_AGREGAR_PROD_BUSCAR.Text = "Buscar"
-        Me.BTN_AGREGAR_PROD_BUSCAR.UseVisualStyleBackColor = True
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(137, 21)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(206, 20)
-        Me.TextBox1.TabIndex = 3
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Location = New System.Drawing.Point(43, 24)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(81, 17)
+        Me.RadioButton1.TabIndex = 0
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "Descripción"
+        Me.RadioButton1.UseVisualStyleBackColor = True
         '
         'BTN_AGREGAR_PROD_CARGAR
         '
@@ -112,15 +121,6 @@ Partial Class FRM_AGREGAR_PROD_A_VENT
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(369, 202)
         Me.DataGridView1.TabIndex = 6
-        '
-        'BTN_AGREGAR_PROD_LIMPIAR
-        '
-        Me.BTN_AGREGAR_PROD_LIMPIAR.Location = New System.Drawing.Point(243, 45)
-        Me.BTN_AGREGAR_PROD_LIMPIAR.Name = "BTN_AGREGAR_PROD_LIMPIAR"
-        Me.BTN_AGREGAR_PROD_LIMPIAR.Size = New System.Drawing.Size(100, 22)
-        Me.BTN_AGREGAR_PROD_LIMPIAR.TabIndex = 4
-        Me.BTN_AGREGAR_PROD_LIMPIAR.Text = "Limpiar"
-        Me.BTN_AGREGAR_PROD_LIMPIAR.UseVisualStyleBackColor = True
         '
         'FRM_AGREGAR_PROD_A_VENT
         '

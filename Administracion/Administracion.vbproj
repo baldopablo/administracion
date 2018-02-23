@@ -152,6 +152,18 @@
     <Compile Include="FORMULARIOS\FRM_OBTENER_CADENA.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FORMULARIOS\FRM_PRODUCTOS_BUSCAR_B_M.Designer.vb">
+      <DependentUpon>FRM_PRODUCTOS_BUSCAR_B_M.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_PRODUCTOS_BUSCAR_B_M.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_PROVEEDORES_BUSCAR_B_M.Designer.vb">
+      <DependentUpon>FRM_PROVEEDORES_BUSCAR_B_M.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_PROVEEDORES_BUSCAR_B_M.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FORMULARIOS\FRM_TIPOS_PRODUCTOS.Designer.vb">
       <DependentUpon>FRM_TIPOS_PRODUCTOS.vb</DependentUpon>
     </Compile>
@@ -252,6 +264,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FORMULARIOS\FRM_OBTENER_CADENA.resx">
       <DependentUpon>FRM_OBTENER_CADENA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\FRM_PRODUCTOS_BUSCAR_B_M.resx">
+      <DependentUpon>FRM_PRODUCTOS_BUSCAR_B_M.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\FRM_PROVEEDORES_BUSCAR_B_M.resx">
+      <DependentUpon>FRM_PROVEEDORES_BUSCAR_B_M.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMULARIOS\FRM_TIPOS_PRODUCTOS.resx">
       <DependentUpon>FRM_TIPOS_PRODUCTOS.vb</DependentUpon>

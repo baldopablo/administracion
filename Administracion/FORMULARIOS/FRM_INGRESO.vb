@@ -33,7 +33,7 @@
             FRM_MENU.LBL_MENU_PERFIL.Text = Buscausuario.USU_PERFIL.ToString
             FRM_MENU.LBL_MENU_USU.Text = Buscausuario.USU_USUARIO.ToString
 
-            
+
             FRM_MENU.Show()
             Me.Finalize()
             Me.Close()
@@ -70,7 +70,7 @@
         TB_USU_USUARIO.Text = TB_USU_USUARIO.Text.ToUpper
     End Sub
 
-    
+
     Private Sub BTN_INGR_CANCELAR_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BTN_INGR_CANCELAR.Click
         Me.Close()
         Application.Exit()
@@ -80,4 +80,5 @@
     Private Sub FRM_INGRESO_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         TB_USU_USUARIO.Focus()
     End Sub
+
 End Class

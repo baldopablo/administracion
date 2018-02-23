@@ -40,4 +40,35 @@
     Private Sub BTN_PROV_SALIR_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BTN_PROV_SALIR.Click
         Me.Close()
     End Sub
+
+    Private Sub FRM_PROVEEDORES_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub BTN_PROV_ACTUALIZAR_Click(sender As System.Object, e As System.EventArgs) Handles BTN_PROV_ACTUALIZAR.Click
+        If TB_PROV_CODIGO.Text.Length = 0 Or TB_PROV_DIRECCION.Text.Length = 0 Or TB_PROV_LOCALIDAD.Text.Length = 0 Or TB_PROV_NOMBRE.Text.Length = 0 Or TB_PROV_TEL_1.Text.Length = 0 Then
+            MsgBox("Debe completar todos los campos requeridos")
+            Exit Sub
+        End If
+        Try
+            Dim ActualizarProveedor = (From P In datacontext.PROVEEDORES Where P.ID_PROVEEDOR = (TB_PROV_ID.Text)).ToList()(0)
+
+            ActualizarProveedor.PROV_NOMBRE = TB_PROV_NOMBRE.Text
+            ActualizarProveedor.PROV_DIRECCION = TB_PROV_DIRECCION.Text
+            ActualizarProveedor.PROV_TEL_1 = TB_PROV_TEL_1.Text
+            ActualizarProveedor.PROV_TEL_2 = TB_PROV_TEL_2.Text
+            ActualizarProveedor.PROV_CODIGO = TB_PROV_CODIGO.Text
+            ActualizarProveedor.PROV_MAIL = TB_PROV_MAIL.Text
+            ActualizarProveedor.PROV_URL = TB_PROV_URL.Text
+            ActualizarProveedor.PROV_LOCALIDAD = TB_PROV_LOCALIDAD.Text
+            datacontext.SubmitChanges()
+            MsgBox("Los datos se han modificado correctamente")
+
+            FRM_PROVEEDORES_BUSCAR_B_M.CargarGrillaProveedor()
+            Me.Close()
+
+        Catch ex As Exception
+            MsgBox("Los datos no se han modificado! intente nuevamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Modificar proveedor")
+        End Try
+    End Sub
 End Class

@@ -42,24 +42,24 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Administracion.exe" size="158208">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Administracion.exe" size="190976">
       <assemblyIdentity name="Administracion" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>XfWCKrUdKvA8bQQmo6qpdtuHv+Q=</dsig:DigestValue>
+        <dsig:DigestValue>XDdLhBZCgO54/YSDDA0jOlHZUb8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Administracion.exe.config" size="564">
+  <file name="Administracion.exe.config" size="561">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>yB7kJPpUvZda/AUZ3eFvEW/qJLY=</dsig:DigestValue>
+      <dsig:DigestValue>DlZsFIkM85NNm3em84uYYin3dks=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

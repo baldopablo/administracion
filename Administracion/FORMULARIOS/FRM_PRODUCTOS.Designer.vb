@@ -40,6 +40,9 @@ Partial Class FRM_PRODUCTOS
         Me.CB_PROD_TIPO_PROD = New System.Windows.Forms.ComboBox()
         Me.BTN_PROD_GUARDAR = New System.Windows.Forms.Button()
         Me.BTN_PROD_SALIR = New System.Windows.Forms.Button()
+        Me.btnActualizar = New System.Windows.Forms.Button()
+        Me.TB_PROD_ID = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -152,6 +155,7 @@ Partial Class FRM_PRODUCTOS
         'CB_PROD_PROVEEDOR
         '
         Me.CB_PROD_PROVEEDOR.FormattingEnabled = True
+        Me.CB_PROD_PROVEEDOR.Items.AddRange(New Object() {"LOPEZ S.R.L", "GIMENEZ S.A", "1"})
         Me.CB_PROD_PROVEEDOR.Location = New System.Drawing.Point(134, 147)
         Me.CB_PROD_PROVEEDOR.Name = "CB_PROD_PROVEEDOR"
         Me.CB_PROD_PROVEEDOR.Size = New System.Drawing.Size(94, 21)
@@ -168,6 +172,7 @@ Partial Class FRM_PRODUCTOS
         'CB_PROD_TIPO_PROD
         '
         Me.CB_PROD_TIPO_PROD.FormattingEnabled = True
+        Me.CB_PROD_TIPO_PROD.Items.AddRange(New Object() {"ENLATADOS", "1"})
         Me.CB_PROD_TIPO_PROD.Location = New System.Drawing.Point(134, 204)
         Me.CB_PROD_TIPO_PROD.Name = "CB_PROD_TIPO_PROD"
         Me.CB_PROD_TIPO_PROD.Size = New System.Drawing.Size(94, 21)
@@ -184,18 +189,48 @@ Partial Class FRM_PRODUCTOS
         '
         'BTN_PROD_SALIR
         '
-        Me.BTN_PROD_SALIR.Location = New System.Drawing.Point(131, 244)
+        Me.BTN_PROD_SALIR.Location = New System.Drawing.Point(148, 244)
         Me.BTN_PROD_SALIR.Name = "BTN_PROD_SALIR"
         Me.BTN_PROD_SALIR.Size = New System.Drawing.Size(89, 31)
         Me.BTN_PROD_SALIR.TabIndex = 17
         Me.BTN_PROD_SALIR.Text = "Salir"
         Me.BTN_PROD_SALIR.UseVisualStyleBackColor = True
         '
+        'btnActualizar
+        '
+        Me.btnActualizar.Location = New System.Drawing.Point(53, 244)
+        Me.btnActualizar.Name = "btnActualizar"
+        Me.btnActualizar.Size = New System.Drawing.Size(89, 31)
+        Me.btnActualizar.TabIndex = 18
+        Me.btnActualizar.Text = "Actualizar"
+        Me.btnActualizar.UseVisualStyleBackColor = True
+        '
+        'TB_PROD_ID
+        '
+        Me.TB_PROD_ID.Location = New System.Drawing.Point(168, 309)
+        Me.TB_PROD_ID.Name = "TB_PROD_ID"
+        Me.TB_PROD_ID.Size = New System.Drawing.Size(98, 20)
+        Me.TB_PROD_ID.TabIndex = 20
+        Me.TB_PROD_ID.Visible = False
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(169, 288)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(18, 13)
+        Me.Label9.TabIndex = 19
+        Me.Label9.Text = "ID"
+        Me.Label9.Visible = False
+        '
         'FRM_PRODUCTOS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(304, 341)
+        Me.Controls.Add(Me.TB_PROD_ID)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.btnActualizar)
         Me.Controls.Add(Me.BTN_PROD_SALIR)
         Me.Controls.Add(Me.BTN_PROD_GUARDAR)
         Me.Controls.Add(Me.CB_PROD_TIPO_PROD)
@@ -238,4 +273,7 @@ Partial Class FRM_PRODUCTOS
     Friend WithEvents CB_PROD_TIPO_PROD As System.Windows.Forms.ComboBox
     Friend WithEvents BTN_PROD_GUARDAR As System.Windows.Forms.Button
     Friend WithEvents BTN_PROD_SALIR As System.Windows.Forms.Button
+    Friend WithEvents btnActualizar As System.Windows.Forms.Button
+    Friend WithEvents TB_PROD_ID As System.Windows.Forms.TextBox
+    Friend WithEvents Label9 As System.Windows.Forms.Label
 End Class

@@ -67,7 +67,6 @@
         TB_CLIE_BUSCAR_APE.Enabled = False
         TB_CLIE_BUSCAR_APE.Clear()
         TB_CLIE_BUSCAR_DNI.Enabled = True
-
     End Sub
 
     Private Sub RB_CLIE_BUSCAR_APE_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RB_CLIE_BUSCAR_APE.CheckedChanged
