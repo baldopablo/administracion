@@ -76,7 +76,7 @@ Partial Class FRM_DEPOSITOS_BUSCAR_B_M
         Me.GroupBox1.Size = New System.Drawing.Size(244, 76)
         Me.GroupBox1.TabIndex = 14
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Buscar Proveedor"
+        Me.GroupBox1.Text = "Buscar Depósito"
         '
         'TB_DEPO_BUSCAR_CODIGO
         '
@@ -135,7 +135,7 @@ Partial Class FRM_DEPOSITOS_BUSCAR_B_M
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.BTN_DEPO_BUS_SALIR)
         Me.Name = "FRM_DEPOSITOS_BUSCAR_B_M"
-        Me.Text = "FRM_DEPOSITOS_BUSCAR_B_M"
+        Me.Text = "MODIFICAR Y ELIMINAR DEPOSITOS"
         CType(Me.DGV_DEPO_BUSCAR, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

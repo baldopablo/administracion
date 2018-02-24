@@ -71,7 +71,7 @@ Partial Class FRM_VENTAS
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(23, 97)
+        Me.Label2.Location = New System.Drawing.Point(23, 78)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(96, 13)
         Me.Label2.TabIndex = 4
@@ -80,7 +80,7 @@ Partial Class FRM_VENTAS
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(26, 113)
+        Me.DataGridView1.Location = New System.Drawing.Point(26, 94)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(309, 115)
         Me.DataGridView1.TabIndex = 6
@@ -96,7 +96,7 @@ Partial Class FRM_VENTAS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(384, 272)
+        Me.ClientSize = New System.Drawing.Size(363, 272)
         Me.Controls.Add(Me.TB_VENT_FECHA)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label2)

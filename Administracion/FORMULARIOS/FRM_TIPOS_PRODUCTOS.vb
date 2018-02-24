@@ -34,4 +34,8 @@
     Private Sub BTN_PROD_TIPO_SALIR_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BTN_PROD_TIPO_SALIR.Click
         Me.Close()
     End Sub
+
+    Private Sub FRM_TIPOS_PRODUCTOS_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

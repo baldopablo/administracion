@@ -35,4 +35,8 @@
     Private Sub BTN_SERV_SALIR_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BTN_SERV_SALIR.Click
         Me.Close()
     End Sub
+
+    Private Sub FRM_SERVICIOS_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

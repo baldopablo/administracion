@@ -29,29 +29,33 @@ Partial Class FRM_INGRESO
         Me.TB_USU_USUARIO = New System.Windows.Forms.TextBox()
         Me.TB_USU_CONTRASEÑA = New System.Windows.Forms.TextBox()
         Me.BTN_ING_CAMBIO_PASS = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(14, 14)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(43, 13)
+        Me.Label1.Size = New System.Drawing.Size(62, 18)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Usuario"
+        Me.Label1.Text = "Usuario*"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(14, 57)
+        Me.Label2.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(14, 70)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(61, 13)
+        Me.Label2.Size = New System.Drawing.Size(82, 18)
         Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Contraseña"
+        Me.Label2.Text = "Contraseña*"
         '
         'BTN_INGR_ACEPTAR
         '
-        Me.BTN_INGR_ACEPTAR.Location = New System.Drawing.Point(17, 99)
+        Me.BTN_INGR_ACEPTAR.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_INGR_ACEPTAR.Location = New System.Drawing.Point(13, 148)
         Me.BTN_INGR_ACEPTAR.Name = "BTN_INGR_ACEPTAR"
         Me.BTN_INGR_ACEPTAR.Size = New System.Drawing.Size(87, 32)
         Me.BTN_INGR_ACEPTAR.TabIndex = 3
@@ -60,7 +64,8 @@ Partial Class FRM_INGRESO
         '
         'BTN_INGR_CANCELAR
         '
-        Me.BTN_INGR_CANCELAR.Location = New System.Drawing.Point(110, 99)
+        Me.BTN_INGR_CANCELAR.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_INGR_CANCELAR.Location = New System.Drawing.Point(106, 148)
         Me.BTN_INGR_CANCELAR.Name = "BTN_INGR_CANCELAR"
         Me.BTN_INGR_CANCELAR.Size = New System.Drawing.Size(87, 32)
         Me.BTN_INGR_CANCELAR.TabIndex = 4
@@ -69,33 +74,47 @@ Partial Class FRM_INGRESO
         '
         'TB_USU_USUARIO
         '
-        Me.TB_USU_USUARIO.Location = New System.Drawing.Point(17, 30)
+        Me.TB_USU_USUARIO.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TB_USU_USUARIO.Location = New System.Drawing.Point(17, 35)
         Me.TB_USU_USUARIO.Name = "TB_USU_USUARIO"
-        Me.TB_USU_USUARIO.Size = New System.Drawing.Size(155, 20)
+        Me.TB_USU_USUARIO.Size = New System.Drawing.Size(155, 26)
         Me.TB_USU_USUARIO.TabIndex = 1
         '
         'TB_USU_CONTRASEÑA
         '
-        Me.TB_USU_CONTRASEÑA.Location = New System.Drawing.Point(17, 73)
+        Me.TB_USU_CONTRASEÑA.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TB_USU_CONTRASEÑA.Location = New System.Drawing.Point(17, 91)
         Me.TB_USU_CONTRASEÑA.Name = "TB_USU_CONTRASEÑA"
         Me.TB_USU_CONTRASEÑA.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TB_USU_CONTRASEÑA.Size = New System.Drawing.Size(155, 20)
+        Me.TB_USU_CONTRASEÑA.Size = New System.Drawing.Size(155, 26)
         Me.TB_USU_CONTRASEÑA.TabIndex = 2
         '
         'BTN_ING_CAMBIO_PASS
         '
-        Me.BTN_ING_CAMBIO_PASS.Location = New System.Drawing.Point(203, 99)
+        Me.BTN_ING_CAMBIO_PASS.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_ING_CAMBIO_PASS.Location = New System.Drawing.Point(199, 148)
         Me.BTN_ING_CAMBIO_PASS.Name = "BTN_ING_CAMBIO_PASS"
         Me.BTN_ING_CAMBIO_PASS.Size = New System.Drawing.Size(120, 32)
         Me.BTN_ING_CAMBIO_PASS.TabIndex = 5
         Me.BTN_ING_CAMBIO_PASS.Text = "Cambiar contraseña"
         Me.BTN_ING_CAMBIO_PASS.UseVisualStyleBackColor = True
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Comic Sans MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(22, 127)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(106, 15)
+        Me.Label3.TabIndex = 6
+        Me.Label3.Text = "Datos obligatorios*"
+        '
         'FRM_INGRESO
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(337, 150)
+        Me.ClientSize = New System.Drawing.Size(337, 192)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.BTN_ING_CAMBIO_PASS)
         Me.Controls.Add(Me.TB_USU_CONTRASEÑA)
         Me.Controls.Add(Me.TB_USU_USUARIO)
@@ -116,4 +135,5 @@ Partial Class FRM_INGRESO
     Friend WithEvents TB_USU_USUARIO As System.Windows.Forms.TextBox
     Friend WithEvents TB_USU_CONTRASEÑA As System.Windows.Forms.TextBox
     Friend WithEvents BTN_ING_CAMBIO_PASS As System.Windows.Forms.Button
+    Friend WithEvents Label3 As System.Windows.Forms.Label
 End Class
