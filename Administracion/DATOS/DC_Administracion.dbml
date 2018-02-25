@@ -116,7 +116,6 @@
       <Column Name="CLI_TIPO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="CLI_CONTRATO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="CLI_FECHA_ALTA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="CLI_FECHA_RENOV" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Association Name="CLIENTES_SERVICIOS" Member="SERVICIOS" ThisKey="ID_CLIENTE" OtherKey="ID_CLIENTE" Type="SERVICIOS" />
     </Type>
   </Table>

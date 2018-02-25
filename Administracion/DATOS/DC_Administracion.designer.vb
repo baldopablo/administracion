@@ -2136,8 +2136,6 @@ Partial Public Class CLIENTES
 	
 	Private _CLI_FECHA_ALTA As System.Nullable(Of Date)
 	
-	Private _CLI_FECHA_RENOV As System.Nullable(Of Date)
-	
 	Private _SERVICIOS As EntitySet(Of SERVICIOS)
 	
     #Region "Definiciones de métodos de extensibilidad"
@@ -2194,10 +2192,6 @@ Partial Public Class CLIENTES
     Partial Private Sub OnCLI_FECHA_ALTAChanging(value As System.Nullable(Of Date))
     End Sub
     Partial Private Sub OnCLI_FECHA_ALTAChanged()
-    End Sub
-    Partial Private Sub OnCLI_FECHA_RENOVChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnCLI_FECHA_RENOVChanged()
     End Sub
     #End Region
 	
@@ -2396,22 +2390,6 @@ Partial Public Class CLIENTES
 				Me._CLI_FECHA_ALTA = value
 				Me.SendPropertyChanged("CLI_FECHA_ALTA")
 				Me.OnCLI_FECHA_ALTAChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CLI_FECHA_RENOV", DbType:="Date")>  _
-	Public Property CLI_FECHA_RENOV() As System.Nullable(Of Date)
-		Get
-			Return Me._CLI_FECHA_RENOV
-		End Get
-		Set
-			If (Me._CLI_FECHA_RENOV.Equals(value) = false) Then
-				Me.OnCLI_FECHA_RENOVChanging(value)
-				Me.SendPropertyChanging
-				Me._CLI_FECHA_RENOV = value
-				Me.SendPropertyChanged("CLI_FECHA_RENOV")
-				Me.OnCLI_FECHA_RENOVChanged
 			End If
 		End Set
 	End Property
