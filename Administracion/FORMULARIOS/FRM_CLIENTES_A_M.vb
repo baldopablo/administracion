@@ -18,12 +18,11 @@
         If TB_CLIE_DNI.Text.Length = 0 Or TB_CLIE_APELLIDO.Text.Length = 0 Or TB_CLIE_NOMBRES.Text.Length = 0 Or TB_CLIE_DIRECCION.Text.Length = 0 Or TB_CLIE_TEL_1.Text.Length = 0 Or TB_CLIE_LOCALIDAD.Text.Length = 0 Then
             MsgBox("Debe completar todos los campos requeridos")
             Exit Sub
-        Else
-            If CHB_CLIE_ABONADO.Checked = True Then
-                If TB_CLIE_CONTRATO.Text.Length = 0 Or TB_CLIE_FECHA_ALTA.Text.Length = 0 Or CB_CLIE_TIPO.SelectedText.Length = 0 Then
-                    MsgBox("Debe completar todos los campos requeridos")
-                    Exit Sub
-                End If
+        End If
+        If CHB_CLIE_ABONADO.Checked = True Then
+            If TB_CLIE_CONTRATO.Text.Length = 0 Or CB_CLIE_TIPO.Text.Length = 0 Then
+                MsgBox("Debe completar todos los campos requeridos1")
+                Exit Sub
             End If
         End If
 
@@ -38,10 +37,12 @@
             CLIENTE.CLI_TEL_1 = TB_CLIE_TEL_1.Text
             CLIENTE.CLI_TEL_2 = TB_CLIE_TEL_2.Text
             CLIENTE.CLI_MAIL = TB_CLIE_MAIL.Text
-            CLIENTE.CLI_CONTRATO = TB_CLIE_CONTRATO.Text
-            CLIENTE.CLI_FECHA_ALTA = TB_CLIE_FECHA_ALTA.Text
-            CLIENTE.CLI_FECHA_RENOV = TB_CLIE_FECHA_RENOV.Text
-            CLIENTE.CLI_TIPO = CB_CLIE_TIPO.SelectedText
+
+            If CHB_CLIE_ABONADO.Checked = True Then
+                CLIENTE.CLI_CONTRATO = TB_CLIE_CONTRATO.Text
+                CLIENTE.CLI_FECHA_ALTA = DTP_CLIE_FECHA_ALTA.Text
+                CLIENTE.CLI_TIPO = CB_CLIE_TIPO.SelectedText
+            End If
             TB_CLIE_ID.Text = CLIENTE.ID_CLIENTE
 
             datacontext.CLIENTES.InsertOnSubmit(CLIENTE)
@@ -54,10 +55,8 @@
                     limpiar_campos()
             End Select
 
-            ' End If
-            'End If
         Catch ex As Exception
-            MsgBox("Debe completar todos los campos requeridos")
+            MsgBox("El cliente no fue cargado, pongase en contacto con el administrador")
             Exit Sub
         End Try
 
@@ -107,8 +106,7 @@
         TB_CLIE_TEL_2.Clear()
         TB_CLIE_MAIL.Clear()
         TB_CLIE_CONTRATO.Clear()
-        TB_CLIE_FECHA_ALTA.Clear()
-        TB_CLIE_FECHA_RENOV.Clear()
+        DTP_CLIE_FECHA_ALTA.Value = Date.Now
         CB_CLIE_TIPO.SelectedIndex = -1
     End Sub
 
@@ -118,8 +116,7 @@
         Else
             GB_CLIE_ABONADO.Enabled = False
             TB_CLIE_CONTRATO.Clear()
-            TB_CLIE_FECHA_ALTA.Clear()
-            TB_CLIE_FECHA_RENOV.Clear()
+            DTP_CLIE_FECHA_ALTA.Value = Date.Now
             CB_CLIE_TIPO.SelectedIndex = -1
 
         End If

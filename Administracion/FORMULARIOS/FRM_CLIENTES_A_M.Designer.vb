@@ -49,12 +49,10 @@ Partial Class FRM_CLIENTES_A_M
         Me.TB_CLIE_CONTRATO = New System.Windows.Forms.TextBox()
         Me.GB_CLIE_ABONADO = New System.Windows.Forms.GroupBox()
         Me.CB_CLIE_TIPO = New System.Windows.Forms.ComboBox()
-        Me.Label13 = New System.Windows.Forms.Label()
         Me.TIPO = New System.Windows.Forms.Label()
-        Me.TB_CLIE_FECHA_RENOV = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.TB_CLIE_FECHA_ALTA = New System.Windows.Forms.TextBox()
         Me.CHB_CLIE_ABONADO = New System.Windows.Forms.CheckBox()
+        Me.DTP_CLIE_FECHA_ALTA = New System.Windows.Forms.DateTimePicker()
         Me.GB_CLIE_ABONADO.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -299,12 +297,10 @@ Partial Class FRM_CLIENTES_A_M
         '
         'GB_CLIE_ABONADO
         '
+        Me.GB_CLIE_ABONADO.Controls.Add(Me.DTP_CLIE_FECHA_ALTA)
         Me.GB_CLIE_ABONADO.Controls.Add(Me.CB_CLIE_TIPO)
-        Me.GB_CLIE_ABONADO.Controls.Add(Me.Label13)
         Me.GB_CLIE_ABONADO.Controls.Add(Me.TIPO)
-        Me.GB_CLIE_ABONADO.Controls.Add(Me.TB_CLIE_FECHA_RENOV)
         Me.GB_CLIE_ABONADO.Controls.Add(Me.Label12)
-        Me.GB_CLIE_ABONADO.Controls.Add(Me.TB_CLIE_FECHA_ALTA)
         Me.GB_CLIE_ABONADO.Controls.Add(Me.Label11)
         Me.GB_CLIE_ABONADO.Controls.Add(Me.TB_CLIE_CONTRATO)
         Me.GB_CLIE_ABONADO.Location = New System.Drawing.Point(423, 218)
@@ -322,17 +318,6 @@ Partial Class FRM_CLIENTES_A_M
         Me.CB_CLIE_TIPO.Size = New System.Drawing.Size(54, 26)
         Me.CB_CLIE_TIPO.TabIndex = 31
         '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(119, 69)
-        Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(82, 18)
-        Me.Label13.TabIndex = 30
-        Me.Label13.Text = "Renovación*"
-        '
         'TIPO
         '
         Me.TIPO.AutoSize = True
@@ -343,14 +328,6 @@ Partial Class FRM_CLIENTES_A_M
         Me.TIPO.Size = New System.Drawing.Size(42, 18)
         Me.TIPO.TabIndex = 30
         Me.TIPO.Text = "Tipo*"
-        '
-        'TB_CLIE_FECHA_RENOV
-        '
-        Me.TB_CLIE_FECHA_RENOV.Location = New System.Drawing.Point(122, 91)
-        Me.TB_CLIE_FECHA_RENOV.Margin = New System.Windows.Forms.Padding(4)
-        Me.TB_CLIE_FECHA_RENOV.Name = "TB_CLIE_FECHA_RENOV"
-        Me.TB_CLIE_FECHA_RENOV.Size = New System.Drawing.Size(87, 26)
-        Me.TB_CLIE_FECHA_RENOV.TabIndex = 29
         '
         'Label12
         '
@@ -363,14 +340,6 @@ Partial Class FRM_CLIENTES_A_M
         Me.Label12.TabIndex = 28
         Me.Label12.Text = "Alta*"
         '
-        'TB_CLIE_FECHA_ALTA
-        '
-        Me.TB_CLIE_FECHA_ALTA.Location = New System.Drawing.Point(14, 91)
-        Me.TB_CLIE_FECHA_ALTA.Margin = New System.Windows.Forms.Padding(4)
-        Me.TB_CLIE_FECHA_ALTA.Name = "TB_CLIE_FECHA_ALTA"
-        Me.TB_CLIE_FECHA_ALTA.Size = New System.Drawing.Size(87, 26)
-        Me.TB_CLIE_FECHA_ALTA.TabIndex = 27
-        '
         'CHB_CLIE_ABONADO
         '
         Me.CHB_CLIE_ABONADO.AutoSize = True
@@ -380,6 +349,13 @@ Partial Class FRM_CLIENTES_A_M
         Me.CHB_CLIE_ABONADO.TabIndex = 28
         Me.CHB_CLIE_ABONADO.Text = "Abonado"
         Me.CHB_CLIE_ABONADO.UseVisualStyleBackColor = True
+        '
+        'DTP_CLIE_FECHA_ALTA
+        '
+        Me.DTP_CLIE_FECHA_ALTA.Location = New System.Drawing.Point(14, 90)
+        Me.DTP_CLIE_FECHA_ALTA.Name = "DTP_CLIE_FECHA_ALTA"
+        Me.DTP_CLIE_FECHA_ALTA.Size = New System.Drawing.Size(75, 26)
+        Me.DTP_CLIE_FECHA_ALTA.TabIndex = 29
         '
         'FRM_CLIENTES_A_M
         '
@@ -449,11 +425,9 @@ Partial Class FRM_CLIENTES_A_M
     Friend WithEvents TB_CLIE_CONTRATO As System.Windows.Forms.TextBox
     Friend WithEvents GB_CLIE_ABONADO As System.Windows.Forms.GroupBox
     Friend WithEvents CB_CLIE_TIPO As System.Windows.Forms.ComboBox
-    Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents TIPO As System.Windows.Forms.Label
-    Friend WithEvents TB_CLIE_FECHA_RENOV As System.Windows.Forms.TextBox
     Friend WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents TB_CLIE_FECHA_ALTA As System.Windows.Forms.TextBox
     Friend WithEvents CHB_CLIE_ABONADO As System.Windows.Forms.CheckBox
+    Friend WithEvents DTP_CLIE_FECHA_ALTA As System.Windows.Forms.DateTimePicker
 
 End Class
