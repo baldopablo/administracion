@@ -15,7 +15,7 @@
 
         End If
         FRM_PRODUCTOS.BTN_PROD_GUARDAR.Visible = False
-        FRM_PRODUCTOS.btnActualizar.Visible = True
+        FRM_PRODUCTOS.BTN_PROD_ACTUALIZAR.Visible = True
         FRM_PRODUCTOS.Show()
     End Sub
 
@@ -89,8 +89,8 @@
             Case MsgBoxResult.Yes
                 datacontext.PRODUCTOS.DeleteOnSubmit(eliminar)
                 datacontext.SubmitChanges()
-                MsgBox("El Producto ha sido eliminado")
                 Me.CargarGrillaProducto()
+                MsgBox("El Producto ha sido eliminado")
         End Select
     End Sub
 

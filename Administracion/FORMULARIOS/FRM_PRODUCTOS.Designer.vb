@@ -40,7 +40,7 @@ Partial Class FRM_PRODUCTOS
         Me.CB_PROD_TIPO_PROD = New System.Windows.Forms.ComboBox()
         Me.BTN_PROD_GUARDAR = New System.Windows.Forms.Button()
         Me.BTN_PROD_SALIR = New System.Windows.Forms.Button()
-        Me.btnActualizar = New System.Windows.Forms.Button()
+        Me.BTN_PROD_ACTUALIZAR = New System.Windows.Forms.Button()
         Me.TB_PROD_ID = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -215,15 +215,15 @@ Partial Class FRM_PRODUCTOS
         Me.BTN_PROD_SALIR.Text = "Salir"
         Me.BTN_PROD_SALIR.UseVisualStyleBackColor = True
         '
-        'btnActualizar
+        'BTN_PROD_ACTUALIZAR
         '
-        Me.btnActualizar.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnActualizar.Location = New System.Drawing.Point(110, 344)
-        Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(89, 31)
-        Me.btnActualizar.TabIndex = 18
-        Me.btnActualizar.Text = "Actualizar"
-        Me.btnActualizar.UseVisualStyleBackColor = True
+        Me.BTN_PROD_ACTUALIZAR.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_PROD_ACTUALIZAR.Location = New System.Drawing.Point(110, 344)
+        Me.BTN_PROD_ACTUALIZAR.Name = "BTN_PROD_ACTUALIZAR"
+        Me.BTN_PROD_ACTUALIZAR.Size = New System.Drawing.Size(89, 31)
+        Me.BTN_PROD_ACTUALIZAR.TabIndex = 18
+        Me.BTN_PROD_ACTUALIZAR.Text = "Actualizar"
+        Me.BTN_PROD_ACTUALIZAR.UseVisualStyleBackColor = True
         '
         'TB_PROD_ID
         '
@@ -263,7 +263,7 @@ Partial Class FRM_PRODUCTOS
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.TB_PROD_ID)
         Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.btnActualizar)
+        Me.Controls.Add(Me.BTN_PROD_ACTUALIZAR)
         Me.Controls.Add(Me.BTN_PROD_SALIR)
         Me.Controls.Add(Me.BTN_PROD_GUARDAR)
         Me.Controls.Add(Me.CB_PROD_TIPO_PROD)
@@ -306,7 +306,7 @@ Partial Class FRM_PRODUCTOS
     Friend WithEvents CB_PROD_TIPO_PROD As System.Windows.Forms.ComboBox
     Friend WithEvents BTN_PROD_GUARDAR As System.Windows.Forms.Button
     Friend WithEvents BTN_PROD_SALIR As System.Windows.Forms.Button
-    Friend WithEvents btnActualizar As System.Windows.Forms.Button
+    Friend WithEvents BTN_PROD_ACTUALIZAR As System.Windows.Forms.Button
     Friend WithEvents TB_PROD_ID As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents Label10 As System.Windows.Forms.Label

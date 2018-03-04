@@ -62,7 +62,7 @@
         Me.Close()
     End Sub
 
-    Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles btnActualizar.Click
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BTN_PROD_ACTUALIZAR.Click
 
         If TB_PROD_ID.Text.Length = 0 Or TB_PROD_CODIGO.Text.Length = 0 Or TB_PROD_DESCRIPCION.Text.Length = 0 Or TB_PROD_PRECIO_COSTO.Text.Length = 0 Or TB_PROD_PRECIO_VENTA.Text.Length = 0 Or TB_PROD_STOCK.Text.Length = 0 Or CB_PROD_DEPOSITO.Text.Length = 0 Or CB_PROD_PROVEEDOR.Text.Length = 0 Or CB_PROD_TIPO_PROD.Text.Length = 0 Then
             MsgBox("Debe completar todos los campos requeridos")

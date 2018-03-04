@@ -59,7 +59,8 @@ Public Class FRM_MENU
     End Sub
 
     Private Sub StockToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles StockToolStripMenuItem.Click
-
+        FRM_PRODUCTOS.BTN_PROD_ACTUALIZAR.Visible = False
+        FRM_PRODUCTOS.Show()
     End Sub
 
     Private Sub ConsultarClientesToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConsultarClientesToolStripMenuItem.Click
@@ -71,6 +72,31 @@ Public Class FRM_MENU
 
     Private Sub CambiarContraseñaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CambiarContraseñaToolStripMenuItem.Click
 
+    End Sub
+
+    Private Sub NuevoProveedorToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NuevoProveedorToolStripMenuItem.Click
+        FRM_PROVEEDORES.BTN_PROV_ACTUALIZAR.Visible = False
+        FRM_PROVEEDORES.Show()
+    End Sub
+
+    Private Sub ConsultarProveedoresToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConsultarProveedoresToolStripMenuItem.Click
+        FRM_PROVEEDORES_BUSCAR_B_M.BTN_PROV_BUS_EDITAR.Visible = False
+        FRM_PROVEEDORES_BUSCAR_B_M.BTN_PROV_BUS_ELIMINAR.Visible = False
+        FRM_PROVEEDORES_BUSCAR_B_M.Show()
+    End Sub
+
+    Private Sub ConsultarProductoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConsultarProductoToolStripMenuItem.Click
+        FRM_PRODUCTOS_BUSCAR_B_M.Show()
+    End Sub
+
+    Private Sub ModificarProveedorToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ModificarProveedorToolStripMenuItem.Click
+        FRM_PROVEEDORES_BUSCAR_B_M.BTN_PROV_BUS_ELIMINAR.Visible = False
+        FRM_PROVEEDORES_BUSCAR_B_M.Show()
+    End Sub
+
+    Private Sub EliminarProveedorToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EliminarProveedorToolStripMenuItem.Click
+        FRM_PROVEEDORES_BUSCAR_B_M.BTN_PROV_BUS_EDITAR.Visible = False
+        FRM_PROVEEDORES_BUSCAR_B_M.Show()
     End Sub
 End Class
 

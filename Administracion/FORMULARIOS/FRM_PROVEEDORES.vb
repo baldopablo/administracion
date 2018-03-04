@@ -28,7 +28,12 @@
 
                 datacontext.PROVEEDORES.InsertOnSubmit(PORVEEDOR)
                 datacontext.SubmitChanges()
-                MsgBox("El proveedor se ha creado correctamente", vbInformation)
+                Select Case MsgBox("El proveedor fue creado, cargar otro?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Nuevo cliente")
+                    Case MsgBoxResult.No
+                        Me.Close()
+                    Case MsgBoxResult.Yes
+                        limpiar_campos()
+                End Select
 
             End If
         Catch ex As Exception
@@ -70,5 +75,16 @@
         Catch ex As Exception
             MsgBox("Los datos no se han modificado! intente nuevamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Modificar proveedor")
         End Try
+    End Sub
+    Sub limpiar_campos()
+        TB_PROV_CODIGO.Clear()
+        TB_PROV_DIRECCION.Clear()
+        TB_PROV_ID.Clear()
+        TB_PROV_LOCALIDAD.Clear()
+        TB_PROV_MAIL.Clear()
+        TB_PROV_NOMBRE.Clear()
+        TB_PROV_TEL_1.Clear()
+        TB_PROV_TEL_2.Clear()
+        TB_PROV_URL.Clear()
     End Sub
 End Class

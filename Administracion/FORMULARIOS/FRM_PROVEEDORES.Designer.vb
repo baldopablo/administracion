@@ -51,7 +51,7 @@ Partial Class FRM_PROVEEDORES
         Me.BTN_PROV_GUARDAR.Location = New System.Drawing.Point(29, 351)
         Me.BTN_PROV_GUARDAR.Name = "BTN_PROV_GUARDAR"
         Me.BTN_PROV_GUARDAR.Size = New System.Drawing.Size(82, 28)
-        Me.BTN_PROV_GUARDAR.TabIndex = 0
+        Me.BTN_PROV_GUARDAR.TabIndex = 9
         Me.BTN_PROV_GUARDAR.Text = "Guardar"
         Me.BTN_PROV_GUARDAR.UseVisualStyleBackColor = True
         '
@@ -60,7 +60,7 @@ Partial Class FRM_PROVEEDORES
         Me.BTN_PROV_SALIR.Location = New System.Drawing.Point(149, 351)
         Me.BTN_PROV_SALIR.Name = "BTN_PROV_SALIR"
         Me.BTN_PROV_SALIR.Size = New System.Drawing.Size(82, 28)
-        Me.BTN_PROV_SALIR.TabIndex = 1
+        Me.BTN_PROV_SALIR.TabIndex = 10
         Me.BTN_PROV_SALIR.Text = "Salir"
         Me.BTN_PROV_SALIR.UseVisualStyleBackColor = True
         '
@@ -150,7 +150,7 @@ Partial Class FRM_PROVEEDORES
         Me.TB_PROV_NOMBRE.Location = New System.Drawing.Point(25, 91)
         Me.TB_PROV_NOMBRE.Name = "TB_PROV_NOMBRE"
         Me.TB_PROV_NOMBRE.Size = New System.Drawing.Size(162, 26)
-        Me.TB_PROV_NOMBRE.TabIndex = 10
+        Me.TB_PROV_NOMBRE.TabIndex = 2
         '
         'TB_PROV_DIRECCION
         '
@@ -158,7 +158,7 @@ Partial Class FRM_PROVEEDORES
         Me.TB_PROV_DIRECCION.Location = New System.Drawing.Point(226, 92)
         Me.TB_PROV_DIRECCION.Name = "TB_PROV_DIRECCION"
         Me.TB_PROV_DIRECCION.Size = New System.Drawing.Size(225, 26)
-        Me.TB_PROV_DIRECCION.TabIndex = 11
+        Me.TB_PROV_DIRECCION.TabIndex = 3
         '
         'TB_PROV_TEL_1
         '
@@ -166,7 +166,7 @@ Partial Class FRM_PROVEEDORES
         Me.TB_PROV_TEL_1.Location = New System.Drawing.Point(226, 150)
         Me.TB_PROV_TEL_1.Name = "TB_PROV_TEL_1"
         Me.TB_PROV_TEL_1.Size = New System.Drawing.Size(125, 26)
-        Me.TB_PROV_TEL_1.TabIndex = 12
+        Me.TB_PROV_TEL_1.TabIndex = 5
         '
         'TB_PROV_TEL_2
         '
@@ -174,7 +174,7 @@ Partial Class FRM_PROVEEDORES
         Me.TB_PROV_TEL_2.Location = New System.Drawing.Point(27, 213)
         Me.TB_PROV_TEL_2.Name = "TB_PROV_TEL_2"
         Me.TB_PROV_TEL_2.Size = New System.Drawing.Size(143, 26)
-        Me.TB_PROV_TEL_2.TabIndex = 13
+        Me.TB_PROV_TEL_2.TabIndex = 6
         '
         'TB_PROV_MAIL
         '
@@ -182,7 +182,7 @@ Partial Class FRM_PROVEEDORES
         Me.TB_PROV_MAIL.Location = New System.Drawing.Point(224, 209)
         Me.TB_PROV_MAIL.Name = "TB_PROV_MAIL"
         Me.TB_PROV_MAIL.Size = New System.Drawing.Size(227, 26)
-        Me.TB_PROV_MAIL.TabIndex = 14
+        Me.TB_PROV_MAIL.TabIndex = 7
         '
         'TB_PROV_URL
         '
@@ -190,7 +190,7 @@ Partial Class FRM_PROVEEDORES
         Me.TB_PROV_URL.Location = New System.Drawing.Point(28, 273)
         Me.TB_PROV_URL.Name = "TB_PROV_URL"
         Me.TB_PROV_URL.Size = New System.Drawing.Size(300, 26)
-        Me.TB_PROV_URL.TabIndex = 15
+        Me.TB_PROV_URL.TabIndex = 8
         '
         'TB_PROV_LOCALIDAD
         '
@@ -198,7 +198,7 @@ Partial Class FRM_PROVEEDORES
         Me.TB_PROV_LOCALIDAD.Location = New System.Drawing.Point(25, 150)
         Me.TB_PROV_LOCALIDAD.Name = "TB_PROV_LOCALIDAD"
         Me.TB_PROV_LOCALIDAD.Size = New System.Drawing.Size(162, 26)
-        Me.TB_PROV_LOCALIDAD.TabIndex = 16
+        Me.TB_PROV_LOCALIDAD.TabIndex = 4
         '
         'TB_PROV_CODIGO
         '
@@ -206,7 +206,7 @@ Partial Class FRM_PROVEEDORES
         Me.TB_PROV_CODIGO.Location = New System.Drawing.Point(24, 39)
         Me.TB_PROV_CODIGO.Name = "TB_PROV_CODIGO"
         Me.TB_PROV_CODIGO.Size = New System.Drawing.Size(139, 26)
-        Me.TB_PROV_CODIGO.TabIndex = 17
+        Me.TB_PROV_CODIGO.TabIndex = 1
         '
         'TB_PROV_ID
         '
