@@ -27,6 +27,9 @@ Partial Class FRM_FORMAS_DE_PAGO
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TB_FDP_DESCRIPCION = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.BTN_FDP_ACTUALIZAR = New System.Windows.Forms.Button()
+        Me.TB_FDP_ID = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'BTN_FDP_GUARDAR
@@ -42,7 +45,7 @@ Partial Class FRM_FORMAS_DE_PAGO
         'BTN_FDP_SALIR
         '
         Me.BTN_FDP_SALIR.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_FDP_SALIR.Location = New System.Drawing.Point(118, 110)
+        Me.BTN_FDP_SALIR.Location = New System.Drawing.Point(222, 110)
         Me.BTN_FDP_SALIR.Name = "BTN_FDP_SALIR"
         Me.BTN_FDP_SALIR.Size = New System.Drawing.Size(100, 35)
         Me.BTN_FDP_SALIR.TabIndex = 1
@@ -64,7 +67,7 @@ Partial Class FRM_FORMAS_DE_PAGO
         Me.TB_FDP_DESCRIPCION.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TB_FDP_DESCRIPCION.Location = New System.Drawing.Point(12, 30)
         Me.TB_FDP_DESCRIPCION.Name = "TB_FDP_DESCRIPCION"
-        Me.TB_FDP_DESCRIPCION.Size = New System.Drawing.Size(204, 26)
+        Me.TB_FDP_DESCRIPCION.Size = New System.Drawing.Size(310, 26)
         Me.TB_FDP_DESCRIPCION.TabIndex = 3
         '
         'Label3
@@ -77,11 +80,42 @@ Partial Class FRM_FORMAS_DE_PAGO
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "*Dato obligatorio"
         '
+        'BTN_FDP_ACTUALIZAR
+        '
+        Me.BTN_FDP_ACTUALIZAR.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_FDP_ACTUALIZAR.Location = New System.Drawing.Point(116, 110)
+        Me.BTN_FDP_ACTUALIZAR.Name = "BTN_FDP_ACTUALIZAR"
+        Me.BTN_FDP_ACTUALIZAR.Size = New System.Drawing.Size(100, 35)
+        Me.BTN_FDP_ACTUALIZAR.TabIndex = 6
+        Me.BTN_FDP_ACTUALIZAR.Text = "Actualizar"
+        Me.BTN_FDP_ACTUALIZAR.UseVisualStyleBackColor = True
+        '
+        'TB_FDP_ID
+        '
+        Me.TB_FDP_ID.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TB_FDP_ID.Location = New System.Drawing.Point(265, 65)
+        Me.TB_FDP_ID.Name = "TB_FDP_ID"
+        Me.TB_FDP_ID.Size = New System.Drawing.Size(57, 26)
+        Me.TB_FDP_ID.TabIndex = 7
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(236, 68)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(23, 18)
+        Me.Label2.TabIndex = 8
+        Me.Label2.Text = "Id"
+        '
         'FRM_FORMAS_DE_PAGO
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(231, 157)
+        Me.ClientSize = New System.Drawing.Size(334, 157)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.TB_FDP_ID)
+        Me.Controls.Add(Me.BTN_FDP_ACTUALIZAR)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.TB_FDP_DESCRIPCION)
         Me.Controls.Add(Me.Label1)
@@ -98,4 +132,7 @@ Partial Class FRM_FORMAS_DE_PAGO
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents TB_FDP_DESCRIPCION As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents BTN_FDP_ACTUALIZAR As System.Windows.Forms.Button
+    Friend WithEvents TB_FDP_ID As System.Windows.Forms.TextBox
+    Friend WithEvents Label2 As System.Windows.Forms.Label
 End Class
