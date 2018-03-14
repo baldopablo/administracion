@@ -1,0 +1,17 @@
+1- agregar campo prod_cantidad a la tabla producto de la base de datos
+2- revision de alta, baja, modificacion y busqueda de un producto
+3- creacion del formulario forma_pago_buscar
+4- alta, baja, modificacion y busqueda de formas de pago
+5- creacion del formulario ventas
+	* carga del cliente
+	* carga de combobox forma de pago
+	* label "Cantidad de productos"-----------> suma la cantidad de productos a la venta(vent_cantidad de la tabla ventas)
+
+ funcionamiento de ventas: 
+		boton "agregar producto"-------> frm_producto_buscar.show
+		seleccion de una fila datagridview----------->frm_producto (se elije la cantidad de productos para la venta)
+		boton "confirmar pedido"----------->agrega el producto seleccionado al detalle de la venta(frm_venta)
+		boton "quitar producto"-----------> quita el producto del datagridview del form_ventas
+
+
+		
