@@ -31,6 +31,7 @@ Partial Class FRM_PRODUCTOS_BUSCAR_B_M
         Me.RB_PROD_BUSCAR_CODIGO = New System.Windows.Forms.RadioButton()
         Me.RB_PROD_BUSCAR_NOMBRE = New System.Windows.Forms.RadioButton()
         Me.BTN_PROD_BUS_SALIR = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.DGV_PROD_BUSCAR, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -124,11 +125,22 @@ Partial Class FRM_PRODUCTOS_BUSCAR_B_M
         Me.BTN_PROD_BUS_SALIR.Text = "Salir"
         Me.BTN_PROD_BUS_SALIR.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(519, 356)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(160, 27)
+        Me.Button1.TabIndex = 9
+        Me.Button1.Text = "Agregar a la Venta"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'FRM_PRODUCTOS_BUSCAR_B_M
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(798, 399)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.BTN_PROD_BUS_ELIMINAR)
         Me.Controls.Add(Me.BTN_PROD_BUS_EDITAR)
         Me.Controls.Add(Me.DGV_PROD_BUSCAR)
@@ -151,4 +163,5 @@ Partial Class FRM_PRODUCTOS_BUSCAR_B_M
     Friend WithEvents RB_PROD_BUSCAR_CODIGO As System.Windows.Forms.RadioButton
     Friend WithEvents RB_PROD_BUSCAR_NOMBRE As System.Windows.Forms.RadioButton
     Friend WithEvents BTN_PROD_BUS_SALIR As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

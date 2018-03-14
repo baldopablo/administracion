@@ -1,4 +1,5 @@
 ﻿Public Class FRM_PRODUCTOS_BUSCAR_B_M
+
     Dim datacontext As New DC_AdminDataContext
 
     Private Sub BTN_PROD_BUS_EDITAR_Click(sender As System.Object, e As System.EventArgs) Handles BTN_PROD_BUS_EDITAR.Click
@@ -12,7 +13,7 @@
             FRM_PRODUCTOS.CB_PROD_PROVEEDOR.SelectedValue = DGV_PROD_BUSCAR.Item("ID_PROVEEDOR", DGV_PROD_BUSCAR.SelectedRows(0).Index).Value
             FRM_PRODUCTOS.CB_PROD_DEPOSITO.SelectedValue = DGV_PROD_BUSCAR.Item("ID_DEPOSITO", DGV_PROD_BUSCAR.SelectedRows(0).Index).Value
             FRM_PRODUCTOS.CB_PROD_TIPO_PROD.SelectedValue = DGV_PROD_BUSCAR.Item("ID_PROD_TIPO", DGV_PROD_BUSCAR.SelectedRows(0).Index).Value
-
+            FRM_PRODUCTOS.TB_PROD_CANTIDAD.Text = DGV_PROD_BUSCAR.Item("PROD_CANTIDAD", DGV_PROD_BUSCAR.SelectedRows(0).Index).Value
         End If
         FRM_PRODUCTOS.BTN_PROD_GUARDAR.Visible = False
         FRM_PRODUCTOS.BTN_PROD_ACTUALIZAR.Visible = True
@@ -38,6 +39,8 @@
         DGV_PROD_BUSCAR.Columns.Add("ID_PROVEEDOR", "ID_PROVEEDOR")
         DGV_PROD_BUSCAR.Columns.Add("ID_DEPOSITO", "ID_DEPOSITO")
         DGV_PROD_BUSCAR.Columns.Add("ID_PROD_TIPO", "ID_PROD_TIPO")
+        DGV_PROD_BUSCAR.Columns.Add("PROD_CANTIDAD", "CANTIDAD")
+
 
         DGV_PROD_BUSCAR.Columns(0).DataPropertyName = "ID_PRODUCTO"
         DGV_PROD_BUSCAR.Columns(1).DataPropertyName = "PROD_CODIGO"
@@ -48,12 +51,15 @@
         DGV_PROD_BUSCAR.Columns(6).DataPropertyName = "ID_PROVEEDOR"
         DGV_PROD_BUSCAR.Columns(7).DataPropertyName = "ID_DEPOSITO"
         DGV_PROD_BUSCAR.Columns(8).DataPropertyName = "ID_PROD_TIPO"
+        DGV_PROD_BUSCAR.Columns(9).DataPropertyName = "PROD_CANTIDAD"
+
+
 
         DGV_PROD_BUSCAR.ClearSelection()
     End Sub
 
     Public Sub CargarGrillaProducto()
-        Dim consulta_producto = From U In datacontext.PRODUCTOS Select U.ID_PRODUCTO, U.PROD_CODIGO, U.PROD_DESCRIPCION, U.PROD_PRECIO_COSTO, U.PROD_PRECIO_VTA, U.PROD_STOCK, U.ID_PROVEEDOR, U.ID_DEPOSITO, U.ID_PROD_TIPO
+        Dim consulta_producto = From U In datacontext.PRODUCTOS Select U.ID_PRODUCTO, U.PROD_CODIGO, U.PROD_DESCRIPCION, U.PROD_PRECIO_COSTO, U.PROD_PRECIO_VTA, U.PROD_STOCK, U.ID_PROVEEDOR, U.ID_DEPOSITO, U.ID_PROD_TIPO, U.PROD_CANTIDAD
         DGV_PROD_BUSCAR.DataSource = consulta_producto
     End Sub
 
@@ -105,4 +111,37 @@
         TB_PROD_BUSCAR_NOMBRE.Clear()
         TB_PROD_BUSCAR_CODIGO.Enabled = True
     End Sub
+
+    'BOTON AGREGAR A LA VENTA
+    Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
+      
+        If DGV_PROD_BUSCAR.SelectedRows.Count > 0 Then
+            FRM_PRODUCTOS.Text = "SELECCIONAR DETALLES DE COMPRA"
+            FRM_PRODUCTOS.TB_PROD_ID.Text = DGV_PROD_BUSCAR.Item("ID_PRODUCTO", DGV_PROD_BUSCAR.SelectedRows(0).Index).Value
+            FRM_PRODUCTOS.TB_PROD_CODIGO.Text = DGV_PROD_BUSCAR.Item("PROD_CODIGO", DGV_PROD_BUSCAR.SelectedRows(0).Index).Value
+            FRM_PRODUCTOS.TB_PROD_DESCRIPCION.Text = DGV_PROD_BUSCAR.Item("PROD_DESCRIPCION", DGV_PROD_BUSCAR.SelectedRows(0).Index).Value
+            FRM_PRODUCTOS.TB_PROD_PRECIO_COSTO.Text = DGV_PROD_BUSCAR.Item("PROD_PRECIO_COSTO", DGV_PROD_BUSCAR.SelectedRows(0).Index).Value
+            FRM_PRODUCTOS.TB_PROD_PRECIO_VENTA.Text = DGV_PROD_BUSCAR.Item("PROD_PRECIO_VTA", DGV_PROD_BUSCAR.SelectedRows(0).Index).Value
+            FRM_PRODUCTOS.TB_PROD_STOCK.Text = DGV_PROD_BUSCAR.Item("PROD_STOCK", DGV_PROD_BUSCAR.SelectedRows(0).Index).Value
+            FRM_PRODUCTOS.CB_PROD_PROVEEDOR.SelectedValue = DGV_PROD_BUSCAR.Item("ID_PROVEEDOR", DGV_PROD_BUSCAR.SelectedRows(0).Index).Value
+            FRM_PRODUCTOS.CB_PROD_DEPOSITO.SelectedValue = DGV_PROD_BUSCAR.Item("ID_DEPOSITO", DGV_PROD_BUSCAR.SelectedRows(0).Index).Value
+            FRM_PRODUCTOS.CB_PROD_TIPO_PROD.SelectedValue = DGV_PROD_BUSCAR.Item("ID_PROD_TIPO", DGV_PROD_BUSCAR.SelectedRows(0).Index).Value
+            FRM_PRODUCTOS.TB_PROD_CANTIDAD.Text = DGV_PROD_BUSCAR.Item("PROD_CANTIDAD", DGV_PROD_BUSCAR.SelectedRows(0).Index).Value
+        End If
+        FRM_PRODUCTOS.BTN_PROD_GUARDAR.Enabled = False
+        FRM_PRODUCTOS.BTN_PROD_ACTUALIZAR.Enabled = True
+        FRM_PRODUCTOS.Show()
+    End Sub
+
+    'CALCULO DEL SUBTOTAL 
+    Private Sub CalcularSubtotal()
+        Dim total As Double = 0
+        Dim iTotal As Integer = FRM_VENTAS.DGV_VENTAS_BUSCAR.Rows.Count
+        Dim i As Integer
+        For i = 0 To iTotal - 1
+            total = total + Double.Parse(FRM_VENTAS.DGV_VENTAS_BUSCAR("PROD_PRECIO_VTA", i).Value)
+        Next
+        FRM_VENTAS.TXT_SUBTOTAL_VENTA.Text = Format(total, "$ #,##0.00")
+    End Sub
+
 End Class
