@@ -48,11 +48,11 @@ Partial Class FRM_CLIENTES_A_M
         Me.Label11 = New System.Windows.Forms.Label()
         Me.TB_CLIE_CONTRATO = New System.Windows.Forms.TextBox()
         Me.GB_CLIE_ABONADO = New System.Windows.Forms.GroupBox()
+        Me.DTP_CLIE_FECHA_ALTA = New System.Windows.Forms.DateTimePicker()
         Me.CB_CLIE_TIPO = New System.Windows.Forms.ComboBox()
         Me.TIPO = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.CHB_CLIE_ABONADO = New System.Windows.Forms.CheckBox()
-        Me.DTP_CLIE_FECHA_ALTA = New System.Windows.Forms.DateTimePicker()
         Me.GB_CLIE_ABONADO.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -116,6 +116,7 @@ Partial Class FRM_CLIENTES_A_M
         '
         Me.TB_CLIE_DNI.Location = New System.Drawing.Point(16, 49)
         Me.TB_CLIE_DNI.Margin = New System.Windows.Forms.Padding(4)
+        Me.TB_CLIE_DNI.MaxLength = 8
         Me.TB_CLIE_DNI.Name = "TB_CLIE_DNI"
         Me.TB_CLIE_DNI.Size = New System.Drawing.Size(138, 26)
         Me.TB_CLIE_DNI.TabIndex = 1
@@ -309,6 +310,13 @@ Partial Class FRM_CLIENTES_A_M
         Me.GB_CLIE_ABONADO.TabIndex = 27
         Me.GB_CLIE_ABONADO.TabStop = False
         '
+        'DTP_CLIE_FECHA_ALTA
+        '
+        Me.DTP_CLIE_FECHA_ALTA.Location = New System.Drawing.Point(14, 90)
+        Me.DTP_CLIE_FECHA_ALTA.Name = "DTP_CLIE_FECHA_ALTA"
+        Me.DTP_CLIE_FECHA_ALTA.Size = New System.Drawing.Size(75, 26)
+        Me.DTP_CLIE_FECHA_ALTA.TabIndex = 29
+        '
         'CB_CLIE_TIPO
         '
         Me.CB_CLIE_TIPO.FormattingEnabled = True
@@ -349,13 +357,6 @@ Partial Class FRM_CLIENTES_A_M
         Me.CHB_CLIE_ABONADO.TabIndex = 28
         Me.CHB_CLIE_ABONADO.Text = "Abonado"
         Me.CHB_CLIE_ABONADO.UseVisualStyleBackColor = True
-        '
-        'DTP_CLIE_FECHA_ALTA
-        '
-        Me.DTP_CLIE_FECHA_ALTA.Location = New System.Drawing.Point(14, 90)
-        Me.DTP_CLIE_FECHA_ALTA.Name = "DTP_CLIE_FECHA_ALTA"
-        Me.DTP_CLIE_FECHA_ALTA.Size = New System.Drawing.Size(75, 26)
-        Me.DTP_CLIE_FECHA_ALTA.TabIndex = 29
         '
         'FRM_CLIENTES_A_M
         '

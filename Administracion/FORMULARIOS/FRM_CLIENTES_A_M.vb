@@ -10,22 +10,27 @@
     'GUARDAR
     Private Sub BTN_CLIE_GUARDAR_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BTN_CLIE_GUARDAR.Click
         Dim BUSCARCLIENTE = (From CLIE In datacontext.CLIENTES Select CLIE.CLI_DNI Where CLI_DNI = TB_CLIE_DNI.Text).Any
+        Dim BUSCARCONTRATO = (From CONT In datacontext.CLIENTES Select CONT.CLI_CONTRATO Where CLI_CONTRATO = TB_CLIE_CONTRATO.Text).Any
         If BUSCARCLIENTE = True Then
             MsgBox("El DNI ingresado ya pertence a un cliente")
             Exit Sub
         End If
-        'Try
+
         If TB_CLIE_DNI.Text.Length = 0 Or TB_CLIE_APELLIDO.Text.Length = 0 Or TB_CLIE_NOMBRES.Text.Length = 0 Or TB_CLIE_DIRECCION.Text.Length = 0 Or TB_CLIE_TEL_1.Text.Length = 0 Or TB_CLIE_LOCALIDAD.Text.Length = 0 Then
             MsgBox("Debe completar todos los campos requeridos")
             Exit Sub
         End If
         If CHB_CLIE_ABONADO.Checked = True Then
-            If TB_CLIE_CONTRATO.Text.Length = 0 Or CB_CLIE_TIPO.Text.Length = 0 Then
-                MsgBox("Debe completar todos los campos requeridos1")
+            If BUSCARCONTRATO = True Then
+                MsgBox("El CONTRATO ingresado ya pertence a un cliente")
                 Exit Sub
+            Else
+                If TB_CLIE_CONTRATO.Text.Length = 0 Or CB_CLIE_TIPO.Text.Length = 0 Then
+                    MsgBox("Debe completar todos los campos requeridos1")
+                    Exit Sub
+                End If
             End If
         End If
-
         Try
             Dim CLIENTE = New CLIENTES
 
@@ -41,7 +46,7 @@
             If CHB_CLIE_ABONADO.Checked = True Then
                 CLIENTE.CLI_CONTRATO = TB_CLIE_CONTRATO.Text
                 CLIENTE.CLI_FECHA_ALTA = DTP_CLIE_FECHA_ALTA.Text
-                CLIENTE.CLI_TIPO = CB_CLIE_TIPO.SelectedText
+                CLIENTE.CLI_TIPO = CB_CLIE_TIPO.Text
             End If
             TB_CLIE_ID.Text = CLIENTE.ID_CLIENTE
 
@@ -86,6 +91,9 @@
             Actualizarcliente.CLI_TEL_1 = TB_CLIE_TEL_1.Text
             Actualizarcliente.CLI_TEL_2 = TB_CLIE_TEL_2.Text
             Actualizarcliente.CLI_MAIL = TB_CLIE_MAIL.Text
+            Actualizarcliente.CLI_TIPO = CB_CLIE_TIPO.Text
+            Actualizarcliente.CLI_FECHA_ALTA = DTP_CLIE_FECHA_ALTA.Text
+            Actualizarcliente.CLI_CONTRATO = TB_CLIE_CONTRATO.Text
             datacontext.SubmitChanges()
             MsgBox("Los datos se han modificado correctamente")
 
@@ -108,6 +116,7 @@
         TB_CLIE_CONTRATO.Clear()
         DTP_CLIE_FECHA_ALTA.Value = Date.Now
         CB_CLIE_TIPO.SelectedIndex = -1
+        CHB_CLIE_ABONADO.Checked = False
     End Sub
 
     Private Sub CB_CLIE_ABONADO_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CHB_CLIE_ABONADO.CheckedChanged

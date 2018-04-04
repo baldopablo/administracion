@@ -99,6 +99,7 @@ Partial Class FRM_CLIENTES_BUSCAR_B_M
         '
         Me.DGV_CLIE_BUSCAR.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV_CLIE_BUSCAR.Location = New System.Drawing.Point(19, 95)
+        Me.DGV_CLIE_BUSCAR.MultiSelect = False
         Me.DGV_CLIE_BUSCAR.Name = "DGV_CLIE_BUSCAR"
         Me.DGV_CLIE_BUSCAR.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGV_CLIE_BUSCAR.Size = New System.Drawing.Size(739, 252)

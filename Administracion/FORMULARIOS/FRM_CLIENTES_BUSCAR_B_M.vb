@@ -26,8 +26,8 @@
         If RB_CLIE_BUSCAR_APE.Checked = True Then
             armargrilla()
             buscar = "*" & Me.TB_CLIE_BUSCAR_APE.Text & "*"
-            Dim consultaalu = From U In datacontext.CLIENTES Select U.ID_CLIENTE, U.CLI_NOMBRES, U.CLI_APELLIDO, U.CLI_DNI, U.CLI_DIRECCION, U.CLI_LOCALIDAD, U.CLI_TEL_1, U.CLI_TEL_2, U.CLI_MAIL Where CLI_APELLIDO Like buscar.ToString
-            DGV_CLIE_BUSCAR.DataSource = consultaalu
+            Dim consultaclie = From U In datacontext.CLIENTES Select U.ID_CLIENTE, U.CLI_NOMBRES, U.CLI_APELLIDO, U.CLI_DNI, U.CLI_DIRECCION, U.CLI_LOCALIDAD, U.CLI_TEL_1, U.CLI_TEL_2, U.CLI_MAIL Where CLI_APELLIDO Like buscar.ToString
+            DGV_CLIE_BUSCAR.DataSource = consultaclie
         End If
     End Sub
     Private Sub armargrilla()
@@ -44,6 +44,9 @@
         DGV_CLIE_BUSCAR.Columns.Add("CLI_TEL_1", "TELEFONO 1")
         DGV_CLIE_BUSCAR.Columns.Add("CLI_TEL_2", "TELEFONO 2")
         DGV_CLIE_BUSCAR.Columns.Add("CLI_MAIL", "MAIL")
+        DGV_CLIE_BUSCAR.Columns.Add("CLI_CONTRATO", "CONTRATO")
+        DGV_CLIE_BUSCAR.Columns.Add("CLI_TIPO", "TIPO")
+        DGV_CLIE_BUSCAR.Columns.Add("CLI_FECHA_ALTA", "ALTA")
 
         DGV_CLIE_BUSCAR.Columns(0).DataPropertyName = "ID_CLIENTE"
         DGV_CLIE_BUSCAR.Columns(1).DataPropertyName = "CLI_NOMBRES"
@@ -54,13 +57,16 @@
         DGV_CLIE_BUSCAR.Columns(6).DataPropertyName = "CLI_TEL_1"
         DGV_CLIE_BUSCAR.Columns(7).DataPropertyName = "CLI_TEL_2"
         DGV_CLIE_BUSCAR.Columns(8).DataPropertyName = "CLI_MAIL"
+        DGV_CLIE_BUSCAR.Columns(9).DataPropertyName = "CLI_CONTRATO"
+        DGV_CLIE_BUSCAR.Columns(10).DataPropertyName = "CLI_TIPO"
+        DGV_CLIE_BUSCAR.Columns(11).DataPropertyName = "CLI_FECHA_ALTA"
 
         DGV_CLIE_BUSCAR.ClearSelection()
        
     End Sub
     Public Sub cargargrilla()
-        Dim consultaalu = From U In datacontext.CLIENTES Select U.ID_CLIENTE, U.CLI_NOMBRES, U.CLI_APELLIDO, U.CLI_DNI, U.CLI_DIRECCION, U.CLI_LOCALIDAD, U.CLI_TEL_1, U.CLI_TEL_2, U.CLI_MAIL
-        DGV_CLIE_BUSCAR.DataSource = consultaalu
+        Dim consultaclie = From U In datacontext.CLIENTES Select U.ID_CLIENTE, U.CLI_NOMBRES, U.CLI_APELLIDO, U.CLI_DNI, U.CLI_DIRECCION, U.CLI_LOCALIDAD, U.CLI_TEL_1, U.CLI_TEL_2, U.CLI_MAIL, U.CLI_TIPO, U.CLI_CONTRATO, U.CLI_FECHA_ALTA
+        DGV_CLIE_BUSCAR.DataSource = consultaclie
     End Sub
 
     Private Sub RB_CLIE_BUSCAR_DNI_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RB_CLIE_BUSCAR_DNI.CheckedChanged
@@ -86,7 +92,9 @@
             FRM_CLIENTES_A_M.TB_CLIE_TEL_1.Text = DGV_CLIE_BUSCAR.Item("CLI_TEL_1", DGV_CLIE_BUSCAR.SelectedRows(0).Index).Value
             FRM_CLIENTES_A_M.TB_CLIE_TEL_2.Text = DGV_CLIE_BUSCAR.Item("CLI_TEL_2", DGV_CLIE_BUSCAR.SelectedRows(0).Index).Value
             FRM_CLIENTES_A_M.TB_CLIE_MAIL.Text = DGV_CLIE_BUSCAR.Item("CLI_MAIL", DGV_CLIE_BUSCAR.SelectedRows(0).Index).Value
-
+            FRM_CLIENTES_A_M.CB_CLIE_TIPO.Text = DGV_CLIE_BUSCAR.Item("CLI_TIPO", DGV_CLIE_BUSCAR.SelectedRows(0).Index).Value
+            FRM_CLIENTES_A_M.TB_CLIE_CONTRATO.Text = DGV_CLIE_BUSCAR.Item("CLI_CONTRATO", DGV_CLIE_BUSCAR.SelectedRows(0).Index).Value
+            FRM_CLIENTES_A_M.DTP_CLIE_FECHA_ALTA.Text = DGV_CLIE_BUSCAR.Item("CLI_FECHA_ALTA", DGV_CLIE_BUSCAR.SelectedRows(0).Index).Value
         End If
         FRM_CLIENTES_A_M.BTN_CLIE_GUARDAR.Visible = False
         FRM_CLIENTES_A_M.Show()

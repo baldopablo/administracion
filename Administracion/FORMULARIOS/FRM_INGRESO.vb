@@ -14,18 +14,44 @@
                 FRM_MENU.ClientesToolStripMenuItem.DropDownItems(3).Visible = True
                 FRM_MENU.UsuariosToolStripMenuItem.DropDownItems(0).Visible = True
 
+            ElseIf Buscausuario.USU_PERFIL = "LIMITADO" Then
+                FRM_MENU.ClientesToolStripMenuItem.DropDownItems(0).Visible = True
+                FRM_MENU.ClientesToolStripMenuItem.DropDownItems(1).Visible = False
+                FRM_MENU.ClientesToolStripMenuItem.DropDownItems(2).Visible = False
+                FRM_MENU.ClientesToolStripMenuItem.DropDownItems(3).Visible = True
+                FRM_MENU.UsuariosToolStripMenuItem.Visible = False
+                FRM_MENU.ProductosToolStripMenuItem.DropDownItems(0).Visible = True
+                FRM_MENU.ProductosToolStripMenuItem.DropDownItems(1).Visible = False
+                FRM_MENU.ProductosToolStripMenuItem.DropDownItems(2).Visible = False
+                FRM_MENU.ProductosToolStripMenuItem.DropDownItems(3).Visible = True
+                FRM_MENU.ProveedoresToolStripMenuItem.DropDownItems(0).Visible = True
+                FRM_MENU.ProveedoresToolStripMenuItem.DropDownItems(1).Visible = False
+                FRM_MENU.ProveedoresToolStripMenuItem.DropDownItems(2).Visible = False
+                FRM_MENU.ProveedoresToolStripMenuItem.DropDownItems(3).Visible = True
+                FRM_MENU.VentasToolStripMenuItem.DropDownItems(0).Visible = True
+                FRM_MENU.VentasToolStripMenuItem.DropDownItems(1).Visible = False
+                FRM_MENU.VentasToolStripMenuItem.DropDownItems(2).Visible = False
+                FRM_MENU.VentasToolStripMenuItem.DropDownItems(3).Visible = True
 
             ElseIf Buscausuario.USU_PERFIL = "CONSULTA" Then
                 FRM_MENU.ClientesToolStripMenuItem.DropDownItems(0).Visible = False
                 FRM_MENU.ClientesToolStripMenuItem.DropDownItems(1).Visible = False
                 FRM_MENU.ClientesToolStripMenuItem.DropDownItems(2).Visible = False
                 FRM_MENU.ClientesToolStripMenuItem.DropDownItems(3).Visible = True
+                FRM_MENU.UsuariosToolStripMenuItem.Visible = False
+                FRM_MENU.ProductosToolStripMenuItem.DropDownItems(0).Visible = False
+                FRM_MENU.ProductosToolStripMenuItem.DropDownItems(1).Visible = False
+                FRM_MENU.ProductosToolStripMenuItem.DropDownItems(2).Visible = False
+                FRM_MENU.ProductosToolStripMenuItem.DropDownItems(3).Visible = True
+                FRM_MENU.ProveedoresToolStripMenuItem.DropDownItems(0).Visible = False
+                FRM_MENU.ProveedoresToolStripMenuItem.DropDownItems(1).Visible = False
+                FRM_MENU.ProveedoresToolStripMenuItem.DropDownItems(2).Visible = False
+                FRM_MENU.ProveedoresToolStripMenuItem.DropDownItems(3).Visible = True
+                FRM_MENU.VentasToolStripMenuItem.DropDownItems(0).Visible = False
+                FRM_MENU.VentasToolStripMenuItem.DropDownItems(1).Visible = False
+                FRM_MENU.VentasToolStripMenuItem.DropDownItems(2).Visible = False
+                FRM_MENU.VentasToolStripMenuItem.DropDownItems(3).Visible = True
 
-            ElseIf Buscausuario.USU_PERFIL = "LIMITADO" Then
-                FRM_MENU.ClientesToolStripMenuItem.DropDownItems(0).Visible = True
-                FRM_MENU.ClientesToolStripMenuItem.DropDownItems(1).Visible = False
-                FRM_MENU.ClientesToolStripMenuItem.DropDownItems(2).Visible = False
-                FRM_MENU.ClientesToolStripMenuItem.DropDownItems(3).Visible = True
             End If
 
             'PASAR USUARIO Y PERFIL A LOS LABEL DEL MENUUU!!!! PARA LUEGO TOMAR EL USUARIO PARA
