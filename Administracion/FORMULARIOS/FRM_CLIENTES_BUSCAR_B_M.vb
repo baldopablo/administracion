@@ -1,5 +1,6 @@
 ﻿Public Class FRM_CLIENTES_BUSCAR_B_M
     Dim datacontext As New DC_AdminDataContext
+
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BTN_CLIE_BUS_SALIR.Click
         Me.Close()
         Me.Dispose()
@@ -30,6 +31,7 @@
             DGV_CLIE_BUSCAR.DataSource = consultaclie
         End If
     End Sub
+
     Private Sub armargrilla()
         DGV_CLIE_BUSCAR.Enabled = True
         DGV_CLIE_BUSCAR.AutoGenerateColumns = False
@@ -64,6 +66,7 @@
         DGV_CLIE_BUSCAR.ClearSelection()
        
     End Sub
+
     Public Sub cargargrilla()
         Dim consultaclie = From U In datacontext.CLIENTES Select U.ID_CLIENTE, U.CLI_NOMBRES, U.CLI_APELLIDO, U.CLI_DNI, U.CLI_DIRECCION, U.CLI_LOCALIDAD, U.CLI_TEL_1, U.CLI_TEL_2, U.CLI_MAIL, U.CLI_TIPO, U.CLI_CONTRATO, U.CLI_FECHA_ALTA
         DGV_CLIE_BUSCAR.DataSource = consultaclie
@@ -120,7 +123,16 @@
             'Case MsgBoxResult.No
             '    Me.cargargrilla()
         End Select
-        
+    End Sub
 
+    'CARGA LOS TEXTBOX DEL CLIENTE EN EL FORMULARIO DE VENTAS
+    Private Sub DGV_CLIE_BUSCAR_CellDoubleClick(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGV_CLIE_BUSCAR.CellDoubleClick
+        FRM_VENTAS.TB_CLIENTE_ID.Text = DGV_CLIE_BUSCAR.SelectedCells.Item(0).Value
+        FRM_VENTAS.TB_CLIENTE_NOMBRE.Text = DGV_CLIE_BUSCAR.SelectedCells(1).Value
+        FRM_VENTAS.TB_CLIENTE_APELLIDO.Text = DGV_CLIE_BUSCAR.SelectedCells.Item(2).Value
+        FRM_VENTAS.TB_CLIENTE_DNI.Text = DGV_CLIE_BUSCAR.SelectedCells.Item(3).Value
+        FRM_VENTAS.TB_CLIENTE_DIRECCION.Text = DGV_CLIE_BUSCAR.SelectedCells(4).Value
+        FRM_VENTAS.TB_CLIENTE_TELEFONO.Text = DGV_CLIE_BUSCAR.SelectedCells(6).Value
+        Me.Close()
     End Sub
 End Class
