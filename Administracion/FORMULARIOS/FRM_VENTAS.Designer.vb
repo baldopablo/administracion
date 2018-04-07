@@ -39,18 +39,30 @@ Partial Class FRM_VENTAS
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.lblCantidadProductos = New System.Windows.Forms.Label()
         Me.BTN_VENT_QUITAR_PROD = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TB_VENTA_TOTAL = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.TXT_SUBTOTAL_VENTA = New System.Windows.Forms.TextBox()
+        Me.TB_SUBTOTAL_VENTA = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TB_CLIENTE_ID = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.TB_CLIENTE_APELLIDO = New System.Windows.Forms.TextBox()
         Me.TB_CLIENTE_DNI = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.BTN_VENTA_GENERAR_COMPROBANTE = New System.Windows.Forms.Button()
+        Me.BTN_VENTA_IMPRIMIR = New System.Windows.Forms.Button()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.TB_CLIENTE_NOMBRE = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.TB_CLIENTE_TELEFONO = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TB_CLIENTE_DIRECCION = New System.Windows.Forms.TextBox()
+        Me.TB_PROD_X_VTA_ID = New System.Windows.Forms.TextBox()
+        Me.Label15 = New System.Windows.Forms.Label()
         CType(Me.DGV_VENTAS_BUSCAR, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'BTN_VENT_AGREGAR_PROD
@@ -67,11 +79,11 @@ Partial Class FRM_VENTAS
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(334, 77)
+        Me.Label1.Location = New System.Drawing.Point(349, 126)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(101, 18)
+        Me.Label1.Size = New System.Drawing.Size(44, 18)
         Me.Label1.TabIndex = 3
-        Me.Label1.Text = "Fecha de Venta"
+        Me.Label1.Text = "Fecha"
         '
         'DGV_VENTAS_BUSCAR
         '
@@ -87,7 +99,7 @@ Partial Class FRM_VENTAS
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Comic Sans MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(12, 465)
+        Me.Label10.Location = New System.Drawing.Point(12, 502)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(106, 15)
         Me.Label10.TabIndex = 43
@@ -96,7 +108,7 @@ Partial Class FRM_VENTAS
         'BTN_VENTA_SALIR
         '
         Me.BTN_VENTA_SALIR.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_VENTA_SALIR.Location = New System.Drawing.Point(546, 468)
+        Me.BTN_VENTA_SALIR.Location = New System.Drawing.Point(549, 505)
         Me.BTN_VENTA_SALIR.Name = "BTN_VENTA_SALIR"
         Me.BTN_VENTA_SALIR.Size = New System.Drawing.Size(89, 31)
         Me.BTN_VENTA_SALIR.TabIndex = 39
@@ -106,7 +118,7 @@ Partial Class FRM_VENTAS
         'BTN_VENTA_GUARDAR
         '
         Me.BTN_VENTA_GUARDAR.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_VENTA_GUARDAR.Location = New System.Drawing.Point(451, 468)
+        Me.BTN_VENTA_GUARDAR.Location = New System.Drawing.Point(454, 505)
         Me.BTN_VENTA_GUARDAR.Name = "BTN_VENTA_GUARDAR"
         Me.BTN_VENTA_GUARDAR.Size = New System.Drawing.Size(89, 31)
         Me.BTN_VENTA_GUARDAR.TabIndex = 38
@@ -117,7 +129,7 @@ Partial Class FRM_VENTAS
         '
         Me.CB_VENTA_FORMAPAGO.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CB_VENTA_FORMAPAGO.FormattingEnabled = True
-        Me.CB_VENTA_FORMAPAGO.Location = New System.Drawing.Point(134, 74)
+        Me.CB_VENTA_FORMAPAGO.Location = New System.Drawing.Point(139, 123)
         Me.CB_VENTA_FORMAPAGO.Name = "CB_VENTA_FORMAPAGO"
         Me.CB_VENTA_FORMAPAGO.Size = New System.Drawing.Size(181, 26)
         Me.CB_VENTA_FORMAPAGO.TabIndex = 35
@@ -129,20 +141,21 @@ Partial Class FRM_VENTAS
         Me.TB_VENTA_DESCUENTO.Name = "TB_VENTA_DESCUENTO"
         Me.TB_VENTA_DESCUENTO.Size = New System.Drawing.Size(90, 23)
         Me.TB_VENTA_DESCUENTO.TabIndex = 31
+        Me.TB_VENTA_DESCUENTO.Text = "0"
         '
         'TB_VENTA_ID
         '
         Me.TB_VENTA_ID.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TB_VENTA_ID.Location = New System.Drawing.Point(152, 21)
+        Me.TB_VENTA_ID.Location = New System.Drawing.Point(91, 21)
         Me.TB_VENTA_ID.Name = "TB_VENTA_ID"
-        Me.TB_VENTA_ID.Size = New System.Drawing.Size(98, 26)
+        Me.TB_VENTA_ID.Size = New System.Drawing.Size(37, 26)
         Me.TB_VENTA_ID.TabIndex = 30
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(25, 77)
+        Me.Label6.Location = New System.Drawing.Point(30, 126)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(103, 18)
         Me.Label6.TabIndex = 27
@@ -172,7 +185,7 @@ Partial Class FRM_VENTAS
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(72, 24)
+        Me.Label12.Location = New System.Drawing.Point(11, 24)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(68, 18)
         Me.Label12.TabIndex = 22
@@ -183,18 +196,20 @@ Partial Class FRM_VENTAS
         Me.DTP_FECHA_VENTA.CalendarFont = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DTP_FECHA_VENTA.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DTP_FECHA_VENTA.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DTP_FECHA_VENTA.Location = New System.Drawing.Point(440, 71)
+        Me.DTP_FECHA_VENTA.Location = New System.Drawing.Point(399, 123)
         Me.DTP_FECHA_VENTA.Name = "DTP_FECHA_VENTA"
-        Me.DTP_FECHA_VENTA.Size = New System.Drawing.Size(100, 26)
+        Me.DTP_FECHA_VENTA.Size = New System.Drawing.Size(122, 26)
         Me.DTP_FECHA_VENTA.TabIndex = 44
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.TB_PROD_X_VTA_ID)
+        Me.GroupBox1.Controls.Add(Me.Label15)
         Me.GroupBox1.Controls.Add(Me.lblCantidadProductos)
         Me.GroupBox1.Controls.Add(Me.BTN_VENT_QUITAR_PROD)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.TB_VENTA_TOTAL)
         Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.TXT_SUBTOTAL_VENTA)
+        Me.GroupBox1.Controls.Add(Me.TB_SUBTOTAL_VENTA)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.DGV_VENTAS_BUSCAR)
         Me.GroupBox1.Controls.Add(Me.BTN_VENT_AGREGAR_PROD)
@@ -203,7 +218,7 @@ Partial Class FRM_VENTAS
         Me.GroupBox1.Controls.Add(Me.TB_VENTA_ID)
         Me.GroupBox1.Controls.Add(Me.Label12)
         Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 119)
+        Me.GroupBox1.Location = New System.Drawing.Point(15, 157)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(623, 342)
         Me.GroupBox1.TabIndex = 45
@@ -229,13 +244,13 @@ Partial Class FRM_VENTAS
         Me.BTN_VENT_QUITAR_PROD.Text = "Quitar producto"
         Me.BTN_VENT_QUITAR_PROD.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'TB_VENTA_TOTAL
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Comic Sans MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(520, 310)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(90, 23)
-        Me.TextBox1.TabIndex = 47
+        Me.TB_VENTA_TOTAL.Font = New System.Drawing.Font("Comic Sans MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TB_VENTA_TOTAL.Location = New System.Drawing.Point(520, 310)
+        Me.TB_VENTA_TOTAL.Name = "TB_VENTA_TOTAL"
+        Me.TB_VENTA_TOTAL.Size = New System.Drawing.Size(90, 23)
+        Me.TB_VENTA_TOTAL.TabIndex = 47
         '
         'Label5
         '
@@ -247,13 +262,13 @@ Partial Class FRM_VENTAS
         Me.Label5.TabIndex = 46
         Me.Label5.Text = "Total"
         '
-        'TXT_SUBTOTAL_VENTA
+        'TB_SUBTOTAL_VENTA
         '
-        Me.TXT_SUBTOTAL_VENTA.Font = New System.Drawing.Font("Comic Sans MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TXT_SUBTOTAL_VENTA.Location = New System.Drawing.Point(520, 262)
-        Me.TXT_SUBTOTAL_VENTA.Name = "TXT_SUBTOTAL_VENTA"
-        Me.TXT_SUBTOTAL_VENTA.Size = New System.Drawing.Size(90, 23)
-        Me.TXT_SUBTOTAL_VENTA.TabIndex = 45
+        Me.TB_SUBTOTAL_VENTA.Font = New System.Drawing.Font("Comic Sans MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TB_SUBTOTAL_VENTA.Location = New System.Drawing.Point(520, 262)
+        Me.TB_SUBTOTAL_VENTA.Name = "TB_SUBTOTAL_VENTA"
+        Me.TB_SUBTOTAL_VENTA.Size = New System.Drawing.Size(90, 23)
+        Me.TB_SUBTOTAL_VENTA.TabIndex = 45
         '
         'Label3
         '
@@ -268,80 +283,193 @@ Partial Class FRM_VENTAS
         'TB_CLIENTE_ID
         '
         Me.TB_CLIENTE_ID.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TB_CLIENTE_ID.Location = New System.Drawing.Point(87, 23)
+        Me.TB_CLIENTE_ID.Location = New System.Drawing.Point(596, 125)
         Me.TB_CLIENTE_ID.Name = "TB_CLIENTE_ID"
-        Me.TB_CLIENTE_ID.Size = New System.Drawing.Size(56, 26)
+        Me.TB_CLIENTE_ID.Size = New System.Drawing.Size(42, 26)
         Me.TB_CLIENTE_ID.TabIndex = 47
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(25, 26)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(57, 18)
-        Me.Label2.TabIndex = 46
-        Me.Label2.Text = "Cliente*"
         '
         'TB_CLIENTE_APELLIDO
         '
         Me.TB_CLIENTE_APELLIDO.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TB_CLIENTE_APELLIDO.Location = New System.Drawing.Point(144, 23)
+        Me.TB_CLIENTE_APELLIDO.Location = New System.Drawing.Point(79, 21)
         Me.TB_CLIENTE_APELLIDO.Name = "TB_CLIENTE_APELLIDO"
-        Me.TB_CLIENTE_APELLIDO.Size = New System.Drawing.Size(192, 26)
+        Me.TB_CLIENTE_APELLIDO.Size = New System.Drawing.Size(160, 26)
         Me.TB_CLIENTE_APELLIDO.TabIndex = 48
         '
         'TB_CLIENTE_DNI
         '
         Me.TB_CLIENTE_DNI.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TB_CLIENTE_DNI.Location = New System.Drawing.Point(337, 23)
+        Me.TB_CLIENTE_DNI.Location = New System.Drawing.Point(502, 18)
         Me.TB_CLIENTE_DNI.Name = "TB_CLIENTE_DNI"
-        Me.TB_CLIENTE_DNI.Size = New System.Drawing.Size(127, 26)
+        Me.TB_CLIENTE_DNI.Size = New System.Drawing.Size(107, 26)
         Me.TB_CLIENTE_DNI.TabIndex = 49
         '
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(470, 23)
+        Me.Button1.Location = New System.Drawing.Point(532, 50)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(52, 25)
+        Me.Button1.Size = New System.Drawing.Size(78, 51)
         Me.Button1.TabIndex = 50
-        Me.Button1.Text = "..."
+        Me.Button1.Text = "Buscar Cliente"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'BTN_VENTA_GENERAR_COMPROBANTE
+        'BTN_VENTA_IMPRIMIR
         '
-        Me.BTN_VENTA_GENERAR_COMPROBANTE.Location = New System.Drawing.Point(370, 472)
-        Me.BTN_VENTA_GENERAR_COMPROBANTE.Name = "BTN_VENTA_GENERAR_COMPROBANTE"
-        Me.BTN_VENTA_GENERAR_COMPROBANTE.Size = New System.Drawing.Size(75, 23)
-        Me.BTN_VENTA_GENERAR_COMPROBANTE.TabIndex = 51
-        Me.BTN_VENTA_GENERAR_COMPROBANTE.Text = "Generar Comprobante"
-        Me.BTN_VENTA_GENERAR_COMPROBANTE.UseVisualStyleBackColor = True
+        Me.BTN_VENTA_IMPRIMIR.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_VENTA_IMPRIMIR.Location = New System.Drawing.Point(359, 506)
+        Me.BTN_VENTA_IMPRIMIR.Name = "BTN_VENTA_IMPRIMIR"
+        Me.BTN_VENTA_IMPRIMIR.Size = New System.Drawing.Size(89, 31)
+        Me.BTN_VENTA_IMPRIMIR.TabIndex = 51
+        Me.BTN_VENTA_IMPRIMIR.Text = "Imprimir"
+        Me.BTN_VENTA_IMPRIMIR.UseVisualStyleBackColor = True
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Comic Sans MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(532, 130)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(58, 15)
+        Me.Label7.TabIndex = 52
+        Me.Label7.Text = "Id Cliente"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(15, 26)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(58, 18)
+        Me.Label8.TabIndex = 53
+        Me.Label8.Text = "Apellido"
+        '
+        'TB_CLIENTE_NOMBRE
+        '
+        Me.TB_CLIENTE_NOMBRE.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TB_CLIENTE_NOMBRE.Location = New System.Drawing.Point(311, 18)
+        Me.TB_CLIENTE_NOMBRE.Name = "TB_CLIENTE_NOMBRE"
+        Me.TB_CLIENTE_NOMBRE.Size = New System.Drawing.Size(154, 26)
+        Me.TB_CLIENTE_NOMBRE.TabIndex = 54
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(250, 23)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(55, 18)
+        Me.Label9.TabIndex = 55
+        Me.Label9.Text = "Nombre"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(471, 23)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(28, 18)
+        Me.Label13.TabIndex = 56
+        Me.Label13.Text = "Dni"
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.Label14)
+        Me.GroupBox2.Controls.Add(Me.TB_CLIENTE_TELEFONO)
+        Me.GroupBox2.Controls.Add(Me.Label2)
+        Me.GroupBox2.Controls.Add(Me.TB_CLIENTE_DIRECCION)
+        Me.GroupBox2.Controls.Add(Me.Label13)
+        Me.GroupBox2.Controls.Add(Me.Label9)
+        Me.GroupBox2.Controls.Add(Me.TB_CLIENTE_NOMBRE)
+        Me.GroupBox2.Controls.Add(Me.Label8)
+        Me.GroupBox2.Controls.Add(Me.Button1)
+        Me.GroupBox2.Controls.Add(Me.TB_CLIENTE_DNI)
+        Me.GroupBox2.Controls.Add(Me.TB_CLIENTE_APELLIDO)
+        Me.GroupBox2.Location = New System.Drawing.Point(15, 6)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(623, 107)
+        Me.GroupBox2.TabIndex = 57
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Cliente*"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Location = New System.Drawing.Point(337, 66)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(63, 18)
+        Me.Label14.TabIndex = 60
+        Me.Label14.Text = "Teléfono"
+        '
+        'TB_CLIENTE_TELEFONO
+        '
+        Me.TB_CLIENTE_TELEFONO.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TB_CLIENTE_TELEFONO.Location = New System.Drawing.Point(406, 61)
+        Me.TB_CLIENTE_TELEFONO.Name = "TB_CLIENTE_TELEFONO"
+        Me.TB_CLIENTE_TELEFONO.Size = New System.Drawing.Size(107, 26)
+        Me.TB_CLIENTE_TELEFONO.TabIndex = 59
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(6, 64)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(66, 18)
+        Me.Label2.TabIndex = 58
+        Me.Label2.Text = "Dirección"
+        '
+        'TB_CLIENTE_DIRECCION
+        '
+        Me.TB_CLIENTE_DIRECCION.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TB_CLIENTE_DIRECCION.Location = New System.Drawing.Point(78, 61)
+        Me.TB_CLIENTE_DIRECCION.Name = "TB_CLIENTE_DIRECCION"
+        Me.TB_CLIENTE_DIRECCION.Size = New System.Drawing.Size(243, 26)
+        Me.TB_CLIENTE_DIRECCION.TabIndex = 57
+        '
+        'TB_PROD_X_VTA_ID
+        '
+        Me.TB_PROD_X_VTA_ID.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TB_PROD_X_VTA_ID.Location = New System.Drawing.Point(253, 21)
+        Me.TB_PROD_X_VTA_ID.Name = "TB_PROD_X_VTA_ID"
+        Me.TB_PROD_X_VTA_ID.Size = New System.Drawing.Size(37, 26)
+        Me.TB_PROD_X_VTA_ID.TabIndex = 51
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(143, 24)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(106, 18)
+        Me.Label15.TabIndex = 50
+        Me.Label15.Text = "Id Prod_x_Vta*"
         '
         'FRM_VENTAS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(645, 508)
-        Me.Controls.Add(Me.BTN_VENTA_GENERAR_COMPROBANTE)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.TB_CLIENTE_DNI)
-        Me.Controls.Add(Me.TB_CLIENTE_APELLIDO)
-        Me.Controls.Add(Me.TB_CLIENTE_ID)
-        Me.Controls.Add(Me.Label2)
+        Me.ClientSize = New System.Drawing.Size(663, 549)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.BTN_VENTA_IMPRIMIR)
         Me.Controls.Add(Me.BTN_VENTA_SALIR)
         Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.TB_CLIENTE_ID)
         Me.Controls.Add(Me.BTN_VENTA_GUARDAR)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.DTP_FECHA_VENTA)
         Me.Controls.Add(Me.CB_VENTA_FORMAPAGO)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.GroupBox2)
         Me.Name = "FRM_VENTAS"
         Me.Text = "VENTAS"
         CType(Me.DGV_VENTAS_BUSCAR, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -362,15 +490,26 @@ Partial Class FRM_VENTAS
     Friend WithEvents DTP_FECHA_VENTA As System.Windows.Forms.DateTimePicker
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents TB_CLIENTE_ID As System.Windows.Forms.TextBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents TXT_SUBTOTAL_VENTA As System.Windows.Forms.TextBox
+    Friend WithEvents TB_SUBTOTAL_VENTA As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents BTN_VENT_QUITAR_PROD As System.Windows.Forms.Button
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents TB_VENTA_TOTAL As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents TB_CLIENTE_APELLIDO As System.Windows.Forms.TextBox
     Friend WithEvents TB_CLIENTE_DNI As System.Windows.Forms.TextBox
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents lblCantidadProductos As System.Windows.Forms.Label
-    Friend WithEvents BTN_VENTA_GENERAR_COMPROBANTE As System.Windows.Forms.Button
+    Friend WithEvents BTN_VENTA_IMPRIMIR As System.Windows.Forms.Button
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents TB_CLIENTE_NOMBRE As System.Windows.Forms.TextBox
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents Label14 As System.Windows.Forms.Label
+    Friend WithEvents TB_CLIENTE_TELEFONO As System.Windows.Forms.TextBox
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents TB_CLIENTE_DIRECCION As System.Windows.Forms.TextBox
+    Friend WithEvents TB_PROD_X_VTA_ID As System.Windows.Forms.TextBox
+    Friend WithEvents Label15 As System.Windows.Forms.Label
 End Class
