@@ -38,9 +38,6 @@ Partial Class FRM_PRODUCTOS
         Me.CB_PROD_PROVEEDOR = New System.Windows.Forms.ComboBox()
         Me.CB_PROD_DEPOSITO = New System.Windows.Forms.ComboBox()
         Me.CB_PROD_TIPO_PROD = New System.Windows.Forms.ComboBox()
-        Me.BTN_PROD_GUARDAR = New System.Windows.Forms.Button()
-        Me.BTN_PROD_SALIR = New System.Windows.Forms.Button()
-        Me.BTN_PROD_ACTUALIZAR = New System.Windows.Forms.Button()
         Me.TB_PROD_ID = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -48,6 +45,9 @@ Partial Class FRM_PRODUCTOS
         Me.Label11 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.BTN_PROD_CONFIRMAR_PRODUCTO = New System.Windows.Forms.Button()
+        Me.BTN_PROD_GUARDAR = New System.Windows.Forms.Button()
+        Me.BTN_PROD_SALIR = New System.Windows.Forms.Button()
+        Me.BTN_PROD_ACTUALIZAR = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -125,7 +125,7 @@ Partial Class FRM_PRODUCTOS
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(25, 247)
+        Me.Label8.Location = New System.Drawing.Point(229, 194)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(119, 18)
         Me.Label8.TabIndex = 7
@@ -144,7 +144,7 @@ Partial Class FRM_PRODUCTOS
         Me.TB_PROD_DESCRIPCION.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TB_PROD_DESCRIPCION.Location = New System.Drawing.Point(98, 61)
         Me.TB_PROD_DESCRIPCION.Name = "TB_PROD_DESCRIPCION"
-        Me.TB_PROD_DESCRIPCION.Size = New System.Drawing.Size(386, 26)
+        Me.TB_PROD_DESCRIPCION.Size = New System.Drawing.Size(387, 26)
         Me.TB_PROD_DESCRIPCION.TabIndex = 9
         '
         'TB_PROD_PRECIO_COSTO
@@ -175,7 +175,7 @@ Partial Class FRM_PRODUCTOS
         '
         Me.CB_PROD_PROVEEDOR.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CB_PROD_PROVEEDOR.FormattingEnabled = True
-        Me.CB_PROD_PROVEEDOR.Location = New System.Drawing.Point(289, 148)
+        Me.CB_PROD_PROVEEDOR.Location = New System.Drawing.Point(286, 148)
         Me.CB_PROD_PROVEEDOR.Name = "CB_PROD_PROVEEDOR"
         Me.CB_PROD_PROVEEDOR.Size = New System.Drawing.Size(198, 26)
         Me.CB_PROD_PROVEEDOR.TabIndex = 13
@@ -193,40 +193,10 @@ Partial Class FRM_PRODUCTOS
         '
         Me.CB_PROD_TIPO_PROD.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CB_PROD_TIPO_PROD.FormattingEnabled = True
-        Me.CB_PROD_TIPO_PROD.Location = New System.Drawing.Point(150, 244)
+        Me.CB_PROD_TIPO_PROD.Location = New System.Drawing.Point(354, 191)
         Me.CB_PROD_TIPO_PROD.Name = "CB_PROD_TIPO_PROD"
-        Me.CB_PROD_TIPO_PROD.Size = New System.Drawing.Size(238, 26)
+        Me.CB_PROD_TIPO_PROD.Size = New System.Drawing.Size(130, 26)
         Me.CB_PROD_TIPO_PROD.TabIndex = 15
-        '
-        'BTN_PROD_GUARDAR
-        '
-        Me.BTN_PROD_GUARDAR.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_PROD_GUARDAR.Location = New System.Drawing.Point(238, 347)
-        Me.BTN_PROD_GUARDAR.Name = "BTN_PROD_GUARDAR"
-        Me.BTN_PROD_GUARDAR.Size = New System.Drawing.Size(89, 31)
-        Me.BTN_PROD_GUARDAR.TabIndex = 16
-        Me.BTN_PROD_GUARDAR.Text = "Guardar"
-        Me.BTN_PROD_GUARDAR.UseVisualStyleBackColor = True
-        '
-        'BTN_PROD_SALIR
-        '
-        Me.BTN_PROD_SALIR.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_PROD_SALIR.Location = New System.Drawing.Point(428, 347)
-        Me.BTN_PROD_SALIR.Name = "BTN_PROD_SALIR"
-        Me.BTN_PROD_SALIR.Size = New System.Drawing.Size(89, 31)
-        Me.BTN_PROD_SALIR.TabIndex = 17
-        Me.BTN_PROD_SALIR.Text = "Salir"
-        Me.BTN_PROD_SALIR.UseVisualStyleBackColor = True
-        '
-        'BTN_PROD_ACTUALIZAR
-        '
-        Me.BTN_PROD_ACTUALIZAR.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_PROD_ACTUALIZAR.Location = New System.Drawing.Point(333, 347)
-        Me.BTN_PROD_ACTUALIZAR.Name = "BTN_PROD_ACTUALIZAR"
-        Me.BTN_PROD_ACTUALIZAR.Size = New System.Drawing.Size(89, 31)
-        Me.BTN_PROD_ACTUALIZAR.TabIndex = 18
-        Me.BTN_PROD_ACTUALIZAR.Text = "Actualizar"
-        Me.BTN_PROD_ACTUALIZAR.UseVisualStyleBackColor = True
         '
         'TB_PROD_ID
         '
@@ -261,7 +231,7 @@ Partial Class FRM_PRODUCTOS
         'TB_PROD_CANTIDAD
         '
         Me.TB_PROD_CANTIDAD.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TB_PROD_CANTIDAD.Location = New System.Drawing.Point(392, 191)
+        Me.TB_PROD_CANTIDAD.Location = New System.Drawing.Point(274, 247)
         Me.TB_PROD_CANTIDAD.Name = "TB_PROD_CANTIDAD"
         Me.TB_PROD_CANTIDAD.Size = New System.Drawing.Size(98, 26)
         Me.TB_PROD_CANTIDAD.TabIndex = 23
@@ -270,7 +240,7 @@ Partial Class FRM_PRODUCTOS
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(250, 194)
+        Me.Label11.Location = New System.Drawing.Point(141, 250)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(127, 18)
         Me.Label11.TabIndex = 22
@@ -279,8 +249,8 @@ Partial Class FRM_PRODUCTOS
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.TB_PROD_CANTIDAD)
-        Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Controls.Add(Me.TB_PROD_ID)
+        Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Controls.Add(Me.CB_PROD_TIPO_PROD)
         Me.GroupBox1.Controls.Add(Me.CB_PROD_DEPOSITO)
@@ -314,16 +284,46 @@ Partial Class FRM_PRODUCTOS
         Me.BTN_PROD_CONFIRMAR_PRODUCTO.Text = "Confirmar Pedido"
         Me.BTN_PROD_CONFIRMAR_PRODUCTO.UseVisualStyleBackColor = True
         '
+        'BTN_PROD_GUARDAR
+        '
+        Me.BTN_PROD_GUARDAR.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_PROD_GUARDAR.Location = New System.Drawing.Point(238, 347)
+        Me.BTN_PROD_GUARDAR.Name = "BTN_PROD_GUARDAR"
+        Me.BTN_PROD_GUARDAR.Size = New System.Drawing.Size(89, 31)
+        Me.BTN_PROD_GUARDAR.TabIndex = 26
+        Me.BTN_PROD_GUARDAR.Text = "Guardar"
+        Me.BTN_PROD_GUARDAR.UseVisualStyleBackColor = True
+        '
+        'BTN_PROD_SALIR
+        '
+        Me.BTN_PROD_SALIR.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_PROD_SALIR.Location = New System.Drawing.Point(428, 347)
+        Me.BTN_PROD_SALIR.Name = "BTN_PROD_SALIR"
+        Me.BTN_PROD_SALIR.Size = New System.Drawing.Size(89, 31)
+        Me.BTN_PROD_SALIR.TabIndex = 27
+        Me.BTN_PROD_SALIR.Text = "Salir"
+        Me.BTN_PROD_SALIR.UseVisualStyleBackColor = True
+        '
+        'BTN_PROD_ACTUALIZAR
+        '
+        Me.BTN_PROD_ACTUALIZAR.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_PROD_ACTUALIZAR.Location = New System.Drawing.Point(333, 347)
+        Me.BTN_PROD_ACTUALIZAR.Name = "BTN_PROD_ACTUALIZAR"
+        Me.BTN_PROD_ACTUALIZAR.Size = New System.Drawing.Size(89, 31)
+        Me.BTN_PROD_ACTUALIZAR.TabIndex = 28
+        Me.BTN_PROD_ACTUALIZAR.Text = "Actualizar"
+        Me.BTN_PROD_ACTUALIZAR.UseVisualStyleBackColor = True
+        '
         'FRM_PRODUCTOS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(523, 390)
-        Me.Controls.Add(Me.BTN_PROD_CONFIRMAR_PRODUCTO)
-        Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.BTN_PROD_ACTUALIZAR)
         Me.Controls.Add(Me.BTN_PROD_SALIR)
         Me.Controls.Add(Me.BTN_PROD_GUARDAR)
+        Me.Controls.Add(Me.BTN_PROD_CONFIRMAR_PRODUCTO)
+        Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "FRM_PRODUCTOS"
         Me.Text = "CARGAR PRODUCTOS"
@@ -349,9 +349,6 @@ Partial Class FRM_PRODUCTOS
     Friend WithEvents CB_PROD_PROVEEDOR As System.Windows.Forms.ComboBox
     Friend WithEvents CB_PROD_DEPOSITO As System.Windows.Forms.ComboBox
     Friend WithEvents CB_PROD_TIPO_PROD As System.Windows.Forms.ComboBox
-    Friend WithEvents BTN_PROD_GUARDAR As System.Windows.Forms.Button
-    Friend WithEvents BTN_PROD_SALIR As System.Windows.Forms.Button
-    Friend WithEvents BTN_PROD_ACTUALIZAR As System.Windows.Forms.Button
     Friend WithEvents TB_PROD_ID As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents Label10 As System.Windows.Forms.Label
@@ -359,4 +356,7 @@ Partial Class FRM_PRODUCTOS
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents BTN_PROD_CONFIRMAR_PRODUCTO As System.Windows.Forms.Button
+    Friend WithEvents BTN_PROD_GUARDAR As System.Windows.Forms.Button
+    Friend WithEvents BTN_PROD_SALIR As System.Windows.Forms.Button
+    Friend WithEvents BTN_PROD_ACTUALIZAR As System.Windows.Forms.Button
 End Class
