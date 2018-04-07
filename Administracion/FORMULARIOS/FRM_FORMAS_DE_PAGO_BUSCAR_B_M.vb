@@ -35,8 +35,9 @@
         DGV_FORMA_DE_PAGO_BUSCAR.Columns.Clear()
 
         DGV_FORMA_DE_PAGO_BUSCAR.Columns.Add("ID_FORM_DE_PAGO", "ID_FORM_DE_PAGO")
+        DGV_FORMA_DE_PAGO_BUSCAR.Columns(0).Visible = False
         DGV_FORMA_DE_PAGO_BUSCAR.Columns.Add("FDP_DESCRIPCION", "DESCRIPCION")
-
+        DGV_FORMA_DE_PAGO_BUSCAR.Columns(1).Width = 150
         DGV_FORMA_DE_PAGO_BUSCAR.Columns(0).DataPropertyName = "ID_FORM_DE_PAGO"
         DGV_FORMA_DE_PAGO_BUSCAR.Columns(1).DataPropertyName = "FDP_DESCRIPCION"
 

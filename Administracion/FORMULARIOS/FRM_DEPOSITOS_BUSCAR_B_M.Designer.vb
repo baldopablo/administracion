@@ -61,7 +61,7 @@ Partial Class FRM_DEPOSITOS_BUSCAR_B_M
         Me.DGV_DEPO_BUSCAR.Location = New System.Drawing.Point(26, 94)
         Me.DGV_DEPO_BUSCAR.Name = "DGV_DEPO_BUSCAR"
         Me.DGV_DEPO_BUSCAR.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGV_DEPO_BUSCAR.Size = New System.Drawing.Size(739, 252)
+        Me.DGV_DEPO_BUSCAR.Size = New System.Drawing.Size(532, 252)
         Me.DGV_DEPO_BUSCAR.TabIndex = 16
         '
         'GroupBox1
@@ -117,7 +117,7 @@ Partial Class FRM_DEPOSITOS_BUSCAR_B_M
         'BTN_DEPO_BUS_SALIR
         '
         Me.BTN_DEPO_BUS_SALIR.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_DEPO_BUS_SALIR.Location = New System.Drawing.Point(680, 356)
+        Me.BTN_DEPO_BUS_SALIR.Location = New System.Drawing.Point(473, 356)
         Me.BTN_DEPO_BUS_SALIR.Name = "BTN_DEPO_BUS_SALIR"
         Me.BTN_DEPO_BUS_SALIR.Size = New System.Drawing.Size(85, 27)
         Me.BTN_DEPO_BUS_SALIR.TabIndex = 15
@@ -128,7 +128,7 @@ Partial Class FRM_DEPOSITOS_BUSCAR_B_M
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(793, 404)
+        Me.ClientSize = New System.Drawing.Size(584, 404)
         Me.Controls.Add(Me.BTN_DEPO_BUS_ELIMINAR)
         Me.Controls.Add(Me.BTN_DEPO_BUS_EDITAR)
         Me.Controls.Add(Me.DGV_DEPO_BUSCAR)

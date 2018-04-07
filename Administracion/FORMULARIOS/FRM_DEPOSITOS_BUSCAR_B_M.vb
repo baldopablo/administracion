@@ -35,16 +35,18 @@
     End Sub
 
     Private Sub BTN_PROV_BUS_EDITAR_Click(sender As System.Object, e As System.EventArgs) Handles BTN_DEPO_BUS_EDITAR.Click
+
+        FRM_DEPOSITOS.Text = "ACTUALIZAR DEPÓSITO"
         If DGV_DEPO_BUSCAR.SelectedRows.Count > 0 Then
             FRM_DEPOSITOS.TB_DEPO_ID.Text = DGV_DEPO_BUSCAR.Item("ID_DEPOSITO", DGV_DEPO_BUSCAR.SelectedRows(0).Index).Value
             FRM_DEPOSITOS.TB_DEPO_NOMBRE.Text = DGV_DEPO_BUSCAR.Item("DEPO_NOMBRE", DGV_DEPO_BUSCAR.SelectedRows(0).Index).Value
             FRM_DEPOSITOS.TB_DEPO_DIRECCION.Text = DGV_DEPO_BUSCAR.Item("DEPO_DIRECCION", DGV_DEPO_BUSCAR.SelectedRows(0).Index).Value
             FRM_DEPOSITOS.TB_DEPO_LOCALIDAD.Text = DGV_DEPO_BUSCAR.Item("DEPO_LOCALIDAD", DGV_DEPO_BUSCAR.SelectedRows(0).Index).Value
             FRM_DEPOSITOS.TB_DEPO_CODIGO.Text = DGV_DEPO_BUSCAR.Item("DEPO_CODIGO", DGV_DEPO_BUSCAR.SelectedRows(0).Index).Value
-           
         End If
-        FRM_DEPOSITOS.BTN_DEPO_GUARDAR.Visible = False
-        FRM_DEPOSITOS.BTN_DEPO_ACTUALIZAR.Visible = True
+        FRM_DEPOSITOS.BTN_DEPO_GUARDAR.Enabled = False
+        FRM_DEPOSITOS.BTN_DEPO_ACTUALIZAR.Enabled = True
+
         FRM_DEPOSITOS.Show()
     End Sub
 
@@ -76,10 +78,13 @@
         DGV_DEPO_BUSCAR.Columns.Clear()
 
         DGV_DEPO_BUSCAR.Columns.Add("ID_DEPOSITO", "ID_DEPOSITO")
+        DGV_DEPO_BUSCAR.Columns(0).Visible = False
         DGV_DEPO_BUSCAR.Columns.Add("DEPO_NOMBRE", "NOMBRE")
-        DGV_DEPO_BUSCAR.Columns.Add("DEPO_DIRECCION", "DIRECCION")
+        DGV_DEPO_BUSCAR.Columns(1).Width = 150
+        DGV_DEPO_BUSCAR.Columns.Add("DEPO_DIRECCION", "DIRECCIÓN")
+        DGV_DEPO_BUSCAR.Columns(2).Width = 150
         DGV_DEPO_BUSCAR.Columns.Add("DEPO_LOCALIDAD", "LOCALIDAD")
-        DGV_DEPO_BUSCAR.Columns.Add("DEPO_CODIGO", "CODIGO")
+        DGV_DEPO_BUSCAR.Columns.Add("DEPO_CODIGO", "CÓDIGO")
 
         DGV_DEPO_BUSCAR.Columns(0).DataPropertyName = "ID_DEPOSITO"
         DGV_DEPO_BUSCAR.Columns(1).DataPropertyName = "DEPO_NOMBRE"

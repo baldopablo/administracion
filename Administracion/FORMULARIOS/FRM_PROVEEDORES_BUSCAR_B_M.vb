@@ -15,19 +15,24 @@
         DGV_PROV_BUSCAR.Columns.Add("PROV_NOMBRE", "NOMBRES")
         DGV_PROV_BUSCAR.Columns.Add("PROV_DIRECCION", "DIRECCION")
         DGV_PROV_BUSCAR.Columns.Add("PROV_TEL_1", "TELEFONO 1")
-        DGV_PROV_BUSCAR.Columns.Add("PROV_TEL_2", "TELEEFONO 2")
+        DGV_PROV_BUSCAR.Columns.Add("PROV_TEL_2", "TELEFONO 2")
         DGV_PROV_BUSCAR.Columns.Add("PROV_MAIL", "MAIL")
         DGV_PROV_BUSCAR.Columns.Add("PROV_URL", "URL")
         DGV_PROV_BUSCAR.Columns.Add("PROV_LOCALIDAD", "LOCALIDAD")
         DGV_PROV_BUSCAR.Columns.Add("PROV_CODIGO", "CODIGO")
 
         DGV_PROV_BUSCAR.Columns(0).DataPropertyName = "ID_PROVEEDOR"
+        DGV_PROV_BUSCAR.Columns(0).Visible = False
         DGV_PROV_BUSCAR.Columns(1).DataPropertyName = "PROV_NOMBRE"
+        DGV_PROV_BUSCAR.Columns(1).Width = 150
         DGV_PROV_BUSCAR.Columns(2).DataPropertyName = "PROV_DIRECCION"
+        DGV_PROV_BUSCAR.Columns(2).Width = 150
         DGV_PROV_BUSCAR.Columns(3).DataPropertyName = "PROV_TEL_1"
         DGV_PROV_BUSCAR.Columns(4).DataPropertyName = "PROV_TEL_2"
         DGV_PROV_BUSCAR.Columns(5).DataPropertyName = "PROV_MAIL"
+        DGV_PROV_BUSCAR.Columns(5).Width = 150
         DGV_PROV_BUSCAR.Columns(6).DataPropertyName = "PROV_URL"
+        DGV_PROV_BUSCAR.Columns(6).Width = 150
         DGV_PROV_BUSCAR.Columns(7).DataPropertyName = "PROV_LOCALIDAD"
         DGV_PROV_BUSCAR.Columns(8).DataPropertyName = "PROV_CODIGO"
 

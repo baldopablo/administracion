@@ -25,16 +25,10 @@
                 PORVEEDOR.PROV_LOCALIDAD = TB_PROV_LOCALIDAD.Text
                 I = PORVEEDOR.ID_PROVEEDOR
 
-
                 datacontext.PROVEEDORES.InsertOnSubmit(PORVEEDOR)
                 datacontext.SubmitChanges()
-                Select Case MsgBox("El proveedor fue creado, cargar otro?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Nuevo cliente")
-                    Case MsgBoxResult.No
-                        Me.Close()
-                    Case MsgBoxResult.Yes
-                        limpiar_campos()
-                End Select
-
+                MsgBox("El proveedor se ha cargado correctamente")
+                Me.Close()
             End If
         Catch ex As Exception
             MsgBox("Debe completar todos los campos requeridos")
@@ -44,11 +38,9 @@
 
     Private Sub BTN_PROV_SALIR_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BTN_PROV_SALIR.Click
         Me.Close()
+        Me.Dispose()
     End Sub
 
-    Private Sub FRM_PROVEEDORES_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-
-    End Sub
 
     Private Sub BTN_PROV_ACTUALIZAR_Click(sender As System.Object, e As System.EventArgs) Handles BTN_PROV_ACTUALIZAR.Click
         If TB_PROV_CODIGO.Text.Length = 0 Or TB_PROV_DIRECCION.Text.Length = 0 Or TB_PROV_LOCALIDAD.Text.Length = 0 Or TB_PROV_NOMBRE.Text.Length = 0 Or TB_PROV_TEL_1.Text.Length = 0 Then

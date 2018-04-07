@@ -26,9 +26,9 @@ Partial Class FRM_FORMAS_DE_PAGO_BUSCAR_B_M
         Me.BTN_CLIE_BUS_EDITAR = New System.Windows.Forms.Button()
         Me.DGV_FORMA_DE_PAGO_BUSCAR = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.TB_FORMA_PAGO_BUSCAR_DESC = New System.Windows.Forms.TextBox()
         Me.BTN_CLIE_BUS_SALIR = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.DGV_FORMA_DE_PAGO_BUSCAR, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -36,7 +36,7 @@ Partial Class FRM_FORMAS_DE_PAGO_BUSCAR_B_M
         'BTN_CLIE_BUS_ELIMINAR
         '
         Me.BTN_CLIE_BUS_ELIMINAR.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_CLIE_BUS_ELIMINAR.Location = New System.Drawing.Point(202, 309)
+        Me.BTN_CLIE_BUS_ELIMINAR.Location = New System.Drawing.Point(124, 301)
         Me.BTN_CLIE_BUS_ELIMINAR.Name = "BTN_CLIE_BUS_ELIMINAR"
         Me.BTN_CLIE_BUS_ELIMINAR.Size = New System.Drawing.Size(85, 27)
         Me.BTN_CLIE_BUS_ELIMINAR.TabIndex = 8
@@ -46,7 +46,7 @@ Partial Class FRM_FORMAS_DE_PAGO_BUSCAR_B_M
         'BTN_CLIE_BUS_EDITAR
         '
         Me.BTN_CLIE_BUS_EDITAR.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_CLIE_BUS_EDITAR.Location = New System.Drawing.Point(111, 309)
+        Me.BTN_CLIE_BUS_EDITAR.Location = New System.Drawing.Point(33, 301)
         Me.BTN_CLIE_BUS_EDITAR.Name = "BTN_CLIE_BUS_EDITAR"
         Me.BTN_CLIE_BUS_EDITAR.Size = New System.Drawing.Size(85, 27)
         Me.BTN_CLIE_BUS_EDITAR.TabIndex = 7
@@ -59,7 +59,7 @@ Partial Class FRM_FORMAS_DE_PAGO_BUSCAR_B_M
         Me.DGV_FORMA_DE_PAGO_BUSCAR.Location = New System.Drawing.Point(26, 94)
         Me.DGV_FORMA_DE_PAGO_BUSCAR.Name = "DGV_FORMA_DE_PAGO_BUSCAR"
         Me.DGV_FORMA_DE_PAGO_BUSCAR.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGV_FORMA_DE_PAGO_BUSCAR.Size = New System.Drawing.Size(353, 196)
+        Me.DGV_FORMA_DE_PAGO_BUSCAR.Size = New System.Drawing.Size(275, 191)
         Me.DGV_FORMA_DE_PAGO_BUSCAR.TabIndex = 6
         '
         'GroupBox1
@@ -69,44 +69,44 @@ Partial Class FRM_FORMAS_DE_PAGO_BUSCAR_B_M
         Me.GroupBox1.Font = New System.Drawing.Font("Comic Sans MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(26, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(353, 64)
+        Me.GroupBox1.Size = New System.Drawing.Size(275, 64)
         Me.GroupBox1.TabIndex = 4
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Buscar Forma de Pago"
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(6, 28)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(79, 18)
+        Me.Label1.TabIndex = 3
+        Me.Label1.Text = "Descripción"
+        '
         'TB_FORMA_PAGO_BUSCAR_DESC
         '
         Me.TB_FORMA_PAGO_BUSCAR_DESC.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TB_FORMA_PAGO_BUSCAR_DESC.Location = New System.Drawing.Point(114, 25)
+        Me.TB_FORMA_PAGO_BUSCAR_DESC.Location = New System.Drawing.Point(91, 25)
         Me.TB_FORMA_PAGO_BUSCAR_DESC.Name = "TB_FORMA_PAGO_BUSCAR_DESC"
-        Me.TB_FORMA_PAGO_BUSCAR_DESC.Size = New System.Drawing.Size(217, 26)
+        Me.TB_FORMA_PAGO_BUSCAR_DESC.Size = New System.Drawing.Size(174, 26)
         Me.TB_FORMA_PAGO_BUSCAR_DESC.TabIndex = 2
         '
         'BTN_CLIE_BUS_SALIR
         '
         Me.BTN_CLIE_BUS_SALIR.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_CLIE_BUS_SALIR.Location = New System.Drawing.Point(294, 309)
+        Me.BTN_CLIE_BUS_SALIR.Location = New System.Drawing.Point(216, 301)
         Me.BTN_CLIE_BUS_SALIR.Name = "BTN_CLIE_BUS_SALIR"
         Me.BTN_CLIE_BUS_SALIR.Size = New System.Drawing.Size(85, 27)
         Me.BTN_CLIE_BUS_SALIR.TabIndex = 5
         Me.BTN_CLIE_BUS_SALIR.Text = "Salir"
         Me.BTN_CLIE_BUS_SALIR.UseVisualStyleBackColor = True
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(29, 28)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(79, 18)
-        Me.Label1.TabIndex = 3
-        Me.Label1.Text = "Descripción"
-        '
         'FRM_FORMAS_DE_PAGO_BUSCAR_B_M
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(401, 352)
+        Me.ClientSize = New System.Drawing.Size(327, 352)
         Me.Controls.Add(Me.BTN_CLIE_BUS_ELIMINAR)
         Me.Controls.Add(Me.BTN_CLIE_BUS_EDITAR)
         Me.Controls.Add(Me.DGV_FORMA_DE_PAGO_BUSCAR)
