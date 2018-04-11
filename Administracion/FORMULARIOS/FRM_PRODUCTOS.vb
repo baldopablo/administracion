@@ -42,6 +42,7 @@
             TB_PROD_CANTIDAD.Focus()
             Exit Sub
         End If
+
         'CARGA EL DGV DE VENTAS
         Dim id_producto, cantidad As Integer
         Dim descripcion_producto As String
@@ -56,20 +57,21 @@
         PrecioCantidad()
         CantidadProductos()
         Subtotal()
-
+        FRM_VENTAS.TB_VENTA_DESCUENTO.Clear()
+        FRM_VENTAS.TB_VENTA_TOTAL.Clear()
         FRM_PRODUCTOS_BUSCAR_B_M.Close()
         Me.Close()
     End Sub
 
     'SUMA LA CANTIDAD DE PRODUCTOS DE LA VENTA
-    Private Sub CantidadProductos()
+    Public Sub CantidadProductos()
         Dim Cantidad_venta As Integer = 0
         Dim iCantidad_Venta As Integer = FRM_VENTAS.DGV_VENTAS_BUSCAR.Rows.Count
         Dim c As Integer
         For c = 0 To iCantidad_Venta - 1
             Cantidad_venta = Cantidad_venta + Integer.Parse(FRM_VENTAS.DGV_VENTAS_BUSCAR(1, c).Value)
         Next
-        FRM_VENTAS.lblCantidadProductos.Text = Format(Cantidad_venta)
+        FRM_VENTAS.LBL_VENTA_CANT_PROD.Text = Format(Cantidad_venta)
     End Sub
 
     'CALCULA PRECIO DE VENTA * LA CANTIDAD DE PRODUCTOS
@@ -85,7 +87,7 @@
     End Sub
 
     ' CALCULA(SUBTOTAL)
-    Private Sub Subtotal()
+    Public Sub Subtotal()
         Dim suma As Double = 0
         Dim ATot As Integer = FRM_VENTAS.DGV_VENTAS_BUSCAR.Rows.Count
         Dim Aa As Integer
