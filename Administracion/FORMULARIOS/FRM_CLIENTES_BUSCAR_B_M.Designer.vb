@@ -31,6 +31,7 @@ Partial Class FRM_CLIENTES_BUSCAR_B_M
         Me.DGV_CLIE_BUSCAR = New System.Windows.Forms.DataGridView()
         Me.BTN_CLIE_BUS_EDITAR = New System.Windows.Forms.Button()
         Me.BTN_CLIE_BUS_ELIMINAR = New System.Windows.Forms.Button()
+        Me.BTN_CLIE_BUS_IMPRIMIR = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGV_CLIE_BUSCAR, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -125,11 +126,22 @@ Partial Class FRM_CLIENTES_BUSCAR_B_M
         Me.BTN_CLIE_BUS_ELIMINAR.Text = "Eliminar"
         Me.BTN_CLIE_BUS_ELIMINAR.UseVisualStyleBackColor = True
         '
+        'BTN_CLIE_BUS_IMPRIMIR
+        '
+        Me.BTN_CLIE_BUS_IMPRIMIR.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_CLIE_BUS_IMPRIMIR.Location = New System.Drawing.Point(582, 357)
+        Me.BTN_CLIE_BUS_IMPRIMIR.Name = "BTN_CLIE_BUS_IMPRIMIR"
+        Me.BTN_CLIE_BUS_IMPRIMIR.Size = New System.Drawing.Size(85, 27)
+        Me.BTN_CLIE_BUS_IMPRIMIR.TabIndex = 4
+        Me.BTN_CLIE_BUS_IMPRIMIR.Text = "Imprimir"
+        Me.BTN_CLIE_BUS_IMPRIMIR.UseVisualStyleBackColor = True
+        '
         'FRM_CLIENTES_BUSCAR_B_M
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(770, 396)
+        Me.Controls.Add(Me.BTN_CLIE_BUS_IMPRIMIR)
         Me.Controls.Add(Me.BTN_CLIE_BUS_ELIMINAR)
         Me.Controls.Add(Me.BTN_CLIE_BUS_EDITAR)
         Me.Controls.Add(Me.DGV_CLIE_BUSCAR)
@@ -153,4 +165,5 @@ Partial Class FRM_CLIENTES_BUSCAR_B_M
     Friend WithEvents DGV_CLIE_BUSCAR As System.Windows.Forms.DataGridView
     Friend WithEvents BTN_CLIE_BUS_EDITAR As System.Windows.Forms.Button
     Friend WithEvents BTN_CLIE_BUS_ELIMINAR As System.Windows.Forms.Button
+    Friend WithEvents BTN_CLIE_BUS_IMPRIMIR As System.Windows.Forms.Button
 End Class

@@ -3,6 +3,7 @@
 Public Class FRM_VENTAS_BUSCAR_M_B
 
     Dim datacontext As New DC_AdminDataContext
+
     Private Maestro As SqlDataAdapter
     Private Detalle As SqlDataAdapter
     Private ConjuntoDeDatos As DataSet
@@ -46,8 +47,8 @@ Public Class FRM_VENTAS_BUSCAR_M_B
             Case MsgBoxResult.Yes
                 datacontext.VENTAS.DeleteOnSubmit(eliminar)
                 datacontext.SubmitChanges()
-                MsgBox("La venta ha sido eliminada")
-                '   Me.CargarGrillaMaestro()
+                MsgBox("La venta ha sido eliminada satisfactoriamente")
+                Me.CargarGrillaMaestro()
         End Select
     End Sub
 
@@ -87,20 +88,20 @@ Public Class FRM_VENTAS_BUSCAR_M_B
         TB_VENTA_BUSCAR_DNI_CLI.Enabled = False
     End Sub
 
-    'Public Sub CargarGrillaMaestro() 'MAESTRO
-    '    Dim CargarGrillaMaestro = From U In datacontext.CLIENTES
-    '                        Join V In datacontext.VENTAS On U.ID_CLIENTE Equals V.ID_CLIENTE
-    '                        Select U.ID_CLIENTE, U.CLI_APELLIDO, U.CLI_NOMBRES, U.CLI_DNI, V.ID_VENTA, V.VENT_FECHA
-    '    DGV_VENTA_BUSCAR.DataSource = CargarGrillaMaestro
-    'End Sub
+    Public Sub CargarGrillaMaestro() 'MAESTRO
+        Dim CargarGrillaMaestro = From U In datacontext.CLIENTES
+                            Join V In datacontext.VENTAS On U.ID_CLIENTE Equals V.ID_CLIENTE
+                            Select U.ID_CLIENTE, U.CLI_APELLIDO, U.CLI_NOMBRES, U.CLI_DNI, V.ID_VENTA, V.VENT_FECHA
+        DGV_VENTA_BUSCAR.DataSource = CargarGrillaMaestro
+    End Sub
 
-    'Public Sub CargarGrillaDetalle() 'DETALLE
-    '    Dim ConsultaGrillaDetalle = From U In datacontext.PRODUCTOS
-    '                        Join V In datacontext.PROD_X_VTA On V.ID_PRODUCTO Equals U.ID_PRODUCTO
-    '                        Join D In datacontext.VENTAS On V.ID_VENTA Equals D.ID_VENTA
-    '                        Select V.ID_VENTA, D.ID_CLIENTE, V.PXV_CANTIDAD, U.PROD_DESCRIPCION, U.PROD_PRECIO_VTA
-    '    DGV_VENTA_DETALLE.DataSource = ConsultaGrillaDetalle
-    'End Sub
+    Public Sub CargarGrillaDetalle() 'DETALLE
+        Dim ConsultaGrillaDetalle = From U In datacontext.PRODUCTOS
+                            Join V In datacontext.PROD_X_VTA On V.ID_PRODUCTO Equals U.ID_PRODUCTO
+                            Join D In datacontext.VENTAS On V.ID_VENTA Equals D.ID_VENTA
+                            Select V.ID_VENTA, D.ID_CLIENTE, V.PXV_CANTIDAD, U.PROD_DESCRIPCION, U.PROD_PRECIO_VTA
+        DGV_VENTA_DETALLE.DataSource = ConsultaGrillaDetalle
+    End Sub
 
     Private Sub ArmarGrillaDetalle()
         DGV_VENTA_DETALLE.Enabled = True
@@ -132,8 +133,6 @@ Public Class FRM_VENTAS_BUSCAR_M_B
 
     Private Sub FRM_VENTAS_BUSCAR_M_B_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
 
-
-
  Dim miConexion As New SqlConnection("Data Source=VALE\VALEVALERIA;Initial Catalog=Administracion;Integrated Security=True")
 
         ArmarGrillaMaestro()
@@ -141,7 +140,6 @@ Public Class FRM_VENTAS_BUSCAR_M_B
 
         Maestro = New SqlDataAdapter("SELECT dbo.CLIENTES.ID_CLIENTE, dbo.CLIENTES.CLI_NOMBRES, dbo.CLIENTES.CLI_APELLIDO,dbo.CLIENTES.CLI_DNI, dbo.VENTAS.ID_VENTA, dbo.VENTAS.VENT_FECHA, dbo.VENTAS.VENT_TOTAL FROM dbo.CLIENTES INNER JOIN dbo.VENTAS ON dbo.CLIENTES.ID_CLIENTE = dbo.VENTAS.ID_CLIENTE WHERE VENTAS.ID_CLIENTE <> 0", miConexion)
         Dim MaestroCmdBuilder As New SqlCommandBuilder(Maestro)
-
 
         Detalle = New SqlDataAdapter("SELECT dbo.PROD_X_VTA.ID_PROD_X_VTA, dbo.PROD_X_VTA.PXV_CANTIDAD,dbo.PROD_X_VTA.ID_VENTA, dbo.PRODUCTOS.PROD_DESCRIPCION, dbo.PRODUCTOS.PROD_PRECIO_VTA, dbo.VENTAS.ID_CLIENTE FROM dbo.PROD_X_VTA INNER JOIN dbo.PRODUCTOS ON dbo.PROD_X_VTA.ID_PRODUCTO = dbo.PRODUCTOS.ID_PRODUCTO INNER JOIN dbo.VENTAS ON dbo.PROD_X_VTA.ID_VENTA = dbo.VENTAS.ID_VENTA WHERE VENTAS.ID_CLIENTE<>0", miConexion)
         Dim DetalleCmdBuilder As New SqlCommandBuilder(Detalle)
@@ -155,10 +153,10 @@ Public Class FRM_VENTAS_BUSCAR_M_B
 
         Me.DGV_VENTA_DETALLE.DataSource = ConjuntoDeDatos
 
-
         ConjuntoDeDatos.Relations.Add("VENTA_PROD_X_VTA", ConjuntoDeDatos.Tables("VENTAS").Columns("ID_VENTA"),
                                                   ConjuntoDeDatos.Tables("PROD_X_VTA").Columns("ID_VENTA"))
         Me.DGV_VENTA_DETALLE.DataMember = "VENTAS.VENTA_PROD_X_VTA"
-    End Sub
 
+
+    End Sub
 End Class

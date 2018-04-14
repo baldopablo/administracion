@@ -5,6 +5,19 @@
 
     Private Sub FRM_PRODUCTOS_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         TB_PROD_CODIGO.Focus()
+        If Me.Text = "CARGAR PRODUCTO" Then
+            BTN_PROD_ACTUALIZAR.Visible = False
+            BTN_PROD_CONFIRMAR_PRODUCTO.Visible = False
+            Label11.Visible = False
+            TB_PROD_CANTIDAD.Visible = False
+        ElseIf Me.Text = "ACTUALIZAR PRODUCTO" Then
+            BTN_PROD_ACTUALIZAR.Visible = True
+            BTN_PROD_CONFIRMAR_PRODUCTO.Visible = False
+        ElseIf Me.Text = "CONFIRMAR PRODUCTO" Then
+            BTN_PROD_ACTUALIZAR.Visible = False
+            BTN_PROD_CONFIRMAR_PRODUCTO.Visible = True
+            BTN_PROD_GUARDAR.Visible = False
+        End If
 
         'CARGA COMBO DEPOSITO
         Dim COMBODEPOSITO = (From DEP In datacontext.DEPOSITOS Select DEP.ID_DEPOSITO, DEP.DEPO_NOMBRE)
@@ -23,10 +36,6 @@
         CB_PROD_TIPO_PROD.DataSource = COMBOTIPO_PRODUCTO
         CB_PROD_TIPO_PROD.DisplayMember = "PROD_TIPO_DESC"
         CB_PROD_TIPO_PROD.ValueMember = "ID_PROD_TIPO"
-    End Sub
-
-    Private Sub BTN_PROD_SALIR_Click(sender As System.Object, e As System.EventArgs)
-        Me.Close()
     End Sub
 
     Private Sub BTN_PROD_CONFIRMAR_PRODUCTO_Click(sender As System.Object, e As System.EventArgs) Handles BTN_PROD_CONFIRMAR_PRODUCTO.Click
@@ -180,6 +189,7 @@
             MsgBox("Los datos se han modificado correctamente")
 
             FRM_PRODUCTOS_BUSCAR_B_M.CargarGrillaProducto()
+
             Me.Close()
 
         Catch ex As Exception
@@ -187,5 +197,43 @@
         End Try
     End Sub
 
+    Private Sub TB_PROD_CANTIDAD_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles TB_PROD_CANTIDAD.KeyPress
+
+        'INGRESO DE SOLO NUMEROS
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    'CONTROLAR
+    Public Sub DisminuirStock()
+        Dim stock As Integer = Val(TB_PROD_STOCK.Text)
+        Dim cantidad As Integer = Val(TB_PROD_CANTIDAD.Text)
+        Dim NuevoStock As Integer
+
+        NuevoStock = Val(TB_PROD_STOCK.Text) - Val(TB_PROD_CANTIDAD.Text)
+        TB_PROD_STOCK.Text = NuevoStock
+    End Sub
+
+    'CONTROLAR
+    Public Sub AumentarStock()
+        Dim stock As Integer = Val(TB_PROD_STOCK.Text)
+        Dim cantidad As Integer = Val(TB_PROD_CANTIDAD.Text)
+        Dim NuevoStock As Integer
+
+        NuevoStock = Val(TB_PROD_STOCK.Text) + Val(TB_PROD_CANTIDAD.Text)
+        TB_PROD_STOCK.Text = NuevoStock
+    End Sub
+
+    Private Sub BTN_PROD_SALIR_Click_1(sender As System.Object, e As System.EventArgs) Handles BTN_PROD_SALIR.Click
+        Me.Close()
+        Me.Dispose()
+    End Sub
 End Class
 

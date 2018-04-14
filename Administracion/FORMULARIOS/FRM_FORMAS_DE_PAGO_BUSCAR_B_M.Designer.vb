@@ -22,36 +22,36 @@ Partial Class FRM_FORMAS_DE_PAGO_BUSCAR_B_M
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.BTN_CLIE_BUS_ELIMINAR = New System.Windows.Forms.Button()
-        Me.BTN_CLIE_BUS_EDITAR = New System.Windows.Forms.Button()
+        Me.BTN_FORMA_PAGO_ELIMINAR = New System.Windows.Forms.Button()
+        Me.BTN_FORMA_PAGO_EDITAR = New System.Windows.Forms.Button()
         Me.DGV_FORMA_DE_PAGO_BUSCAR = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TB_FORMA_PAGO_BUSCAR_DESC = New System.Windows.Forms.TextBox()
-        Me.BTN_CLIE_BUS_SALIR = New System.Windows.Forms.Button()
+        Me.BTN_FORMA_PAGO_SALIR = New System.Windows.Forms.Button()
         CType(Me.DGV_FORMA_DE_PAGO_BUSCAR, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'BTN_CLIE_BUS_ELIMINAR
+        'BTN_FORMA_PAGO_ELIMINAR
         '
-        Me.BTN_CLIE_BUS_ELIMINAR.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_CLIE_BUS_ELIMINAR.Location = New System.Drawing.Point(124, 301)
-        Me.BTN_CLIE_BUS_ELIMINAR.Name = "BTN_CLIE_BUS_ELIMINAR"
-        Me.BTN_CLIE_BUS_ELIMINAR.Size = New System.Drawing.Size(85, 27)
-        Me.BTN_CLIE_BUS_ELIMINAR.TabIndex = 8
-        Me.BTN_CLIE_BUS_ELIMINAR.Text = "Eliminar"
-        Me.BTN_CLIE_BUS_ELIMINAR.UseVisualStyleBackColor = True
+        Me.BTN_FORMA_PAGO_ELIMINAR.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_FORMA_PAGO_ELIMINAR.Location = New System.Drawing.Point(124, 301)
+        Me.BTN_FORMA_PAGO_ELIMINAR.Name = "BTN_FORMA_PAGO_ELIMINAR"
+        Me.BTN_FORMA_PAGO_ELIMINAR.Size = New System.Drawing.Size(85, 27)
+        Me.BTN_FORMA_PAGO_ELIMINAR.TabIndex = 8
+        Me.BTN_FORMA_PAGO_ELIMINAR.Text = "Eliminar"
+        Me.BTN_FORMA_PAGO_ELIMINAR.UseVisualStyleBackColor = True
         '
-        'BTN_CLIE_BUS_EDITAR
+        'BTN_FORMA_PAGO_EDITAR
         '
-        Me.BTN_CLIE_BUS_EDITAR.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_CLIE_BUS_EDITAR.Location = New System.Drawing.Point(33, 301)
-        Me.BTN_CLIE_BUS_EDITAR.Name = "BTN_CLIE_BUS_EDITAR"
-        Me.BTN_CLIE_BUS_EDITAR.Size = New System.Drawing.Size(85, 27)
-        Me.BTN_CLIE_BUS_EDITAR.TabIndex = 7
-        Me.BTN_CLIE_BUS_EDITAR.Text = "Modificar"
-        Me.BTN_CLIE_BUS_EDITAR.UseVisualStyleBackColor = True
+        Me.BTN_FORMA_PAGO_EDITAR.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_FORMA_PAGO_EDITAR.Location = New System.Drawing.Point(33, 301)
+        Me.BTN_FORMA_PAGO_EDITAR.Name = "BTN_FORMA_PAGO_EDITAR"
+        Me.BTN_FORMA_PAGO_EDITAR.Size = New System.Drawing.Size(85, 27)
+        Me.BTN_FORMA_PAGO_EDITAR.TabIndex = 7
+        Me.BTN_FORMA_PAGO_EDITAR.Text = "Modificar"
+        Me.BTN_FORMA_PAGO_EDITAR.UseVisualStyleBackColor = True
         '
         'DGV_FORMA_DE_PAGO_BUSCAR
         '
@@ -92,26 +92,26 @@ Partial Class FRM_FORMAS_DE_PAGO_BUSCAR_B_M
         Me.TB_FORMA_PAGO_BUSCAR_DESC.Size = New System.Drawing.Size(174, 26)
         Me.TB_FORMA_PAGO_BUSCAR_DESC.TabIndex = 2
         '
-        'BTN_CLIE_BUS_SALIR
+        'BTN_FORMA_PAGO_SALIR
         '
-        Me.BTN_CLIE_BUS_SALIR.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_CLIE_BUS_SALIR.Location = New System.Drawing.Point(216, 301)
-        Me.BTN_CLIE_BUS_SALIR.Name = "BTN_CLIE_BUS_SALIR"
-        Me.BTN_CLIE_BUS_SALIR.Size = New System.Drawing.Size(85, 27)
-        Me.BTN_CLIE_BUS_SALIR.TabIndex = 5
-        Me.BTN_CLIE_BUS_SALIR.Text = "Salir"
-        Me.BTN_CLIE_BUS_SALIR.UseVisualStyleBackColor = True
+        Me.BTN_FORMA_PAGO_SALIR.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_FORMA_PAGO_SALIR.Location = New System.Drawing.Point(216, 301)
+        Me.BTN_FORMA_PAGO_SALIR.Name = "BTN_FORMA_PAGO_SALIR"
+        Me.BTN_FORMA_PAGO_SALIR.Size = New System.Drawing.Size(85, 27)
+        Me.BTN_FORMA_PAGO_SALIR.TabIndex = 5
+        Me.BTN_FORMA_PAGO_SALIR.Text = "Salir"
+        Me.BTN_FORMA_PAGO_SALIR.UseVisualStyleBackColor = True
         '
         'FRM_FORMAS_DE_PAGO_BUSCAR_B_M
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(327, 352)
-        Me.Controls.Add(Me.BTN_CLIE_BUS_ELIMINAR)
-        Me.Controls.Add(Me.BTN_CLIE_BUS_EDITAR)
+        Me.Controls.Add(Me.BTN_FORMA_PAGO_ELIMINAR)
+        Me.Controls.Add(Me.BTN_FORMA_PAGO_EDITAR)
         Me.Controls.Add(Me.DGV_FORMA_DE_PAGO_BUSCAR)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.BTN_CLIE_BUS_SALIR)
+        Me.Controls.Add(Me.BTN_FORMA_PAGO_SALIR)
         Me.Name = "FRM_FORMAS_DE_PAGO_BUSCAR_B_M"
         Me.Text = "MODIFICAR Y ELIMINAR FORMAS DE PAGO"
         CType(Me.DGV_FORMA_DE_PAGO_BUSCAR, System.ComponentModel.ISupportInitialize).EndInit()
@@ -120,11 +120,11 @@ Partial Class FRM_FORMAS_DE_PAGO_BUSCAR_B_M
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents BTN_CLIE_BUS_ELIMINAR As System.Windows.Forms.Button
-    Friend WithEvents BTN_CLIE_BUS_EDITAR As System.Windows.Forms.Button
+    Friend WithEvents BTN_FORMA_PAGO_ELIMINAR As System.Windows.Forms.Button
+    Friend WithEvents BTN_FORMA_PAGO_EDITAR As System.Windows.Forms.Button
     Friend WithEvents DGV_FORMA_DE_PAGO_BUSCAR As System.Windows.Forms.DataGridView
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents TB_FORMA_PAGO_BUSCAR_DESC As System.Windows.Forms.TextBox
-    Friend WithEvents BTN_CLIE_BUS_SALIR As System.Windows.Forms.Button
+    Friend WithEvents BTN_FORMA_PAGO_SALIR As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class

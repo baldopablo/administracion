@@ -2,10 +2,17 @@
     Dim datacontext As New DC_AdminDataContext
 
     Private Sub FRM_TIPOS_PRODUCTOS_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-        TB_PROD_TIPO_CODIGO.Focus()
+        If Me.Text = "CARGAR TIPO DE PRODUCTO" Then
+            BTN_PROD_TIPO_ACTUALIZAR.Visible = False
+            TB_PROD_TIPO_CODIGO.Focus()
+        ElseIf Me.Text = "ACTUALIZAR TIPO DE PRODUCTO" Then
+            BTN_PROD_TIPO_ACTUALIZAR.Visible = True
+        End If
+
+
     End Sub
 
-    Private Sub BTN_PROD_TIPO_GUARDAR_Click(sender As System.Object, e As System.EventArgs) Handles BTN_PROD_TIPO_GUARDAR.Click
+    Private Sub BTN_PROD_TIPO_GUARDAR_Click(sender As System.Object, e As System.EventArgs)
         Dim BUSCARCODIGO = (From PRODTIPO In datacontext.PRODUCTOS_TIPOS Select PRODTIPO.PROD_TIPO_CODIGO Where PROD_TIPO_CODIGO = TB_PROD_TIPO_CODIGO.Text).Any
         If BUSCARCODIGO = True Then
             MsgBox("El Código del producto ya fue ingresado")
@@ -34,7 +41,7 @@
         End Try
     End Sub
 
-    Private Sub BTN_PROD_TIPO_ACTUALIZAR_Click(sender As System.Object, e As System.EventArgs) Handles BTN_PROD_TIPO_ACTUALIZAR.Click
+    Private Sub BTN_PROD_TIPO_ACTUALIZAR_Click(sender As System.Object, e As System.EventArgs)
 
         If TB_PROD_TIPO_CODIGO.Text.Length = 0 Or TB_PROD_TIPO_DESCRIPCION.Text.Length = 0 Then
             MsgBox("Debe completar todos los campos requeridos")
@@ -56,7 +63,7 @@
         End Try
     End Sub
 
-    Private Sub BTN_PROD_TIPO_SALIR_Click(sender As System.Object, e As System.EventArgs) Handles BTN_PROD_TIPO_SALIR.Click
+    Private Sub BTN_PROD_TIPO_SALIR_Click(sender As System.Object, e As System.EventArgs)
         Me.Close()
         Me.Dispose()
     End Sub

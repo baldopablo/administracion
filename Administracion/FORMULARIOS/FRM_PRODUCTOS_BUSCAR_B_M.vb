@@ -14,14 +14,25 @@
             FRM_PRODUCTOS.CB_PROD_DEPOSITO.SelectedValue = DGV_PROD_BUSCAR.Item("ID_DEPOSITO", DGV_PROD_BUSCAR.SelectedRows(0).Index).Value
             FRM_PRODUCTOS.CB_PROD_TIPO_PROD.SelectedValue = DGV_PROD_BUSCAR.Item("ID_PROD_TIPO", DGV_PROD_BUSCAR.SelectedRows(0).Index).Value
         End If
+
+        FRM_PRODUCTOS.Text = "ACTUALIZAR PRODUCTO"
         FRM_PRODUCTOS.BTN_PROD_GUARDAR.Visible = False
         FRM_PRODUCTOS.BTN_PROD_ACTUALIZAR.Visible = True
+        FRM_PRODUCTOS.BTN_PROD_CONFIRMAR_PRODUCTO.Visible = False
+        FRM_PRODUCTOS.Label11.Visible = False
+        FRM_PRODUCTOS.TB_PROD_CANTIDAD.Visible = False
         FRM_PRODUCTOS.Show()
     End Sub
 
     Private Sub FRM_PRODUCTOS_BUSCAR_B_M_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-        ArmarGrillaProducto()
         CargarGrillaProducto()
+        ArmarGrillaProducto()
+
+        If Me.Text = "BUSCAR PRODUCTO" Then
+            BTN_PROD_BUS_AGREGAR_A_VENTA.Visible = True
+        ElseIf Me.Text = "MODIFICAR Y ELIMINAR PRODUCTOS" Then
+            BTN_PROD_BUS_AGREGAR_A_VENTA.Visible = False
+        End If
     End Sub
 
     Private Sub ArmarGrillaProducto()
@@ -107,8 +118,7 @@
     End Sub
 
     'BOTON AGREGAR A LA VENTA
-    Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
-      
+    Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles BTN_PROD_BUS_AGREGAR_A_VENTA.Click
         If DGV_PROD_BUSCAR.SelectedRows.Count > 0 Then
             FRM_PRODUCTOS.Text = "SELECCIONAR DETALLES DE COMPRA"
             FRM_PRODUCTOS.TB_PROD_ID.Text = DGV_PROD_BUSCAR.Item("ID_PRODUCTO", DGV_PROD_BUSCAR.SelectedRows(0).Index).Value
@@ -121,12 +131,10 @@
             FRM_PRODUCTOS.CB_PROD_DEPOSITO.SelectedValue = DGV_PROD_BUSCAR.Item("ID_DEPOSITO", DGV_PROD_BUSCAR.SelectedRows(0).Index).Value
             FRM_PRODUCTOS.CB_PROD_TIPO_PROD.SelectedValue = DGV_PROD_BUSCAR.Item("ID_PROD_TIPO", DGV_PROD_BUSCAR.SelectedRows(0).Index).Value
         End If
-        FRM_PRODUCTOS.BTN_PROD_GUARDAR.Enabled = False
-        FRM_PRODUCTOS.BTN_PROD_ACTUALIZAR.Enabled = True
-
         TextAgregarVenta()
         FRM_PRODUCTOS.Show()
     End Sub
+
     Private Sub TextAgregarVenta()
         FRM_PRODUCTOS.TB_PROD_CODIGO.Enabled = False
         FRM_PRODUCTOS.TB_PROD_DESCRIPCION.Enabled = False
@@ -137,17 +145,8 @@
         FRM_PRODUCTOS.CB_PROD_TIPO_PROD.Enabled = False
         FRM_PRODUCTOS.TB_PROD_PRECIO_VENTA.Enabled = False
         FRM_PRODUCTOS.TB_PROD_CANTIDAD.Enabled = True
+        FRM_PRODUCTOS.BTN_PROD_GUARDAR.Visible = False
+        FRM_PRODUCTOS.BTN_PROD_ACTUALIZAR.Visible = False
+        FRM_PRODUCTOS.BTN_PROD_CONFIRMAR_PRODUCTO.Visible = True
     End Sub
-
-    'CALCULO DEL SUBTOTAL 
-    Private Sub CalcularSubtotal()
-        Dim total As Double = 0
-        Dim iTotal As Integer = FRM_VENTAS.DGV_VENTAS_BUSCAR.Rows.Count
-        Dim i As Integer
-        For i = 0 To iTotal - 1
-            total = total + Double.Parse(FRM_VENTAS.DGV_VENTAS_BUSCAR("PROD_PRECIO_VTA", i).Value)
-        Next
-        FRM_VENTAS.TB_SUBTOTAL_VENTA.Text = Format(total, "$ #,##0.00")
-    End Sub
-
 End Class

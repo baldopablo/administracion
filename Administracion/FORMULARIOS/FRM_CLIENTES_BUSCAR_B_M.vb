@@ -17,8 +17,17 @@
     End Sub
 
     Private Sub FMR_CLIENTES_BUSCAR_B_M_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        armargrilla()
         cargargrilla()
+        armargrilla()
+        If Me.Text = "MODIFICAR Y ELIMINAR CLIENTES" Then
+        ElseIf Me.Text = "SELECCIONAR CLIENTE" Then
+            BTN_CLIE_BUS_EDITAR.Visible = False
+            BTN_CLIE_BUS_ELIMINAR.Visible = False
+            BTN_CLIE_BUS_IMPRIMIR.Visible = False
+            '    DGV_CLIE_BUSCAR.ClearSelection()
+        End If
+
+
 
     End Sub
 

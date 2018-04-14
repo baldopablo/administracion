@@ -2,8 +2,12 @@
     Dim datacontext As New DC_AdminDataContext
 
     Private Sub FRM_VENTAS_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+        TB_CLIENTE_APELLIDO.Enabled = False
+        TB_CLIENTE_NOMBRE.Enabled = False
+        TB_CLIENTE_DNI.Enabled = False
+        TB_CLIENTE_DIRECCION.Enabled = False
+        TB_CLIENTE_TELEFONO.Enabled = False
         armargrilla()
-
         'CARGA COMBO DEPOSITO
         Dim COMBOFORMAPAGO = (From FDP In datacontext.FORMAS_DE_PAGO Select FDP.ID_FORM_DE_PAGO, FDP.FDP_DESCRIPCION)
         CB_VENTA_FORMAPAGO.DataSource = COMBOFORMAPAGO
@@ -11,7 +15,12 @@
         CB_VENTA_FORMAPAGO.ValueMember = "ID_FORM_DE_PAGO"
     End Sub
 
-    Private Sub BTN_VENT_AGREGAR_PROD_Click(sender As System.Object, e As System.EventArgs) Handles BTN_VENT_AGREGAR_PROD.Click
+    Private Sub BTN_VENT_AGREGAR_PROD_Click(sender As System.Object, e As System.EventArgs)
+        FRM_PRODUCTOS_BUSCAR_B_M.Text = "BUSCAR PRODUCTO"
+        FRM_PRODUCTOS_BUSCAR_B_M.BTN_PROD_BUS_AGREGAR_A_VENTA.Visible = True
+        FRM_PRODUCTOS_BUSCAR_B_M.BTN_PROD_BUS_EDITAR.Visible = False
+        FRM_PRODUCTOS_BUSCAR_B_M.BTN_PROD_BUS_ELIMINAR.Visible = False
+        FRM_PRODUCTOS_BUSCAR_B_M.DGV_PROD_BUSCAR.ClearSelection()
         FRM_PRODUCTOS_BUSCAR_B_M.ShowDialog()
     End Sub
 
@@ -55,10 +64,32 @@
     End Sub
 
     Private Sub Button1_Click_1(sender As System.Object, e As System.EventArgs) Handles BTN_VENT_CARGAR_CLIENTE.Click
+        FRM_CLIENTES_BUSCAR_B_M.Text = "SELECCIONAR CLIENTE"
         FRM_CLIENTES_BUSCAR_B_M.Show()
     End Sub
 
-    Private Sub BTN_PROD_GUARDAR_Click(sender As System.Object, e As System.EventArgs) Handles BTN_VENTA_GUARDAR.Click
+    Private Sub BTN_VENTA_SALIR_Click(sender As System.Object, e As System.EventArgs)
+        Me.Close()
+    End Sub
+
+    Private Sub TB_VENTA_DESCUENTO_TextChanged(sender As System.Object, e As System.EventArgs) Handles TB_VENTA_DESCUENTO.TextChanged
+
+        'CALCULO DEL TOTAL DE LA VENTA
+        If TB_VENTA_DESCUENTO.Text = "" Then
+            TB_VENTA_TOTAL.Text = TB_SUBTOTAL_VENTA.Text
+        Else
+            Dim vsubtotal As Double = TB_SUBTOTAL_VENTA.Text
+            Dim vdescuento As Double = TB_VENTA_DESCUENTO.Text
+            Dim vporcentaje As Double
+            Dim vtotal As Double
+
+            vporcentaje = vsubtotal * vdescuento / 100
+            vtotal = vsubtotal - vporcentaje
+            TB_VENTA_TOTAL.Text = vtotal
+        End If
+    End Sub
+
+    Private Sub BTN_VENTA_GUARDAR_Click(sender As System.Object, e As System.EventArgs) Handles BTN_VENTA_GUARDAR.Click
 
         'VALIDA CARGA DE PRODUCTOS PARA LA VENTA
         If DGV_VENTAS_BUSCAR.Rows.Count = 0 Then
@@ -76,6 +107,7 @@
             Dim VEN = New VENTAS
 
             'GUARDA EN LA TABLA VENTAS
+            VEN.ID_CLIENTE = TB_CLIENTE_ID.Text
             VEN.VENT_FECHA = DTP_FECHA_VENTA.Text
             VEN.VENT_SUBTOTAL = TB_SUBTOTAL_VENTA.Text
             VEN.VENT_TOTAL = TB_VENTA_TOTAL.Text
@@ -84,6 +116,7 @@
 
             datacontext.VENTAS.InsertOnSubmit(VEN)
             datacontext.SubmitChanges()
+            FRM_PRODUCTOS.DisminuirStock()
 
             'GUARDA EN LA TABLA PROD_X_VTA
             For Each rows As DataGridViewRow In Me.DGV_VENTAS_BUSCAR.Rows
@@ -104,71 +137,4 @@
             Exit Sub
         End Try
     End Sub
-
-    Private Sub BTN_VENTA_ACTUALIZAR_Click(sender As System.Object, e As System.EventArgs) Handles BTN_VENTA_ACTUALIZAR.Click
-
-        If TB_SUBTOTAL_VENTA.Text.Length = 0 Or TB_VENTA_TOTAL.Text.Length = 0 Then
-            MsgBox("Debe completar todos los campos requeridos")
-            Exit Sub
-        End If
-        Try
-            Dim VEN = New VENTAS
-            Dim ActualizarVenta = (From P In datacontext.VENTAS Where P.ID_VENTA = (TB_VENTA_ID.Text)).ToList()(0)
-
-            'ACTUALIZA LA TABLA VENTAS
-            ActualizarVenta.VENT_FECHA = DTP_FECHA_VENTA.Text
-            ActualizarVenta.VENT_SUBTOTAL = TB_SUBTOTAL_VENTA.Text
-            ActualizarVenta.VENT_TOTAL = TB_VENTA_TOTAL.Text
-            ActualizarVenta.VENT_CANTIDAD = LBL_VENTA_CANT_PROD.Text
-            ActualizarVenta.ID_FORM_DE_PAGO = CB_VENTA_FORMAPAGO.Text
-            datacontext.SubmitChanges()
-
-
-            'ACTUALIZA LA TABLA PROD_X_VENTA
-            For Each rows As DataGridViewRow In Me.DGV_VENTAS_BUSCAR.Rows
-                Dim PROD_X_VTA = New PROD_X_VTA
-
-                PROD_X_VTA.ID_PRODUCTO = rows.Cells(0).Value
-                PROD_X_VTA.PXV_CANTIDAD = rows.Cells(1).Value
-                PROD_X_VTA.PXV_PRECIO_X_PRODUCTO = rows.Cells(3).Value
-                TB_VENTA_ID.Text = VEN.ID_VENTA
-                PROD_X_VTA.ID_VENTA = TB_VENTA_ID.Text
-                TB_PROD_X_VTA_ID.Text = PROD_X_VTA.ID_PROD_X_VTA
-
-                datacontext.SubmitChanges()
-            Next
-            MsgBox("Los datos se han modificado correctamente")
-            FRM_VENTAS_BUSCAR_M_B.cargargrilla()
-            Me.Close()
-
-        Catch ex As Exception
-            MsgBox("Los datos no se han modificado! intente nuevamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Modificar venta")
-        End Try
-    End Sub
-
-    Public Sub DisminuirStock()
-
-    End Sub
-
-    Private Sub BTN_VENTA_SALIR_Click(sender As System.Object, e As System.EventArgs) Handles BTN_VENTA_SALIR.Click
-        Me.Close()
-    End Sub
-
-    Private Sub TB_VENTA_DESCUENTO_LostFocus(sender As Object, e As System.EventArgs) Handles TB_VENTA_DESCUENTO.LostFocus
-
-        'CALCULO DEL TOTAL DE LA VENTA
-        If TB_VENTA_DESCUENTO.Text = "" Then
-            TB_VENTA_TOTAL.Text = TB_SUBTOTAL_VENTA.Text
-        Else
-            Dim vsubtotal As Double = TB_SUBTOTAL_VENTA.Text
-            Dim vdescuento As Double = TB_VENTA_DESCUENTO.Text
-            Dim vporcentaje As Double
-            Dim vtotal As Double
-
-            vporcentaje = vsubtotal * vdescuento / 100
-            vtotal = vsubtotal - vporcentaje
-            TB_VENTA_TOTAL.Text = vtotal
-        End If
-    End Sub
-
 End Class

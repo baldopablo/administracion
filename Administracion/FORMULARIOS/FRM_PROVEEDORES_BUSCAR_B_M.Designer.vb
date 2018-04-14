@@ -38,7 +38,7 @@ Partial Class FRM_PROVEEDORES_BUSCAR_B_M
         'BTN_PROV_BUS_ELIMINAR
         '
         Me.BTN_PROV_BUS_ELIMINAR.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_PROV_BUS_ELIMINAR.Location = New System.Drawing.Point(73, 371)
+        Me.BTN_PROV_BUS_ELIMINAR.Location = New System.Drawing.Point(118, 371)
         Me.BTN_PROV_BUS_ELIMINAR.Name = "BTN_PROV_BUS_ELIMINAR"
         Me.BTN_PROV_BUS_ELIMINAR.Size = New System.Drawing.Size(85, 27)
         Me.BTN_PROV_BUS_ELIMINAR.TabIndex = 13

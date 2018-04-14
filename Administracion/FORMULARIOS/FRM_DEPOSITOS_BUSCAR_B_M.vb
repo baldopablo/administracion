@@ -1,6 +1,7 @@
 ﻿Public Class FRM_DEPOSITOS_BUSCAR_B_M
 
     Dim datacontext As New DC_AdminDataContext
+    Shared Property Tipo As TipoFormulario
 
     Private Sub TB_PROV_BUSCAR_NOMBRE_TextChanged(sender As System.Object, e As System.EventArgs) Handles TB_DEPO_BUSCAR_NOMBRE.TextChanged
         Dim buscar As String
@@ -36,6 +37,8 @@
 
     Private Sub BTN_PROV_BUS_EDITAR_Click(sender As System.Object, e As System.EventArgs) Handles BTN_DEPO_BUS_EDITAR.Click
 
+        FRM_DEPOSITOS.Tipo = TipoFormulario.ModificarDeposito
+
         FRM_DEPOSITOS.Text = "ACTUALIZAR DEPÓSITO"
         If DGV_DEPO_BUSCAR.SelectedRows.Count > 0 Then
             FRM_DEPOSITOS.TB_DEPO_ID.Text = DGV_DEPO_BUSCAR.Item("ID_DEPOSITO", DGV_DEPO_BUSCAR.SelectedRows(0).Index).Value
@@ -44,9 +47,8 @@
             FRM_DEPOSITOS.TB_DEPO_LOCALIDAD.Text = DGV_DEPO_BUSCAR.Item("DEPO_LOCALIDAD", DGV_DEPO_BUSCAR.SelectedRows(0).Index).Value
             FRM_DEPOSITOS.TB_DEPO_CODIGO.Text = DGV_DEPO_BUSCAR.Item("DEPO_CODIGO", DGV_DEPO_BUSCAR.SelectedRows(0).Index).Value
         End If
-        FRM_DEPOSITOS.BTN_DEPO_GUARDAR.Enabled = False
-        FRM_DEPOSITOS.BTN_DEPO_ACTUALIZAR.Enabled = True
-
+        FRM_DEPOSITOS.BTN_DEPO_GUARDAR.Visible = False
+        FRM_DEPOSITOS.BTN_DEPO_ACTUALIZAR.Visible = True
         FRM_DEPOSITOS.Show()
     End Sub
 
@@ -68,9 +70,25 @@
     End Sub
 
     Private Sub FRM_DEPOSITOS_BUSCAR_B_M_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-        ArmarGrillaDeposito()
+        ' PrepararFormulario()
         CargarGrillaDeposito()
+        ArmarGrillaDeposito()
     End Sub
+
+    'Private Sub PrepararFormulario()
+    '    Select Case Tipo
+    '        Case TipoFormulario.ModificarDeposito
+    '            BTN_DEPO_BUS_EDITAR.Visible = True
+    '            BTN_DEPO_BUS_ELIMINAR.Visible = True
+    '            BTN_DEPO_BUS_SALIR.Visible = True
+
+    '        Case TipoFormulario.EliminarDeposito
+
+    '            BTN_DEPO_BUS_EDITAR.Visible = True
+    '            BTN_DEPO_BUS_ELIMINAR.Visible = True
+    '            BTN_DEPO_BUS_SALIR.Visible = True
+    '    End Select
+    'End Sub
 
     Private Sub ArmarGrillaDeposito()
         DGV_DEPO_BUSCAR.Enabled = True

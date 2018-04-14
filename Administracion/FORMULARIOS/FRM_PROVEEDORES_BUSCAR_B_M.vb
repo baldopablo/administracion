@@ -1,10 +1,27 @@
 ﻿Public Class FRM_PROVEEDORES_BUSCAR_B_M
+
     Dim datacontext As New DC_AdminDataContext
+    Shared Property Tipo As TipoFormulario
 
     Private Sub FRM_PROVEEDORES_BUSCAR_B_M_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-        ArmarGrillaProveedor()
         CargarGrillaProveedor()
+        ArmarGrillaProveedor()
     End Sub
+
+    'Private Sub PrepararFormulario()
+    '    Select Case Tipo
+    '        Case TipoFormulario.ModificarProveedor
+    '            BTN_PROV_BUS_EDITAR.Visible = True
+    '            BTN_PROV_BUS_ELIMINAR.Visible = True
+    '            BTN_PROV_BUS_SALIR.Visible = True
+
+    '        Case TipoFormulario.EliminarProveedor
+
+    '            BTN_PROV_BUS_EDITAR.Visible = True
+    '            BTN_PROV_BUS_ELIMINAR.Visible = True
+    '            BTN_PROV_BUS_SALIR.Visible = True
+    '    End Select
+    'End Sub
 
     Private Sub ArmarGrillaProveedor()
         DGV_PROV_BUSCAR.Enabled = True
@@ -70,7 +87,9 @@
     End Sub
 
     Private Sub BTN_PROV_BUS_EDITAR_Click(sender As System.Object, e As System.EventArgs) Handles BTN_PROV_BUS_EDITAR.Click
+
         If DGV_PROV_BUSCAR.SelectedRows.Count > 0 Then
+           
             FRM_PROVEEDORES.TB_PROV_ID.Text = DGV_PROV_BUSCAR.Item("ID_PROVEEDOR", DGV_PROV_BUSCAR.SelectedRows(0).Index).Value
             FRM_PROVEEDORES.TB_PROV_NOMBRE.Text = DGV_PROV_BUSCAR.Item("PROV_NOMBRE", DGV_PROV_BUSCAR.SelectedRows(0).Index).Value
             FRM_PROVEEDORES.TB_PROV_DIRECCION.Text = DGV_PROV_BUSCAR.Item("PROV_DIRECCION", DGV_PROV_BUSCAR.SelectedRows(0).Index).Value
@@ -82,8 +101,10 @@
             FRM_PROVEEDORES.TB_PROV_CODIGO.Text = DGV_PROV_BUSCAR.Item("PROV_CODIGO", DGV_PROV_BUSCAR.SelectedRows(0).Index).Value
 
         End If
+        FRM_PROVEEDORES.Text = "ACTUALIZAR PROVEEDORES"
         FRM_PROVEEDORES.BTN_PROV_GUARDAR.Visible = False
         FRM_PROVEEDORES.BTN_PROV_ACTUALIZAR.Visible = True
+
         FRM_PROVEEDORES.Show()
     End Sub
 
