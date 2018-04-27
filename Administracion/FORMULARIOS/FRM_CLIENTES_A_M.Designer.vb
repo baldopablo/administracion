@@ -312,9 +312,10 @@ Partial Class FRM_CLIENTES_A_M
         '
         'DTP_CLIE_FECHA_ALTA
         '
+        Me.DTP_CLIE_FECHA_ALTA.Font = New System.Drawing.Font("Comic Sans MS", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DTP_CLIE_FECHA_ALTA.Location = New System.Drawing.Point(14, 90)
         Me.DTP_CLIE_FECHA_ALTA.Name = "DTP_CLIE_FECHA_ALTA"
-        Me.DTP_CLIE_FECHA_ALTA.Size = New System.Drawing.Size(75, 26)
+        Me.DTP_CLIE_FECHA_ALTA.Size = New System.Drawing.Size(202, 24)
         Me.DTP_CLIE_FECHA_ALTA.TabIndex = 29
         '
         'CB_CLIE_TIPO
@@ -391,7 +392,7 @@ Partial Class FRM_CLIENTES_A_M
         Me.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "FRM_CLIENTES_A_M"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "CARGAR CLIENTES"
         Me.GB_CLIE_ABONADO.ResumeLayout(False)
         Me.GB_CLIE_ABONADO.PerformLayout()

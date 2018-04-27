@@ -133,7 +133,7 @@ Public Class FRM_VENTAS_BUSCAR_M_B
 
     Private Sub FRM_VENTAS_BUSCAR_M_B_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
 
- Dim miConexion As New SqlConnection("Data Source=VALE\VALEVALERIA;Initial Catalog=Administracion;Integrated Security=True")
+        Dim miConexion As New SqlConnection("Data Source=VALE\VALEVALERIA;Initial Catalog=Administracion;Integrated Security=True")
 
         ArmarGrillaMaestro()
         ArmarGrillaDetalle()
@@ -156,7 +156,5 @@ Public Class FRM_VENTAS_BUSCAR_M_B
         ConjuntoDeDatos.Relations.Add("VENTA_PROD_X_VTA", ConjuntoDeDatos.Tables("VENTAS").Columns("ID_VENTA"),
                                                   ConjuntoDeDatos.Tables("PROD_X_VTA").Columns("ID_VENTA"))
         Me.DGV_VENTA_DETALLE.DataMember = "VENTAS.VENTA_PROD_X_VTA"
-
-
     End Sub
 End Class

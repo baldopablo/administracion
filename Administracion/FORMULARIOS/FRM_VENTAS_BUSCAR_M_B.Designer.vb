@@ -39,7 +39,7 @@ Partial Class FRM_VENTAS_BUSCAR_M_B
         'BTN_VENTA_BUS_ELIMINAR
         '
         Me.BTN_VENTA_BUS_ELIMINAR.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_VENTA_BUS_ELIMINAR.Location = New System.Drawing.Point(381, 470)
+        Me.BTN_VENTA_BUS_ELIMINAR.Location = New System.Drawing.Point(358, 470)
         Me.BTN_VENTA_BUS_ELIMINAR.Name = "BTN_VENTA_BUS_ELIMINAR"
         Me.BTN_VENTA_BUS_ELIMINAR.Size = New System.Drawing.Size(85, 27)
         Me.BTN_VENTA_BUS_ELIMINAR.TabIndex = 13
@@ -50,7 +50,7 @@ Partial Class FRM_VENTAS_BUSCAR_M_B
         '
         Me.DGV_VENTA_BUSCAR.AllowUserToAddRows = False
         Me.DGV_VENTA_BUSCAR.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_VENTA_BUSCAR.Location = New System.Drawing.Point(35, 103)
+        Me.DGV_VENTA_BUSCAR.Location = New System.Drawing.Point(12, 108)
         Me.DGV_VENTA_BUSCAR.MultiSelect = False
         Me.DGV_VENTA_BUSCAR.Name = "DGV_VENTA_BUSCAR"
         Me.DGV_VENTA_BUSCAR.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -111,7 +111,7 @@ Partial Class FRM_VENTAS_BUSCAR_M_B
         'BTN_VENTA_BUS_SALIR
         '
         Me.BTN_VENTA_BUS_SALIR.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_VENTA_BUS_SALIR.Location = New System.Drawing.Point(472, 470)
+        Me.BTN_VENTA_BUS_SALIR.Location = New System.Drawing.Point(449, 470)
         Me.BTN_VENTA_BUS_SALIR.Name = "BTN_VENTA_BUS_SALIR"
         Me.BTN_VENTA_BUS_SALIR.Size = New System.Drawing.Size(85, 27)
         Me.BTN_VENTA_BUS_SALIR.TabIndex = 10
@@ -122,9 +122,10 @@ Partial Class FRM_VENTAS_BUSCAR_M_B
         '
         Me.DGV_VENTA_DETALLE.AllowUserToAddRows = False
         Me.DGV_VENTA_DETALLE.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_VENTA_DETALLE.Location = New System.Drawing.Point(35, 286)
+        Me.DGV_VENTA_DETALLE.Location = New System.Drawing.Point(12, 291)
         Me.DGV_VENTA_DETALLE.MultiSelect = False
         Me.DGV_VENTA_DETALLE.Name = "DGV_VENTA_DETALLE"
+        Me.DGV_VENTA_DETALLE.ReadOnly = True
         Me.DGV_VENTA_DETALLE.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGV_VENTA_DETALLE.Size = New System.Drawing.Size(441, 169)
         Me.DGV_VENTA_DETALLE.TabIndex = 14
@@ -133,13 +134,14 @@ Partial Class FRM_VENTAS_BUSCAR_M_B
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(593, 509)
+        Me.ClientSize = New System.Drawing.Size(546, 509)
         Me.Controls.Add(Me.DGV_VENTA_DETALLE)
         Me.Controls.Add(Me.BTN_VENTA_BUS_ELIMINAR)
         Me.Controls.Add(Me.DGV_VENTA_BUSCAR)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.BTN_VENTA_BUS_SALIR)
         Me.Name = "FRM_VENTAS_BUSCAR_M_B"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FRM_VENTAS_BUSCAR_M_B"
         CType(Me.DGV_VENTA_BUSCAR, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)

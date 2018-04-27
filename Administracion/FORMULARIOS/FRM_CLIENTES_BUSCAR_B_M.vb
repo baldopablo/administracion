@@ -144,4 +144,8 @@
         FRM_VENTAS.TB_CLIENTE_TELEFONO.Text = DGV_CLIE_BUSCAR.SelectedCells(6).Value
         Me.Close()
     End Sub
+
+    Private Sub BTN_CLIE_BUS_IMPRIMIR_Click(sender As System.Object, e As System.EventArgs) Handles BTN_CLIE_BUS_IMPRIMIR.Click
+        FRM_LISTADO_CLIENTES.Show()
+    End Sub
 End Class

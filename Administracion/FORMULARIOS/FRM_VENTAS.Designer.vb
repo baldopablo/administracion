@@ -32,6 +32,7 @@ Partial Class FRM_VENTAS
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.BTN_VENT_AGREGAR_PROD = New System.Windows.Forms.Button()
         Me.TB_PROD_X_VTA_ID = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.LBL_VENTA_CANT_PROD = New System.Windows.Forms.Label()
@@ -60,7 +61,6 @@ Partial Class FRM_VENTAS
         Me.BTN_VENTA_GUARDAR = New System.Windows.Forms.Button()
         Me.BTN_VENTA_SALIR = New System.Windows.Forms.Button()
         Me.DTP_FECHA_VENTA = New System.Windows.Forms.DateTimePicker()
-        Me.BTN_VENT_AGREGAR_PROD = New System.Windows.Forms.Button()
         CType(Me.DGV_VENTAS_BUSCAR, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -178,6 +178,16 @@ Partial Class FRM_VENTAS
         Me.GroupBox1.TabIndex = 45
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Detalle de Venta"
+        '
+        'BTN_VENT_AGREGAR_PROD
+        '
+        Me.BTN_VENT_AGREGAR_PROD.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_VENT_AGREGAR_PROD.Location = New System.Drawing.Point(323, 19)
+        Me.BTN_VENT_AGREGAR_PROD.Name = "BTN_VENT_AGREGAR_PROD"
+        Me.BTN_VENT_AGREGAR_PROD.Size = New System.Drawing.Size(140, 28)
+        Me.BTN_VENT_AGREGAR_PROD.TabIndex = 52
+        Me.BTN_VENT_AGREGAR_PROD.Text = "Agregar Producto"
+        Me.BTN_VENT_AGREGAR_PROD.UseVisualStyleBackColor = True
         '
         'TB_PROD_X_VTA_ID
         '
@@ -452,16 +462,6 @@ Partial Class FRM_VENTAS
         Me.DTP_FECHA_VENTA.Size = New System.Drawing.Size(130, 26)
         Me.DTP_FECHA_VENTA.TabIndex = 62
         '
-        'BTN_VENT_AGREGAR_PROD
-        '
-        Me.BTN_VENT_AGREGAR_PROD.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_VENT_AGREGAR_PROD.Location = New System.Drawing.Point(323, 19)
-        Me.BTN_VENT_AGREGAR_PROD.Name = "BTN_VENT_AGREGAR_PROD"
-        Me.BTN_VENT_AGREGAR_PROD.Size = New System.Drawing.Size(140, 28)
-        Me.BTN_VENT_AGREGAR_PROD.TabIndex = 52
-        Me.BTN_VENT_AGREGAR_PROD.Text = "Agregar Producto"
-        Me.BTN_VENT_AGREGAR_PROD.UseVisualStyleBackColor = True
-        '
         'FRM_VENTAS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -480,6 +480,7 @@ Partial Class FRM_VENTAS
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Name = "FRM_VENTAS"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "VENTAS"
         CType(Me.DGV_VENTAS_BUSCAR, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)

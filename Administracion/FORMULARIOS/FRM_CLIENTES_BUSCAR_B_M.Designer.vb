@@ -148,7 +148,7 @@ Partial Class FRM_CLIENTES_BUSCAR_B_M
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.BTN_CLIE_BUS_SALIR)
         Me.Name = "FRM_CLIENTES_BUSCAR_B_M"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MODIFICAR Y ELIMINAR CLIENTES"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

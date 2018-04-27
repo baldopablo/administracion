@@ -32,6 +32,7 @@ Partial Class FRM_PRODUCTOS_BUSCAR_B_M
         Me.RB_PROD_BUSCAR_NOMBRE = New System.Windows.Forms.RadioButton()
         Me.BTN_PROD_BUS_SALIR = New System.Windows.Forms.Button()
         Me.BTN_PROD_BUS_AGREGAR_A_VENTA = New System.Windows.Forms.Button()
+        Me.BTN_PROD_BUS_ACTUALIZAR_STOCK = New System.Windows.Forms.Button()
         CType(Me.DGV_PROD_BUSCAR, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -62,7 +63,7 @@ Partial Class FRM_PRODUCTOS_BUSCAR_B_M
         Me.DGV_PROD_BUSCAR.Location = New System.Drawing.Point(31, 94)
         Me.DGV_PROD_BUSCAR.Name = "DGV_PROD_BUSCAR"
         Me.DGV_PROD_BUSCAR.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGV_PROD_BUSCAR.Size = New System.Drawing.Size(739, 252)
+        Me.DGV_PROD_BUSCAR.Size = New System.Drawing.Size(619, 252)
         Me.DGV_PROD_BUSCAR.TabIndex = 6
         '
         'GroupBox1
@@ -118,7 +119,7 @@ Partial Class FRM_PRODUCTOS_BUSCAR_B_M
         'BTN_PROD_BUS_SALIR
         '
         Me.BTN_PROD_BUS_SALIR.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_PROD_BUS_SALIR.Location = New System.Drawing.Point(685, 356)
+        Me.BTN_PROD_BUS_SALIR.Location = New System.Drawing.Point(565, 356)
         Me.BTN_PROD_BUS_SALIR.Name = "BTN_PROD_BUS_SALIR"
         Me.BTN_PROD_BUS_SALIR.Size = New System.Drawing.Size(85, 27)
         Me.BTN_PROD_BUS_SALIR.TabIndex = 5
@@ -128,18 +129,29 @@ Partial Class FRM_PRODUCTOS_BUSCAR_B_M
         'BTN_PROD_BUS_AGREGAR_A_VENTA
         '
         Me.BTN_PROD_BUS_AGREGAR_A_VENTA.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_PROD_BUS_AGREGAR_A_VENTA.Location = New System.Drawing.Point(519, 356)
+        Me.BTN_PROD_BUS_AGREGAR_A_VENTA.Location = New System.Drawing.Point(399, 356)
         Me.BTN_PROD_BUS_AGREGAR_A_VENTA.Name = "BTN_PROD_BUS_AGREGAR_A_VENTA"
         Me.BTN_PROD_BUS_AGREGAR_A_VENTA.Size = New System.Drawing.Size(160, 27)
         Me.BTN_PROD_BUS_AGREGAR_A_VENTA.TabIndex = 9
         Me.BTN_PROD_BUS_AGREGAR_A_VENTA.Text = "Agregar a la Venta"
         Me.BTN_PROD_BUS_AGREGAR_A_VENTA.UseVisualStyleBackColor = True
         '
+        'BTN_PROD_BUS_ACTUALIZAR_STOCK
+        '
+        Me.BTN_PROD_BUS_ACTUALIZAR_STOCK.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_PROD_BUS_ACTUALIZAR_STOCK.Location = New System.Drawing.Point(439, 356)
+        Me.BTN_PROD_BUS_ACTUALIZAR_STOCK.Name = "BTN_PROD_BUS_ACTUALIZAR_STOCK"
+        Me.BTN_PROD_BUS_ACTUALIZAR_STOCK.Size = New System.Drawing.Size(120, 27)
+        Me.BTN_PROD_BUS_ACTUALIZAR_STOCK.TabIndex = 10
+        Me.BTN_PROD_BUS_ACTUALIZAR_STOCK.Text = "Actualizar Stock"
+        Me.BTN_PROD_BUS_ACTUALIZAR_STOCK.UseVisualStyleBackColor = True
+        '
         'FRM_PRODUCTOS_BUSCAR_B_M
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(798, 399)
+        Me.ClientSize = New System.Drawing.Size(683, 399)
+        Me.Controls.Add(Me.BTN_PROD_BUS_ACTUALIZAR_STOCK)
         Me.Controls.Add(Me.BTN_PROD_BUS_AGREGAR_A_VENTA)
         Me.Controls.Add(Me.BTN_PROD_BUS_ELIMINAR)
         Me.Controls.Add(Me.BTN_PROD_BUS_EDITAR)
@@ -147,6 +159,7 @@ Partial Class FRM_PRODUCTOS_BUSCAR_B_M
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.BTN_PROD_BUS_SALIR)
         Me.Name = "FRM_PRODUCTOS_BUSCAR_B_M"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MODIFICAR Y ELIMINAR PRODUCTOS"
         CType(Me.DGV_PROD_BUSCAR, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
@@ -164,4 +177,5 @@ Partial Class FRM_PRODUCTOS_BUSCAR_B_M
     Friend WithEvents RB_PROD_BUSCAR_NOMBRE As System.Windows.Forms.RadioButton
     Friend WithEvents BTN_PROD_BUS_SALIR As System.Windows.Forms.Button
     Friend WithEvents BTN_PROD_BUS_AGREGAR_A_VENTA As System.Windows.Forms.Button
+    Friend WithEvents BTN_PROD_BUS_ACTUALIZAR_STOCK As System.Windows.Forms.Button
 End Class

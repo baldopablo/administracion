@@ -82,7 +82,7 @@ Partial Class FRM_PROVEEDORES
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(19, 187)
+        Me.Label4.Location = New System.Drawing.Point(21, 191)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(75, 18)
         Me.Label4.TabIndex = 5
@@ -102,7 +102,7 @@ Partial Class FRM_PROVEEDORES
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(21, 251)
+        Me.Label6.Location = New System.Drawing.Point(22, 251)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(76, 18)
         Me.Label6.TabIndex = 7
@@ -147,7 +147,7 @@ Partial Class FRM_PROVEEDORES
         'TB_PROV_TEL_1
         '
         Me.TB_PROV_TEL_1.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TB_PROV_TEL_1.Location = New System.Drawing.Point(206, 148)
+        Me.TB_PROV_TEL_1.Location = New System.Drawing.Point(206, 149)
         Me.TB_PROV_TEL_1.Name = "TB_PROV_TEL_1"
         Me.TB_PROV_TEL_1.Size = New System.Drawing.Size(125, 26)
         Me.TB_PROV_TEL_1.TabIndex = 5
@@ -163,7 +163,7 @@ Partial Class FRM_PROVEEDORES
         'TB_PROV_MAIL
         '
         Me.TB_PROV_MAIL.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TB_PROV_MAIL.Location = New System.Drawing.Point(204, 207)
+        Me.TB_PROV_MAIL.Location = New System.Drawing.Point(204, 212)
         Me.TB_PROV_MAIL.Name = "TB_PROV_MAIL"
         Me.TB_PROV_MAIL.Size = New System.Drawing.Size(227, 26)
         Me.TB_PROV_MAIL.TabIndex = 7
@@ -173,7 +173,7 @@ Partial Class FRM_PROVEEDORES
         Me.TB_PROV_URL.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TB_PROV_URL.Location = New System.Drawing.Point(25, 272)
         Me.TB_PROV_URL.Name = "TB_PROV_URL"
-        Me.TB_PROV_URL.Size = New System.Drawing.Size(300, 26)
+        Me.TB_PROV_URL.Size = New System.Drawing.Size(406, 26)
         Me.TB_PROV_URL.TabIndex = 8
         '
         'TB_PROV_LOCALIDAD
@@ -289,6 +289,7 @@ Partial Class FRM_PROVEEDORES
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label10)
         Me.Name = "FRM_PROVEEDORES"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "CARGAR PROVEEDORES"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

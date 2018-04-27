@@ -135,6 +135,7 @@ Partial Class FRM_PROVEEDORES_BUSCAR_B_M
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.BTN_PROV_BUS_SALIR)
         Me.Name = "FRM_PROVEEDORES_BUSCAR_B_M"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MODIFICAR Y ELIMINAR PROVEEDORES"
         CType(Me.DGV_PROV_BUSCAR, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)

@@ -4,6 +4,7 @@
 
 
     Private Sub FRM_PRODUCTOS_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+        'LOGICA DE BOTONES
         TB_PROD_CODIGO.Focus()
         If Me.Text = "CARGAR PRODUCTO" Then
             BTN_PROD_ACTUALIZAR.Visible = False
@@ -40,12 +41,14 @@
 
     Private Sub BTN_PROD_CONFIRMAR_PRODUCTO_Click(sender As System.Object, e As System.EventArgs) Handles BTN_PROD_CONFIRMAR_PRODUCTO.Click
 
+        'VALIDA QUE LA CANTIDAD DE PRODUCTOS NO EXCEDA AL STOCK DISPONIBLE
         If Val(TB_PROD_CANTIDAD.Text) > Val(TB_PROD_STOCK.Text) Then
             MsgBox("La cantidad de productos que desea vender excede al stock disponble")
             TB_PROD_CANTIDAD.Clear()
             Exit Sub
         End If
 
+        'VALIDA QUE SE INGRESE LA CANTIDAD DE UNIDADES DEL PRODUCTO A VENDER
         If TB_PROD_CANTIDAD.Text = "" Then
             MsgBox("Debe ingresar la cantidad de productos a vender")
             TB_PROD_CANTIDAD.Focus()
@@ -69,7 +72,7 @@
         FRM_VENTAS.TB_VENTA_DESCUENTO.Clear()
         FRM_VENTAS.TB_VENTA_TOTAL.Clear()
         FRM_PRODUCTOS_BUSCAR_B_M.Close()
-        Me.Close()
+        Me.Hide()
     End Sub
 
     'SUMA LA CANTIDAD DE PRODUCTOS DE LA VENTA
@@ -108,6 +111,7 @@
         End If
     End Sub
 
+    'GUARDAR PRODUCTO
     Private Sub BTN_PROD_GUARDAR_Click_1(sender As System.Object, e As System.EventArgs) Handles BTN_PROD_GUARDAR.Click
 
         Dim BUSCARPRODUCTO = (From PROD In datacontext.PRODUCTOS Select PROD.PROD_CODIGO Where PROD_CODIGO = TB_PROD_CODIGO.Text).Any
@@ -115,34 +119,34 @@
             MsgBox("El código de producto ingresado ya existe")
             Exit Sub
         End If
-        '  Try
-        If TB_PROD_CODIGO.Text.Length = 0 Or TB_PROD_DESCRIPCION.Text.Length = 0 Or TB_PROD_PRECIO_COSTO.Text.Length = 0 Or TB_PROD_PRECIO_VENTA.Text.Length = 0 Or TB_PROD_STOCK.Text.Length = 0 Or CB_PROD_DEPOSITO.Text.Length = 0 Or CB_PROD_PROVEEDOR.Text.Length = 0 Or CB_PROD_TIPO_PROD.Text.Length = 0 Then
+        Try
+            If TB_PROD_CODIGO.Text.Length = 0 Or TB_PROD_DESCRIPCION.Text.Length = 0 Or TB_PROD_PRECIO_COSTO.Text.Length = 0 Or TB_PROD_PRECIO_VENTA.Text.Length = 0 Or TB_PROD_STOCK.Text.Length = 0 Or CB_PROD_DEPOSITO.Text.Length = 0 Or CB_PROD_PROVEEDOR.Text.Length = 0 Or CB_PROD_TIPO_PROD.Text.Length = 0 Then
+                MsgBox("Debe completar todos los campos requeridos")
+                Exit Sub
+            Else
+                Dim I As Integer
+                Dim PRODUCTO = New PRODUCTOS
+
+                PRODUCTO.PROD_CODIGO = TB_PROD_CODIGO.Text
+                PRODUCTO.PROD_DESCRIPCION = TB_PROD_DESCRIPCION.Text
+                PRODUCTO.PROD_PRECIO_COSTO = TB_PROD_PRECIO_COSTO.Text
+                PRODUCTO.PROD_PRECIO_VTA = TB_PROD_PRECIO_VENTA.Text
+                PRODUCTO.PROD_STOCK = TB_PROD_STOCK.Text
+                PRODUCTO.ID_PROVEEDOR = CB_PROD_PROVEEDOR.SelectedValue
+                PRODUCTO.ID_DEPOSITO = CB_PROD_DEPOSITO.SelectedValue
+                PRODUCTO.ID_PROD_TIPO = CB_PROD_TIPO_PROD.SelectedValue
+
+                I = PRODUCTO.ID_PRODUCTO
+
+                datacontext.PRODUCTOS.InsertOnSubmit(PRODUCTO)
+                datacontext.SubmitChanges()
+                MsgBox("El producto se ha creado correctamente", vbInformation)
+                Me.Close()
+            End If
+        Catch ex As Exception
             MsgBox("Debe completar todos los campos requeridos")
             Exit Sub
-        Else
-            Dim I As Integer
-            Dim PRODUCTO = New PRODUCTOS
-
-            PRODUCTO.PROD_CODIGO = TB_PROD_CODIGO.Text
-            PRODUCTO.PROD_DESCRIPCION = TB_PROD_DESCRIPCION.Text
-            PRODUCTO.PROD_PRECIO_COSTO = TB_PROD_PRECIO_COSTO.Text
-            PRODUCTO.PROD_PRECIO_VTA = TB_PROD_PRECIO_VENTA.Text
-            PRODUCTO.PROD_STOCK = TB_PROD_STOCK.Text
-            PRODUCTO.ID_PROVEEDOR = CB_PROD_PROVEEDOR.SelectedValue
-            PRODUCTO.ID_DEPOSITO = CB_PROD_DEPOSITO.SelectedValue
-            PRODUCTO.ID_PROD_TIPO = CB_PROD_TIPO_PROD.SelectedValue
-
-            I = PRODUCTO.ID_PRODUCTO
-
-            datacontext.PRODUCTOS.InsertOnSubmit(PRODUCTO)
-            datacontext.SubmitChanges()
-            MsgBox("El producto se ha creado correctamente", vbInformation)
-            Me.Close()
-        End If
-        'Catch ex As Exception
-        '        MsgBox("Debe completar todos los campos requeridos")
-        '        Exit Sub
-        '    End Try
+        End Try
     End Sub
 
     'VALIDA EL INGRESO DE SOLO NUMEROS Y LA COMA (PARA PRECIO_COMPRA Y PRECIO_VENTA)
@@ -168,6 +172,7 @@
         NumerosyDecimal(TB_PROD_PRECIO_VENTA, e)
     End Sub
 
+    'BOTON ACTUALIZAR
     Private Sub BTN_PROD_ACTUALIZAR_Click(sender As System.Object, e As System.EventArgs) Handles BTN_PROD_ACTUALIZAR.Click
         If TB_PROD_ID.Text.Length = 0 Or TB_PROD_CODIGO.Text.Length = 0 Or TB_PROD_DESCRIPCION.Text.Length = 0 Or TB_PROD_PRECIO_COSTO.Text.Length = 0 Or TB_PROD_PRECIO_VENTA.Text.Length = 0 Or TB_PROD_STOCK.Text.Length = 0 Or CB_PROD_DEPOSITO.Text.Length = 0 Or CB_PROD_PROVEEDOR.Text.Length = 0 Or CB_PROD_TIPO_PROD.Text.Length = 0 Then
             MsgBox("Debe completar todos los campos requeridos")
@@ -197,9 +202,8 @@
         End Try
     End Sub
 
+    'INGRESO DE SOLO NUMEROS
     Private Sub TB_PROD_CANTIDAD_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles TB_PROD_CANTIDAD.KeyPress
-
-        'INGRESO DE SOLO NUMEROS
         If Char.IsNumber(e.KeyChar) Then
             e.Handled = False
         ElseIf Char.IsControl(e.KeyChar) Then
@@ -211,29 +215,46 @@
         End If
     End Sub
 
-    'CONTROLAR
+    'DISMINUIR STOCK
     Public Sub DisminuirStock()
-        Dim stock As Integer = Val(TB_PROD_STOCK.Text)
-        Dim cantidad As Integer = Val(TB_PROD_CANTIDAD.Text)
+        Dim ActualizarProducto = (From P In datacontext.PRODUCTOS Where P.ID_PRODUCTO = (TB_PROD_ID.Text)).ToList()(0)
+        Dim stock As Integer = CDbl(TB_PROD_STOCK.Text)
+        Dim cantidad As Integer = CDbl(TB_PROD_CANTIDAD.Text)
         Dim NuevoStock As Integer
-
-        NuevoStock = Val(TB_PROD_STOCK.Text) - Val(TB_PROD_CANTIDAD.Text)
+        NuevoStock = CDbl(TB_PROD_STOCK.Text) - CDbl(TB_PROD_CANTIDAD.Text)
         TB_PROD_STOCK.Text = NuevoStock
+        ActualizarProducto.PROD_STOCK = NuevoStock
+        datacontext.SubmitChanges()
+        ' MsgBox("stock modificado")
     End Sub
 
-    'CONTROLAR
+    'AUMENTAR STOCK
     Public Sub AumentarStock()
-        Dim stock As Integer = Val(TB_PROD_STOCK.Text)
-        Dim cantidad As Integer = Val(TB_PROD_CANTIDAD.Text)
+        Dim ActualizarStock = (From P In datacontext.PRODUCTOS Where P.PROD_STOCK = (TB_PROD_STOCK.Text)).ToList()(0)
+        Dim stock As Integer = CDbl(TB_PROD_STOCK.Text)
+        Dim cantidad As Integer = CDbl(TB_PROD_AUMENTAR_STOCK.Text)
         Dim NuevoStock As Integer
 
-        NuevoStock = Val(TB_PROD_STOCK.Text) + Val(TB_PROD_CANTIDAD.Text)
+        NuevoStock = CDbl(TB_PROD_STOCK.Text) + CDbl(TB_PROD_AUMENTAR_STOCK.Text)
         TB_PROD_STOCK.Text = NuevoStock
+        TB_PROD_AUMENTAR_STOCK.Clear()
+        ActualizarStock.PROD_STOCK = NuevoStock
+        datacontext.SubmitChanges()
+        MsgBox("El stock ha sido actualizado correctamente!!")
+        Me.Close()
+        FRM_PRODUCTOS_BUSCAR_B_M.CargarGrillaProducto()
+        ' FRM_PRODUCTOS_BUSCAR_B_M.Close()
     End Sub
 
+    'BOTON SALIR
     Private Sub BTN_PROD_SALIR_Click_1(sender As System.Object, e As System.EventArgs) Handles BTN_PROD_SALIR.Click
         Me.Close()
         Me.Dispose()
+    End Sub
+
+    'BOTON AGREGAR STOCK
+    Private Sub BTN_PROD_AGREGAR_STOCK_Click(sender As System.Object, e As System.EventArgs) Handles BTN_PROD_AGREGAR_STOCK.Click
+        AumentarStock()
     End Sub
 End Class
 
