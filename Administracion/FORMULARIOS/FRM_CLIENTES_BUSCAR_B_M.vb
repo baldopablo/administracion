@@ -24,11 +24,7 @@
             BTN_CLIE_BUS_EDITAR.Visible = False
             BTN_CLIE_BUS_ELIMINAR.Visible = False
             BTN_CLIE_BUS_IMPRIMIR.Visible = False
-            '    DGV_CLIE_BUSCAR.ClearSelection()
         End If
-
-
-
     End Sub
 
     Private Sub TB_CLIE_BUSCAR_APE_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TB_CLIE_BUSCAR_APE.TextChanged
