@@ -23,7 +23,7 @@ Partial Class FRM_REPORTE_VENTA
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
-        Me.Reporte_Venta1 = New WindowsApplication1.Reporte_Venta()
+        Me.Vista_Ventas1 = New WindowsApplication1.Vista_Ventas()
         Me.SuspendLayout()
         '
         'CrystalReportViewer1
@@ -35,7 +35,7 @@ Partial Class FRM_REPORTE_VENTA
         Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CrystalReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
-        Me.CrystalReportViewer1.ReportSource = Me.Reporte_Venta1
+        Me.CrystalReportViewer1.ReportSource = Me.Vista_Ventas1
         Me.CrystalReportViewer1.Size = New System.Drawing.Size(703, 498)
         Me.CrystalReportViewer1.TabIndex = 0
         Me.CrystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
@@ -53,5 +53,5 @@ Partial Class FRM_REPORTE_VENTA
 
     End Sub
     Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
-    Friend WithEvents Reporte_Venta1 As WindowsApplication1.Reporte_Venta
+    Friend WithEvents Vista_Ventas1 As WindowsApplication1.Vista_Ventas
 End Class
