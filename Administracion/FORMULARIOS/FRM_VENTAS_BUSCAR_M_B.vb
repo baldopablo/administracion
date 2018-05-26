@@ -3,6 +3,7 @@
 Public Class FRM_VENTAS_BUSCAR_M_B
 
     Dim datacontext As New DC_AdminDataContext
+    Dim datareporte As New DC_Administracion_Reportes
 
     Private Maestro As SqlDataAdapter
     Private Detalle As SqlDataAdapter
@@ -25,6 +26,7 @@ Public Class FRM_VENTAS_BUSCAR_M_B
         DGV_VENTA_BUSCAR.Columns.Add("ID_VENTA", "ID_VENTA")
         DGV_VENTA_BUSCAR.Columns.Add("VENT_FECHA", "FECHA")
         DGV_VENTA_BUSCAR.Columns.Add("VENT_TOTAL", "TOTAL")
+        DGV_VENTA_BUSCAR.Columns.Add("ID_VENTA", "ID_VENTA")
 
         DGV_VENTA_BUSCAR.Columns(0).DataPropertyName = "ID_CLIENTE"
         DGV_VENTA_BUSCAR.Columns(0).Visible = False
@@ -35,9 +37,34 @@ Public Class FRM_VENTAS_BUSCAR_M_B
         DGV_VENTA_BUSCAR.Columns(4).Visible = False
         DGV_VENTA_BUSCAR.Columns(5).DataPropertyName = "VENT_FECHA"
         DGV_VENTA_BUSCAR.Columns(6).DataPropertyName = "VENT_TOTAL"
+        DGV_VENTA_BUSCAR.Columns(7).DataPropertyName = "ID_VENTA"
 
         DGV_VENTA_BUSCAR.ClearSelection()
+    End Sub
 
+    Private Sub ArmarGrillaDetalle()
+        DGV_VENTA_DETALLE.Enabled = True
+        DGV_VENTA_DETALLE.AutoGenerateColumns = False
+        DGV_VENTA_DETALLE.Columns.Clear()
+
+        DGV_VENTA_DETALLE.Columns.Add("ID_PROD_X_VTA", "ID_PROD_X_VTA")
+        DGV_VENTA_DETALLE.Columns.Add("PXV_CANTIDAD", "CANTIDAD")
+        DGV_VENTA_DETALLE.Columns.Add("ID_VENTA", "ID_VENTA")
+        DGV_VENTA_DETALLE.Columns.Add("PROD_DESCRIPCION", "DESCRIPCION")
+        DGV_VENTA_DETALLE.Columns.Add("PROD_PRECIO_VTA", "PRECIO VENTA")
+        DGV_VENTA_DETALLE.Columns.Add("ID_CLIENTE", "ID_CLIENTE")
+
+        DGV_VENTA_DETALLE.Columns(0).DataPropertyName = "ID_PROD_X_VTA"
+        DGV_VENTA_DETALLE.Columns(0).Visible = False
+        DGV_VENTA_DETALLE.Columns(1).DataPropertyName = "PXV_CANTIDAD"
+        DGV_VENTA_DETALLE.Columns(2).DataPropertyName = "ID_VENTA"
+        DGV_VENTA_DETALLE.Columns(2).Visible = False
+        DGV_VENTA_DETALLE.Columns(3).DataPropertyName = "PROD_DESCRIPCION"
+        DGV_VENTA_DETALLE.Columns(3).Width = 200
+        DGV_VENTA_DETALLE.Columns(4).DataPropertyName = "PROD_PRECIO_VTA"
+        DGV_VENTA_DETALLE.Columns(5).DataPropertyName = "ID_CLIENTE"
+        DGV_VENTA_DETALLE.Columns(5).Visible = False
+        DGV_VENTA_DETALLE.ClearSelection()
     End Sub
 
     Private Sub BTN_PROD_TIPO_BUS_ELIMINAR_Click(sender As System.Object, e As System.EventArgs) Handles BTN_VENTA_BUS_ELIMINAR.Click
@@ -103,45 +130,20 @@ Public Class FRM_VENTAS_BUSCAR_M_B
         DGV_VENTA_DETALLE.DataSource = ConsultaGrillaDetalle
     End Sub
 
-    Private Sub ArmarGrillaDetalle()
-        DGV_VENTA_DETALLE.Enabled = True
-        DGV_VENTA_DETALLE.AutoGenerateColumns = False
-        DGV_VENTA_DETALLE.Columns.Clear()
-
-
-        DGV_VENTA_DETALLE.Columns.Add("ID_PROD_X_VTA", "ID_PROD_X_VTA")
-        DGV_VENTA_DETALLE.Columns.Add("PXV_CANTIDAD", "CANTIDAD")
-        DGV_VENTA_DETALLE.Columns.Add("ID_VENTA", "ID_VENTA")
-        DGV_VENTA_DETALLE.Columns.Add("PROD_DESCRIPCION", "DESCRIPCION")
-        DGV_VENTA_DETALLE.Columns.Add("PROD_PRECIO_VTA", "PRECIO VENTA")
-        DGV_VENTA_DETALLE.Columns.Add("ID_CLIENTE", "ID_CLIENTE")
-
-
-        DGV_VENTA_DETALLE.Columns(0).DataPropertyName = "ID_PROD_X_VTA"
-        DGV_VENTA_DETALLE.Columns(0).Visible = False
-        DGV_VENTA_DETALLE.Columns(1).DataPropertyName = "PXV_CANTIDAD"
-        DGV_VENTA_DETALLE.Columns(2).DataPropertyName = "ID_VENTA"
-        DGV_VENTA_DETALLE.Columns(2).Visible = False
-        DGV_VENTA_DETALLE.Columns(3).DataPropertyName = "PROD_DESCRIPCION"
-        DGV_VENTA_DETALLE.Columns(3).Width = 200
-        DGV_VENTA_DETALLE.Columns(4).DataPropertyName = "PROD_PRECIO_VTA"
-        DGV_VENTA_DETALLE.Columns(5).DataPropertyName = "ID_CLIENTE"
-        DGV_VENTA_DETALLE.Columns(5).Visible = False
-        DGV_VENTA_DETALLE.ClearSelection()
-
-    End Sub
-
     Private Sub FRM_VENTAS_BUSCAR_M_B_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-
+    
         Dim miConexion As New SqlConnection("Data Source=VALE\VALEVALERIA;Initial Catalog=Administracion;Integrated Security=True")
 
+        CargarGrillaMaestro()
         ArmarGrillaMaestro()
+
+        CargarGrillaDetalle()
         ArmarGrillaDetalle()
 
-        Maestro = New SqlDataAdapter("SELECT dbo.CLIENTES.ID_CLIENTE, dbo.CLIENTES.CLI_NOMBRES, dbo.CLIENTES.CLI_APELLIDO,dbo.CLIENTES.CLI_DNI, dbo.VENTAS.ID_VENTA, dbo.VENTAS.VENT_FECHA, dbo.VENTAS.VENT_TOTAL FROM dbo.CLIENTES INNER JOIN dbo.VENTAS ON dbo.CLIENTES.ID_CLIENTE = dbo.VENTAS.ID_CLIENTE WHERE VENTAS.ID_CLIENTE <> 0", miConexion)
+        Maestro = New SqlDataAdapter("SELECT dbo.CLIENTES.ID_CLIENTE, dbo.CLIENTES.CLI_NOMBRES, dbo.CLIENTES.CLI_APELLIDO,dbo.CLIENTES.CLI_DNI, dbo.VENTAS.ID_VENTA, dbo.VENTAS.VENT_FECHA, dbo.VENTAS.VENT_TOTAL FROM dbo.CLIENTES INNER JOIN dbo.VENTAS ON dbo.CLIENTES.ID_CLIENTE = dbo.VENTAS.ID_CLIENTE WHERE VENTAS.ID_CLIENTE <> 0 order by ID_VENTA desc", miConexion)
         Dim MaestroCmdBuilder As New SqlCommandBuilder(Maestro)
 
-        Detalle = New SqlDataAdapter("SELECT dbo.PROD_X_VTA.ID_PROD_X_VTA, dbo.PROD_X_VTA.PXV_CANTIDAD,dbo.PROD_X_VTA.ID_VENTA, dbo.PRODUCTOS.PROD_DESCRIPCION, dbo.PRODUCTOS.PROD_PRECIO_VTA, dbo.VENTAS.ID_CLIENTE FROM dbo.PROD_X_VTA INNER JOIN dbo.PRODUCTOS ON dbo.PROD_X_VTA.ID_PRODUCTO = dbo.PRODUCTOS.ID_PRODUCTO INNER JOIN dbo.VENTAS ON dbo.PROD_X_VTA.ID_VENTA = dbo.VENTAS.ID_VENTA WHERE VENTAS.ID_CLIENTE<>0", miConexion)
+        Detalle = New SqlDataAdapter("SELECT dbo.PROD_X_VTA.ID_PROD_X_VTA, dbo.PROD_X_VTA.PXV_CANTIDAD,dbo.PROD_X_VTA.ID_VENTA, dbo.PRODUCTOS.PROD_DESCRIPCION, dbo.PRODUCTOS.PROD_PRECIO_VTA, dbo.VENTAS.ID_CLIENTE FROM dbo.PROD_X_VTA INNER JOIN dbo.PRODUCTOS ON dbo.PROD_X_VTA.ID_PRODUCTO = dbo.PRODUCTOS.ID_PRODUCTO INNER JOIN dbo.VENTAS ON dbo.PROD_X_VTA.ID_VENTA = dbo.VENTAS.ID_VENTA WHERE VENTAS.ID_CLIENTE<>0 order by ID_VENTA desc", miConexion)
         Dim DetalleCmdBuilder As New SqlCommandBuilder(Detalle)
 
         ConjuntoDeDatos = New DataSet
@@ -156,5 +158,12 @@ Public Class FRM_VENTAS_BUSCAR_M_B
         ConjuntoDeDatos.Relations.Add("VENTA_PROD_X_VTA", ConjuntoDeDatos.Tables("VENTAS").Columns("ID_VENTA"),
                                                   ConjuntoDeDatos.Tables("PROD_X_VTA").Columns("ID_VENTA"))
         Me.DGV_VENTA_DETALLE.DataMember = "VENTAS.VENTA_PROD_X_VTA"
+    End Sub
+
+    Private Sub BTN_VENTA_BUS_IMPRIMIR_Click(sender As System.Object, e As System.EventArgs) Handles BTN_VENTA_BUS_IMPRIMIR.Click
+        Dim objForm As New Reporte_Historial_Ventas
+        Dim id_ven As Integer = DGV_VENTA_BUSCAR.CurrentRow.Cells("ID_VENTA").Value
+        FRM_HISTORIAL_VENTAS.id_venta = id_ven
+        FRM_HISTORIAL_VENTAS.Show()
     End Sub
 End Class

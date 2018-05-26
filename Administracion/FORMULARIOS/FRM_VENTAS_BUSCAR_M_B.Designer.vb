@@ -31,6 +31,7 @@ Partial Class FRM_VENTAS_BUSCAR_M_B
         Me.TB_VENTA_BUSCAR_DNI_CLI = New System.Windows.Forms.TextBox()
         Me.BTN_VENTA_BUS_SALIR = New System.Windows.Forms.Button()
         Me.DGV_VENTA_DETALLE = New System.Windows.Forms.DataGridView()
+        Me.BTN_VENTA_BUS_IMPRIMIR = New System.Windows.Forms.Button()
         CType(Me.DGV_VENTA_BUSCAR, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGV_VENTA_DETALLE, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -54,7 +55,7 @@ Partial Class FRM_VENTAS_BUSCAR_M_B
         Me.DGV_VENTA_BUSCAR.MultiSelect = False
         Me.DGV_VENTA_BUSCAR.Name = "DGV_VENTA_BUSCAR"
         Me.DGV_VENTA_BUSCAR.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGV_VENTA_BUSCAR.Size = New System.Drawing.Size(522, 169)
+        Me.DGV_VENTA_BUSCAR.Size = New System.Drawing.Size(522, 193)
         Me.DGV_VENTA_BUSCAR.TabIndex = 11
         '
         'GroupBox1
@@ -122,19 +123,30 @@ Partial Class FRM_VENTAS_BUSCAR_M_B
         '
         Me.DGV_VENTA_DETALLE.AllowUserToAddRows = False
         Me.DGV_VENTA_DETALLE.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_VENTA_DETALLE.Location = New System.Drawing.Point(12, 291)
+        Me.DGV_VENTA_DETALLE.Location = New System.Drawing.Point(12, 320)
         Me.DGV_VENTA_DETALLE.MultiSelect = False
         Me.DGV_VENTA_DETALLE.Name = "DGV_VENTA_DETALLE"
         Me.DGV_VENTA_DETALLE.ReadOnly = True
         Me.DGV_VENTA_DETALLE.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGV_VENTA_DETALLE.Size = New System.Drawing.Size(441, 169)
+        Me.DGV_VENTA_DETALLE.Size = New System.Drawing.Size(441, 140)
         Me.DGV_VENTA_DETALLE.TabIndex = 14
+        '
+        'BTN_VENTA_BUS_IMPRIMIR
+        '
+        Me.BTN_VENTA_BUS_IMPRIMIR.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_VENTA_BUS_IMPRIMIR.Location = New System.Drawing.Point(267, 470)
+        Me.BTN_VENTA_BUS_IMPRIMIR.Name = "BTN_VENTA_BUS_IMPRIMIR"
+        Me.BTN_VENTA_BUS_IMPRIMIR.Size = New System.Drawing.Size(85, 27)
+        Me.BTN_VENTA_BUS_IMPRIMIR.TabIndex = 15
+        Me.BTN_VENTA_BUS_IMPRIMIR.Text = "Imprimir"
+        Me.BTN_VENTA_BUS_IMPRIMIR.UseVisualStyleBackColor = True
         '
         'FRM_VENTAS_BUSCAR_M_B
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(546, 509)
+        Me.Controls.Add(Me.BTN_VENTA_BUS_IMPRIMIR)
         Me.Controls.Add(Me.DGV_VENTA_DETALLE)
         Me.Controls.Add(Me.BTN_VENTA_BUS_ELIMINAR)
         Me.Controls.Add(Me.DGV_VENTA_BUSCAR)
@@ -159,4 +171,5 @@ Partial Class FRM_VENTAS_BUSCAR_M_B
     Friend WithEvents DGV_VENTA_DETALLE As System.Windows.Forms.DataGridView
     Friend WithEvents RB_CLI_DNI_BUSCAR As System.Windows.Forms.RadioButton
     Friend WithEvents RB_VENT_FECHA_BUSCAR As System.Windows.Forms.RadioButton
+    Friend WithEvents BTN_VENTA_BUS_IMPRIMIR As System.Windows.Forms.Button
 End Class

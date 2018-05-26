@@ -16,7 +16,7 @@
         TB_VENTA_DESCUENTO.Clear()
         TB_VENTA_TOTAL.Clear()
         TB_SUBTOTAL_VENTA.Clear()
-
+        BTN_VENTA_IMPRIMIR.Enabled = True
         armargrilla()
 
         'CARGA COMBO DEPOSITO
@@ -138,7 +138,7 @@
             FRM_PRODUCTOS.DisminuirStock()
             BTN_VENTA_IMPRIMIR.Enabled = True
             BTN_VENTA_GUARDAR.Enabled = False
-
+            Exit Sub
         Catch ex As Exception
             MsgBox("La venta no fue cargada, pongase en contacto con el administrador")
             Exit Sub
@@ -152,16 +152,26 @@
         FRM_PRODUCTOS_BUSCAR_B_M.BTN_PROD_BUS_EDITAR.Visible = False
         FRM_PRODUCTOS_BUSCAR_B_M.BTN_PROD_BUS_ELIMINAR.Visible = False
         FRM_PRODUCTOS_BUSCAR_B_M.BTN_PROD_BUS_ACTUALIZAR_STOCK.Visible = False
+        FRM_PRODUCTOS_BUSCAR_B_M.BTN_PROD_BUS_VER.Visible = False
         FRM_PRODUCTOS_BUSCAR_B_M.DGV_PROD_BUSCAR.ClearSelection()
         FRM_PRODUCTOS_BUSCAR_B_M.ShowDialog()
     End Sub
 
     'BOTON IMPRIMIR
     Private Sub BTN_VENTA_IMPRIMIR_Click(sender As System.Object, e As System.EventArgs) Handles BTN_VENTA_IMPRIMIR.Click
-        Dim objForm As New Reporte_Venta
-        Dim e1 As Integer = TB_VENTA_ID.Text
-        FRM_REPORTE_VENTA.id_venta = e1
-        FRM_REPORTE_VENTA.Show()
+        'Dim objForm As New Vista_Ventas
+        ''  Dim e1 As Integer = TB_VENTA_ID.Text
+        ''  FRM_REPORTE_VENTA.id_venta = e1
+        'FRM_REPORTE_VENTA.Show()
+
+        Dim dt As New View_Ventas
+       
+        Dim rptdoc As CrystalDecisions.CrystalReports.Engine.ReportDocument
+        rptdoc = New Reporte_Venta
+        rptdoc.SetDataSource(dt)
+        FRM_REPORTE_VENTA.CrystalReportViewer1.ReportSource = rptdoc
+        FRM_REPORTE_VENTA.ShowDialog()
+        FRM_REPORTE_VENTA.Dispose()
     End Sub
 
     'BOTON SALIR
