@@ -536,6 +536,8 @@ Partial Public Class VENTAS
 	
 	Private _ID_FORM_DE_PAGO As Integer
 	
+	Private _ID_CLIENTE As System.Nullable(Of Integer)
+	
 	Private _PROD_X_VTA As EntitySet(Of PROD_X_VTA)
 	
 	Private _FORMAS_DE_PAGO As EntityRef(Of FORMAS_DE_PAGO)
@@ -570,6 +572,10 @@ Partial Public Class VENTAS
     Partial Private Sub OnID_FORM_DE_PAGOChanging(value As Integer)
     End Sub
     Partial Private Sub OnID_FORM_DE_PAGOChanged()
+    End Sub
+    Partial Private Sub OnID_CLIENTEChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnID_CLIENTEChanged()
     End Sub
     #End Region
 	
@@ -681,6 +687,22 @@ Partial Public Class VENTAS
 				Me._ID_FORM_DE_PAGO = value
 				Me.SendPropertyChanged("ID_FORM_DE_PAGO")
 				Me.OnID_FORM_DE_PAGOChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ID_CLIENTE", DbType:="Int")>  _
+	Public Property ID_CLIENTE() As System.Nullable(Of Integer)
+		Get
+			Return Me._ID_CLIENTE
+		End Get
+		Set
+			If (Me._ID_CLIENTE.Equals(value) = false) Then
+				Me.OnID_CLIENTEChanging(value)
+				Me.SendPropertyChanging
+				Me._ID_CLIENTE = value
+				Me.SendPropertyChanged("ID_CLIENTE")
+				Me.OnID_CLIENTEChanged
 			End If
 		End Set
 	End Property
@@ -1401,7 +1423,7 @@ Partial Public Class PROD_X_VTA
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="VENTAS_PROD_X_VTA", Storage:="_VENTAS", ThisKey:="ID_VENTA", OtherKey:="ID_VENTA", IsForeignKey:=true)>  _
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="VENTAS_PROD_X_VTA", Storage:="_VENTAS", ThisKey:="ID_VENTA", OtherKey:="ID_VENTA", IsForeignKey:=true, DeleteOnNull:=true, DeleteRule:="CASCADE")>  _
 	Public Property VENTAS() As VENTAS
 		Get
 			Return Me._VENTAS.Entity

@@ -25,6 +25,7 @@
       <Column Name="VENT_TOTAL" Type="System.Decimal" DbType="Decimal(7,2) NOT NULL" CanBeNull="false" />
       <Column Name="VENT_CANTIDAD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="ID_FORM_DE_PAGO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_CLIENTE" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="VENTAS_PROD_X_VTA" Member="PROD_X_VTA" ThisKey="ID_VENTA" OtherKey="ID_VENTA" Type="PROD_X_VTA" />
       <Association Name="FORMAS_DE_PAGO_VENTAS" Member="FORMAS_DE_PAGO" ThisKey="ID_FORM_DE_PAGO" OtherKey="ID_FORM_DE_PAGO" Type="FORMAS_DE_PAGO" IsForeignKey="true" />
     </Type>
@@ -64,7 +65,7 @@
       <Column Name="ID_VENTA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="PXV_CANTIDAD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="PXV_PRECIO_X_PRODUCTO" Type="System.Decimal" DbType="Decimal(7,2) NOT NULL" CanBeNull="false" />
-      <Association Name="VENTAS_PROD_X_VTA" Member="VENTAS" ThisKey="ID_VENTA" OtherKey="ID_VENTA" Type="VENTAS" IsForeignKey="true" />
+      <Association Name="VENTAS_PROD_X_VTA" Member="VENTAS" ThisKey="ID_VENTA" OtherKey="ID_VENTA" Type="VENTAS" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="PRODUCTOS_PROD_X_VTA" Member="PRODUCTOS" ThisKey="ID_PRODUCTO" OtherKey="ID_PRODUCTO" Type="PRODUCTOS" IsForeignKey="true" />
     </Type>
   </Table>
