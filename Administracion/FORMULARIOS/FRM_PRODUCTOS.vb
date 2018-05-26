@@ -25,18 +25,21 @@
         CB_PROD_DEPOSITO.DataSource = COMBODEPOSITO
         CB_PROD_DEPOSITO.DisplayMember = "DEPO_NOMBRE"
         CB_PROD_DEPOSITO.ValueMember = "ID_DEPOSITO"
+        CB_PROD_DEPOSITO.SelectedIndex = 0
+
 
         'CARGA COMBO PROVEEDOR
         Dim COMBOPROVEEDOR = (From PROV In datacontext.PROVEEDORES Select PROV.ID_PROVEEDOR, PROV.PROV_NOMBRE)
         CB_PROD_PROVEEDOR.DataSource = COMBOPROVEEDOR
         CB_PROD_PROVEEDOR.DisplayMember = "PROV_NOMBRE"
         CB_PROD_PROVEEDOR.ValueMember = "ID_PROVEEDOR"
-
+        CB_PROD_PROVEEDOR.SelectedIndex = 0
         'CARGA COMBO TIPO_PRODUCTO
         Dim COMBOTIPO_PRODUCTO = (From TIPO_PROD In datacontext.PRODUCTOS_TIPOS Select TIPO_PROD.ID_PROD_TIPO, TIPO_PROD.PROD_TIPO_DESC)
         CB_PROD_TIPO_PROD.DataSource = COMBOTIPO_PRODUCTO
         CB_PROD_TIPO_PROD.DisplayMember = "PROD_TIPO_DESC"
         CB_PROD_TIPO_PROD.ValueMember = "ID_PROD_TIPO"
+        CB_PROD_TIPO_PROD.SelectedIndex = 0
     End Sub
 
     Private Sub BTN_PROD_CONFIRMAR_PRODUCTO_Click(sender As System.Object, e As System.EventArgs) Handles BTN_PROD_CONFIRMAR_PRODUCTO.Click
@@ -73,6 +76,7 @@
         FRM_VENTAS.TB_VENTA_TOTAL.Clear()
         FRM_PRODUCTOS_BUSCAR_B_M.Close()
         Me.Hide()
+        TB_PROD_CANTIDAD.Clear()
     End Sub
 
     'SUMA LA CANTIDAD DE PRODUCTOS DE LA VENTA

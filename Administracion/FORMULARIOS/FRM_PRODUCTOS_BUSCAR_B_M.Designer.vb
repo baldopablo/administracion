@@ -33,6 +33,7 @@ Partial Class FRM_PRODUCTOS_BUSCAR_B_M
         Me.BTN_PROD_BUS_SALIR = New System.Windows.Forms.Button()
         Me.BTN_PROD_BUS_AGREGAR_A_VENTA = New System.Windows.Forms.Button()
         Me.BTN_PROD_BUS_ACTUALIZAR_STOCK = New System.Windows.Forms.Button()
+        Me.BTN_PROD_BUS_VER = New System.Windows.Forms.Button()
         CType(Me.DGV_PROD_BUSCAR, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -146,11 +147,22 @@ Partial Class FRM_PRODUCTOS_BUSCAR_B_M
         Me.BTN_PROD_BUS_ACTUALIZAR_STOCK.Text = "Actualizar Stock"
         Me.BTN_PROD_BUS_ACTUALIZAR_STOCK.UseVisualStyleBackColor = True
         '
+        'BTN_PROD_BUS_VER
+        '
+        Me.BTN_PROD_BUS_VER.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_PROD_BUS_VER.Location = New System.Drawing.Point(474, 356)
+        Me.BTN_PROD_BUS_VER.Name = "BTN_PROD_BUS_VER"
+        Me.BTN_PROD_BUS_VER.Size = New System.Drawing.Size(85, 27)
+        Me.BTN_PROD_BUS_VER.TabIndex = 11
+        Me.BTN_PROD_BUS_VER.Text = "Ver"
+        Me.BTN_PROD_BUS_VER.UseVisualStyleBackColor = True
+        '
         'FRM_PRODUCTOS_BUSCAR_B_M
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(683, 399)
+        Me.Controls.Add(Me.BTN_PROD_BUS_VER)
         Me.Controls.Add(Me.BTN_PROD_BUS_ACTUALIZAR_STOCK)
         Me.Controls.Add(Me.BTN_PROD_BUS_AGREGAR_A_VENTA)
         Me.Controls.Add(Me.BTN_PROD_BUS_ELIMINAR)
@@ -178,4 +190,5 @@ Partial Class FRM_PRODUCTOS_BUSCAR_B_M
     Friend WithEvents BTN_PROD_BUS_SALIR As System.Windows.Forms.Button
     Friend WithEvents BTN_PROD_BUS_AGREGAR_A_VENTA As System.Windows.Forms.Button
     Friend WithEvents BTN_PROD_BUS_ACTUALIZAR_STOCK As System.Windows.Forms.Button
+    Friend WithEvents BTN_PROD_BUS_VER As System.Windows.Forms.Button
 End Class

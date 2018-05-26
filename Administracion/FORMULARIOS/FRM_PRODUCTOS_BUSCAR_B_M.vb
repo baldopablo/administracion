@@ -173,6 +173,7 @@
         FRM_PRODUCTOS.TB_PROD_AUMENTAR_STOCK.Visible = False
         FRM_PRODUCTOS.Label12.Visible = False
         FRM_PRODUCTOS.BTN_PROD_AGREGAR_STOCK.Visible = False
+
     End Sub
 
     'CARGA EL FORM "PRODUCTOS" CON LOS DATOS DEL PRODUCTO SELECCIONADO
@@ -203,6 +204,42 @@
         FRM_PRODUCTOS.Label11.Visible = False
         FRM_PRODUCTOS.TB_PROD_CANTIDAD.Visible = False
         FRM_PRODUCTOS.TB_PROD_STOCK.Enabled = False
+        FRM_PRODUCTOS.Show()
+    End Sub
+
+    Private Sub BTN_PROD_BUS_VER_Click(sender As System.Object, e As System.EventArgs) Handles BTN_PROD_BUS_VER.Click
+
+        If DGV_PROD_BUSCAR.SelectedRows.Count > 0 Then
+            FRM_PRODUCTOS.TB_PROD_ID.Text = DGV_PROD_BUSCAR.Item("ID_PRODUCTO", DGV_PROD_BUSCAR.SelectedRows(0).Index).Value
+            FRM_PRODUCTOS.TB_PROD_CODIGO.Text = DGV_PROD_BUSCAR.Item("PROD_CODIGO", DGV_PROD_BUSCAR.SelectedRows(0).Index).Value
+            FRM_PRODUCTOS.TB_PROD_DESCRIPCION.Text = DGV_PROD_BUSCAR.Item("PROD_DESCRIPCION", DGV_PROD_BUSCAR.SelectedRows(0).Index).Value
+            FRM_PRODUCTOS.TB_PROD_PRECIO_COSTO.Text = DGV_PROD_BUSCAR.Item("PROD_PRECIO_COSTO", DGV_PROD_BUSCAR.SelectedRows(0).Index).Value
+            FRM_PRODUCTOS.TB_PROD_PRECIO_VENTA.Text = DGV_PROD_BUSCAR.Item("PROD_PRECIO_VTA", DGV_PROD_BUSCAR.SelectedRows(0).Index).Value
+            FRM_PRODUCTOS.TB_PROD_STOCK.Text = DGV_PROD_BUSCAR.Item("PROD_STOCK", DGV_PROD_BUSCAR.SelectedRows(0).Index).Value
+            FRM_PRODUCTOS.CB_PROD_PROVEEDOR.SelectedValue = DGV_PROD_BUSCAR.Item("ID_PROVEEDOR", DGV_PROD_BUSCAR.SelectedRows(0).Index).Value
+            FRM_PRODUCTOS.CB_PROD_DEPOSITO.SelectedValue = DGV_PROD_BUSCAR.Item("ID_DEPOSITO", DGV_PROD_BUSCAR.SelectedRows(0).Index).Value
+            FRM_PRODUCTOS.CB_PROD_TIPO_PROD.SelectedValue = DGV_PROD_BUSCAR.Item("ID_PROD_TIPO", DGV_PROD_BUSCAR.SelectedRows(0).Index).Value
+        End If
+
+        'LOGICA DE BOTONES
+        FRM_PRODUCTOS.Text = "VER PRODUCTO"
+        FRM_PRODUCTOS.BTN_PROD_GUARDAR.Visible = False
+        FRM_PRODUCTOS.BTN_PROD_ACTUALIZAR.Visible = False
+        FRM_PRODUCTOS.BTN_PROD_CONFIRMAR_PRODUCTO.Visible = False
+        FRM_PRODUCTOS.Label11.Visible = False
+        FRM_PRODUCTOS.TB_PROD_CANTIDAD.Visible = False
+        FRM_PRODUCTOS.TB_PROD_STOCK.Enabled = False
+        FRM_PRODUCTOS.TB_PROD_AUMENTAR_STOCK.Visible = False
+        FRM_PRODUCTOS.BTN_PROD_AGREGAR_STOCK.Visible = False
+        FRM_PRODUCTOS.Label12.Visible = False
+
+        FRM_PRODUCTOS.TB_PROD_CODIGO.Enabled = False
+        FRM_PRODUCTOS.TB_PROD_DESCRIPCION.Enabled = False
+        FRM_PRODUCTOS.TB_PROD_PRECIO_COSTO.Enabled = False
+        FRM_PRODUCTOS.TB_PROD_PRECIO_VENTA.Enabled = False
+        FRM_PRODUCTOS.CB_PROD_DEPOSITO.Enabled = False
+        FRM_PRODUCTOS.CB_PROD_PROVEEDOR.Enabled = False
+        FRM_PRODUCTOS.CB_PROD_TIPO_PROD.Enabled = False
         FRM_PRODUCTOS.Show()
     End Sub
 End Class
